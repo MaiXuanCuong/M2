@@ -1,4 +1,34 @@
-<?php
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=number] ,
+        select{
+            width: 300px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 12px 10px 12px 10px;
+        }
+
+        #submit {
+            border-radius: 2px;
+            padding: 10px 32px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2" align="center">
+            <?php
 if (  $_SERVER['REQUEST_METHOD'] == 'POST'){
     $number1 = $_POST['number1'];
     $number2 = $_POST['number2'];
@@ -29,42 +59,49 @@ if (  $_SERVER['REQUEST_METHOD'] == 'POST'){
     
  }
  ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        input[type=number] ,
-        select{
-            width: 300px;
-            font-size: 16px;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            padding: 12px 10px 12px 10px;
-        }
-
-        #submit {
-            border-radius: 2px;
-            padding: 10px 32px;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-    <form action="" method="post">
-    <input type="number" name="number1" placeholder="nhập số thứ nhất"><br>
-    <select name="pheptinh" id="">
+ 
+            </td>
+        </tr>
+        <form action="" method="post">
+        <tr>
+<td>
+Nhập số thứ nhất
+</td>
+<td>
+<input type="number" name="number1" placeholder="nhập số thứ nhất"><br>
+</td>
+        </tr>
+        <tr>
+        <td>
+        Chọn phép tính
+        </td>
+<td>
+<select name="pheptinh" id="">
         <option name="cong" value="cong">+</option>
         <option name="tru"  value="tru">-</option>
         <option name="nhan" value="nhan">*</option>
         <option name="chia" value="chia">/</option>
     </select><br>
-    <input type="number" name="number2" placeholder="nhập số thứ hai"> <br>
-    <input type="submit" name="submit" id="submit" value="Kiểm tra">
+</td>
+        </tr>
+        <tr>
+        <td>
+        Nhập số thứ hai
+        </td>
+<td>
+<input type="number" name="number2" placeholder="nhập số thứ hai"> <br>
+</td>
+        </tr>
+        <tr>
+        <td></td>
+<td>  <input type="submit" name="submit" id="submit" value="Kiểm tra"></td>
+        </tr>
+    
+   
+   
+  
+  
     </form>
+    </table>
 </body>
 </html>
