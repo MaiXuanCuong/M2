@@ -1,5 +1,6 @@
 <?php
 $number = [
+    "0" => "",
     "1"=>"one",
     "2"=>"two",
     "3"=>"three",
@@ -36,8 +37,9 @@ $chucchan =[
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-
+ 
     $searchWord = $_POST["search"];
+    if ($searchWord != ""){
     switch ($searchWord) {
         case $searchWord<=10 && $searchWord >0:
         echo $number[$searchWord];
@@ -48,9 +50,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case $searchWord >=20 && $searchWord <100;
         $chuc_1=(int)($searchWord/10)*10;
         $dv=$searchWord-$chuc_1;
-        echo $chucchan[$chuc_1].$number[$dv];
+        if ($dv == 0) {
+            echo $chucchan[$chuc_1];
+        } else {
+            echo $chucchan[$chuc_1].' '.$number[$dv];
+        }
+        break;
+        case $searchWord >=100 && $searchWord < 1000;
+        $tram =  (int)($searchWord/100);
+        $hchuc = $searchWord - ($tram*100);
+        $chuc_2 = (int)($hchuc/10)*10;
+        $dv_1 = $hchuc - $chuc_2;
+        if($hchuc == 0){
+            echo $number[$tram]." hundred";
+            
+        } else if ($hchuc > 10 && $hchuc < 20 ){
+            echo $number[$tram]." hundred and ".$chuc[$hchuc].' '.$number[$dv_1];
+        }else {
+            echo $number[$tram]." hundred and ".$chucchan[$chuc_2].' '.$number[$dv_1];
+        }
+        break;
+        default:
+        echo "Số quá lớn nhập số bé hơn 1000";
+        break;
     }
-}
+ } else {
+    echo " Vui lòng nhập số";
+ }
+   
+} 
     ?>
 <!DOCTYPE html>
 <html lang="en">
