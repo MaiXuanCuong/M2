@@ -56,6 +56,9 @@ $customerList = [
     }
     </style>
 </head>
+ 
+
+
 
 <body>
     <table>
