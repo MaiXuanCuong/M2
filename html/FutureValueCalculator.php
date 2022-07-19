@@ -8,8 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dautu = $_POST["dautu"];
     $laisuat = $_POST["laisuat"];
     $sonam = $_POST["sonam"];
-    $lailoi = $dautu + ($dautu * $laisuat*0.01) * $sonam;
-    echo "Gía trị tương lai là : $lailoi VNĐ";
+    if (!($dautu == "" && $laisuat== "")){
+        $lailoi = $dautu + ($dautu * $laisuat*0.01) * $sonam;
+        echo "Gía trị tương lai là : $lailoi VNĐ";
+    }
+  
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Document</title>
     <style>
-        input[type=text] {
+        input[type=number] {
             width: 300px;
             font-size: 16px;
             border: 2px solid #ccc;
@@ -36,9 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <h2>Đầu tư </h2>
 <form method="post">
-    <input type="text" name="dautu" placeholder="Nhập số tiền đầu tư"/>
-    <input type="text" name="laisuat" placeholder="Nhập lãi suất"/>
-    <input type="text" name="sonam" placeholder="Nhập số năm"/>
+    <input type="number" name="dautu" placeholder="Nhập số tiền đầu tư"/><br>
+    <input type="number" name="laisuat" placeholder="Nhập lãi suất"/><br>
+    <input type="number" name="sonam" value="1" placeholder="Nhập số năm"/><br>
     <input type="submit" id="submit" value="Tìm"/>
 </form>
 </body>
