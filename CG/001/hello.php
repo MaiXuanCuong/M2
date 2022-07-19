@@ -10,6 +10,8 @@ $ngoaingu = array("helo","xinchao","goodbye"); // array
 // khai báo hằng
 define("PI", 3.14);
  const PI_2 = 3.14;
+ const PI_2 = 3.14;
+ const PI_2 = 3.14;
  // out put
  /*
  echo : string, integer, float
