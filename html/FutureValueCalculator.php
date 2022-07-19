@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dautu = $_POST["dautu"];
     $laisuat = $_POST["laisuat"];
     $sonam = $_POST["sonam"];
-    $lailoi = $dautu + ($dautu * $laisuat*0.01);
+    $lailoi = $dautu + ($dautu * $laisuat*0.01) * $sonam;
     echo "Gía trị tương lai là : $lailoi VNĐ";
 }
 ?>
