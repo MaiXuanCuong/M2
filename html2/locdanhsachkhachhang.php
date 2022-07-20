@@ -1,12 +1,4 @@
 <?php
-$fromDate = null;
-$toDate = null;
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $fromDate = $_REQUEST["from"];
-    $toDate = $_REQUEST["to"];
-}
-$filteredCustomers = searchByDate($customerList, $fromDate, $toDate);
-
 $customerList = [
     "1" => [
         "name" => "Mai Văn Hoàn",
@@ -34,6 +26,14 @@ $customerList = [
         "address" => "Hà Nội",
         "profile" => "images/img5.jpg"]
 ];
+$fromDate = null;
+$toDate = null;
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $fromDate = $_REQUEST["from"];
+    $toDate = $_REQUEST["to"];
+}
+$filteredCustomers = searchByDate($customerList, $fromDate, $toDate);
+function searchByDate($customers, $fromDate, $toDate)
 {
     if (empty($fromDate) || empty($toDate)) {
         return $customers;
@@ -50,7 +50,6 @@ $customerList = [
     return $filteredCustomers;
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,15 +58,22 @@ $customerList = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table, form {
+            width: 100% ;
+            text-align: center ;
+        }
+    </style>
 </head>
-<body>
-<form method="GET">
-    Chọn ngày sinh từ: <input id="from1" type="date" name="from" placeholder="yyyy/mm/dd"
-               value="from"/>
-    đến: <input id="to1" type="date" name="to" placeholder="yyyy/mm/dd"
-                value="to"/>
+<form  method="GET">
+    Chọn ngày sinh từ: <input id="from" type="date" name="from" placeholder="yyyy/mm/dd"
+               value=""/>
+    đến: <input id="to" type="date" name="to" placeholder="yyyy/mm/dd"
+                value=""/>
     <input type="submit" id="submit" value="Lọc"/>
-    <table border="0">
+</form>
+<body>
+<table border="1px">
     <caption><h2>Danh sách khách hàng</h2></caption>
     <tr>
         <th>STT</th>
@@ -87,8 +93,8 @@ $customerList = [
             </td>
         </tr>
     <?php endforeach; ?>
+ 
 </table>
-</form>
-
+        
 </body>
 </html>
