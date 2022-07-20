@@ -1,6 +1,6 @@
 <?php
 $number = [
-    "0" => "",
+    "0" => "zero",
     "1"=>"one",
     "2"=>"two",
     "3"=>"three",
@@ -13,6 +13,7 @@ $number = [
     "10"=>"ten",
 ];
 $chuc=[
+    
     "11" => "eleven",
     "12" => "twelve",
     "13" => "thirteen",
@@ -24,6 +25,7 @@ $chuc=[
     "19" => "nineteen",
 ];
 $chucchan =[
+    "0" => "",
     "20" => "twenty",
     "30" => "thirty",
     "40" => "forty",
@@ -63,15 +65,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dv_1 = $hchuc - $chuc_2;
         if($hchuc == 0){
             echo $number[$tram]." hundred";
-            
+            break;
         } else if ($hchuc > 10 && $hchuc < 20 ){
-            echo $number[$tram]." hundred and ".$chuc[$hchuc].' '.$number[$dv_1];
-        }else {
+            echo $number[$tram]." hundred and ".$chuc[$hchuc];
+            break;
+        }
+        else if ($chuc_2 == 0 && $dv_1 > 0 && $dv_1 < 10 ){
             echo $number[$tram]." hundred and ".$chucchan[$chuc_2].' '.$number[$dv_1];
+            break;
+        }
+        else if ($dv_1 == 0){
+            echo $number[$tram]." hundred and ".$chucchan[$chuc_2];
+        }
+        else if ($dv_1 != 0){
+            echo $number[$tram]." hundred and ".$chucchan[$chuc_2].' '.$number[$dv_1];
+            break;
         }
         break;
         default:
-        echo "Số quá lớn nhập số bé hơn 1000";
+        echo "Số quá lớn!!! Hãy nhập số bé hơn 1000";
         break;
     }
  } else {

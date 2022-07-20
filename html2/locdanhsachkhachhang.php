@@ -63,6 +63,10 @@ function searchByDate($customers, $fromDate, $toDate)
             width: 100% ;
             text-align: center ;
         }
+        h2{
+            background-color: #00FFFF;
+            height: 50px;
+        }
     </style>
 </head>
 <form  method="GET">
@@ -73,7 +77,7 @@ function searchByDate($customers, $fromDate, $toDate)
     <input type="submit" id="submit" value="Lọc"/>
 </form>
 <body>
-<table border="1px">
+<table border="1px" cellspacing="1" cellpadding="20px">
     <caption><h2>Danh sách khách hàng</h2></caption>
     <tr>
         <th>STT</th>
