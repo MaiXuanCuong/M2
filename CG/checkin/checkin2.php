@@ -317,7 +317,12 @@ if (  $_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "Kết quả : ". $number1 * $number2;
         break;
         case 'chia':
-            echo "Kết quả : ". $number1 / $number2;
+            if ($number2 != 0){
+                echo "Kết quả : ". $number1 / $number2;
+            } else {
+                echo "không được phép chia cho số 0";
+            }
+           
         break;
     }
    } else {
