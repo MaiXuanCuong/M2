@@ -67,17 +67,11 @@ Nhập số tiền
     </select><br>
 </td>
         </tr>
- 
         </tr>
         <tr>
         <td></td>
 <td>  <input type="submit" name="submit" id="submit" value="Kiểm tra"></td>
         </tr>
-    
-   
-   
-  
-  
     </form>
     </table>
 </body>

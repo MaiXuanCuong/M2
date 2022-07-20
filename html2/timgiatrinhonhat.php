@@ -4,7 +4,7 @@ function timgiatrinhonhat($a){
     $min= $songuyen1[0];
     $index =0;
     
-    echo 'Mảng số [';
+ 
     foreach ($songuyen1 as $key => $value){
        if ($value < $min){
         $min=$value;
@@ -12,11 +12,13 @@ function timgiatrinhonhat($a){
        
        }
      
-       echo $value .", ";
+
        
      
     }
-    echo ']';
+    echo '<pre>';
+    print_r($songuyen1);
+    echo '</pre>';
     
     echo "<br>";
     echo 'Số nhỏ nhất là : ' .$min." tại vị trí ".($index+1);
