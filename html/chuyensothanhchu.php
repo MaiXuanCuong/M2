@@ -72,9 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else if ($chuc_2 == 0 && $dv_1 > 0 && $dv_1 < 10 ){
             echo $number[$tram]." hundred and ".$chucchan[$chuc_2].' '.$number[$dv_1];
+            echo '<br>';
+            echo $tram.$chuc_2 . $dv_1;
             break;
+        }else if ($dv_1 == 0  && $chuc_2 <= 10 ){
+            echo $number[$tram]." hundred and ".$number[$chuc_2];
         }
-        else if ($dv_1 == 0){
+        else if ($dv_1 == 0  && $chuc_2 > 10 ){
             echo $number[$tram]." hundred and ".$chucchan[$chuc_2];
         }
         else if ($dv_1 != 0){
