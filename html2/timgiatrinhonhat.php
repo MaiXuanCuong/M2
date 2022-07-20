@@ -1,26 +1,29 @@
 <?php
-
-$songuyen = [3,3,1,4,46,86,9];
-$min= $songuyen[0];
-$index =0;
-
-echo 'Mảng số [';
-foreach ($songuyen as $key => $value){
-   if ($value < $min){
-    $min=$value;
-    $index = $key;
-   
-   }
- 
-   echo $value .", ";
-   
- 
+function timgiatrinhonhat($a){
+    $songuyen1 = $a;
+    $min= $songuyen1[0];
+    $index =0;
+    
+    echo 'Mảng số [';
+    foreach ($songuyen1 as $key => $value){
+       if ($value < $min){
+        $min=$value;
+        $index = $key;
+       
+       }
+     
+       echo $value .", ";
+       
+     
+    }
+    echo ']';
+    
+    echo "<br>";
+    echo 'Số nhỏ nhất là : ' .$min." tại vị trí ".($index+1);
 }
-echo ']';
+$songuyen = [3,3,1,4,46,86,9];
 
-echo "<br>";
-echo 'Số nhỏ nhất là : ' .$min." tại vị trí ".($index+1);
-
+timgiatrinhonhat($songuyen);
 
 
 
