@@ -1,17 +1,41 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #aecho {
+            color : red; 
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="So1" placeholder="nhập số thứ nhất" >
+        <input type="text" name="So2" placeholder="nhập số thứ hai" >
+        <input type="submit" nam="submit" value="Tính">
+    </form>
+    <?php
 if (  $_SERVER['REQUEST_METHOD'] == 'POST'){
+
     $x = $_POST['So1'];
    $y = $_POST['So2'];
-   if (($x != "" && $y != "")){
+//    if (($x != "" && $y != "")){
 function calculate($x1,$y1){
     try {
        
-        if (!(is_numeric($x1))) throw new Exception("STN: Vui lòng nhập số khác 0");
-       if (!(is_numeric($y1))) throw new Exception("STH: Vui lòng nhập số khác 0");
-    
+        // if ((isEm($x1))) throw new Exception("STN: Vui lòng nhập số khác 0");
+        if(!(is_numeric($x1))) throw new Exception("Vui lòng nhập số");
+
+        if(!(is_numeric($y1))) throw new Exception("Vui lòng nhập số");
+    //    if ((is_numeric($y1))) throw new Exception("STH: Vui lòng nhập số khác 0");
     } catch (Exception $e) {
-         $e->getMessage();
+       echo " lỖi :".  $e->getMessage();
+       die();
     }
+    
    
     $cong = $x1 + $y1;
     echo $x1." + ".$y1.' = '.$cong;
@@ -33,21 +57,8 @@ function calculate($x1,$y1){
 calculate($x,$y);}
 else {
     echo 'Hãy nhập số';
-}}
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="post">
-        <input type="text" name="So1" placeholder="nhập số thứ nhất" >
-        <input type="text" name="So2" placeholder="nhập số thứ hai" >
-        <input type="submit" nam="submit" value="Tính">
-    </form>
 </body>
-</html>
+</html> 
+
