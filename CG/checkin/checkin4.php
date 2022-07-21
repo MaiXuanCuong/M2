@@ -53,4 +53,6 @@ echo '</pre>';
 echo $cun->getName();
 echo '<br>';
 echo $cun->getColor();
+// vòng ffoiwf của đối tượng
+
 ?>
