@@ -66,7 +66,6 @@ $quat2->setRadius(10);
 $quat2->setColor("blue");
 echo "Quạt 2: ";
 echo "<br>";
-
 echo $quat2->toString();
 
 
