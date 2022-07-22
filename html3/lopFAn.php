@@ -36,7 +36,11 @@ public function getColor() {
     return $this->color;
 }
 public function toString() {
-    return "Tốc độ ".$this->getSpeed()." màu quạt ".$this->getColor()." bán kính ".$this->getRadius()." Fan is on";
+    if($this->getOn()){
+    return "Quạt đang bật"."<br>". "Tốc độ quạt: ".$this->getSpeed()."<br>"." Màu quạt: ".$this->getColor()."<br>"." Bán kính: ".$this->getRadius();
+} else {
+    echo "Quạt đang tắt" ."<br>"."Màu quạt: ".$this->getColor()."<br>"." Bán kính: ".$this->getRadius();
+}
 }
 
 
@@ -44,7 +48,7 @@ public function toString() {
 }
 $quat1 = new Fan();
 $quat1->setSpeed(FAST);
-$quat1->setOn(true);
+$quat1->setOn(false);
 $quat1->setRadius(10);
 $quat1->setColor("red");
 echo $quat1->toString();
