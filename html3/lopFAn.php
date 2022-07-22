@@ -42,12 +42,7 @@ public function toString() {
     echo "Quạt đang tắt" ."<br>"."Màu quạt: ".$this->getColor()."<br>"." Bán kính: ".$this->getRadius();
 }
 }
-
-
-    
 }
-
-
 $quat1 = new Fan();
 $quat1->setSpeed(FAST);
 $quat1->setOn(true);
