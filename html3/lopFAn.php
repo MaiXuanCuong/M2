@@ -2,15 +2,11 @@
 define ('SLOW', 1);
 define ('MEDIUM', 2);
 define ('FAST', 3);
-
 class Fan{
     private $speed = SLOW;
     private $on = false;
     private $radius = 5;
     private $color = "blue";
-  
-
-
 public function setSpeed($speed) {
     $this->speed = $speed;
 }
