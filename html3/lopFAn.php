@@ -46,12 +46,29 @@ public function toString() {
 
     
 }
+
+
 $quat1 = new Fan();
 $quat1->setSpeed(FAST);
-$quat1->setOn(false);
+$quat1->setOn(true);
 $quat1->setRadius(10);
 $quat1->setColor("red");
+echo "Quạt 1: ";
+echo "<br>";
 echo $quat1->toString();
+echo "<br>";
+echo "<br>";
+echo "<br>";
+$quat2 = new Fan();
+$quat2->setSpeed(MEDIUM);
+$quat2->setOn(false);
+$quat2->setRadius(10);
+$quat2->setColor("blue");
+echo "Quạt 2: ";
+echo "<br>";
+
+echo $quat2->toString();
+
 
 
 
