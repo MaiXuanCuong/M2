@@ -12,5 +12,5 @@ $productManager->add(new Product("Mobile"));
 $product = $productManager->getProducts();
 foreach ($product as $product) {
     echo $product->getName()."<br>";
-}
+}   
 ?>
