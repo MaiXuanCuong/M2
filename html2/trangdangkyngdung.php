@@ -42,13 +42,13 @@ function saveDataJSON($fileName, $name, $email, $phone)
             'email' => $email,
             'phone' => $phone
         );
-        // converts json data into array
+        // chuyển đổi dữ liệu json thành mảng
         $arrData = loadRegistrations($fileName);
-        // Push user data to array
+        // Đẩy dữ liệu người dùng vào mảng
         array_push($arrData, $contact);
-        // Convert updated array to JSON
+        // Chuyển đổi mảng đã cập nhật thành JSON
         $jsonData = json_encode($arrData, JSON_PRETTY_PRINT);
-        // write json data into data.json file
+        // ghi dữ liệu json vào tệp data.json
         file_put_contents($fileName, $jsonData);
         echo "Lưu dữ liệu thành công!";
     } catch (Exception $e) {
@@ -130,7 +130,7 @@ $registrations = loadRegistrations('data.json');
     <?php foreach ($registrations as $registration): ?>
         <tr>
             <td><?= $registration['name']; ?></td>
-            <td><?= $registration['email']; ?></td>
+             <td><?= $registration['email']; ?></td>
             <td><?= $registration['phone']; ?></td>
         </tr>
     <?php endforeach; ?>
