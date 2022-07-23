@@ -3,7 +3,7 @@ function loadRegistrations($fileName){
     $jsonData = file_get_contents($fileName);
     return json_decode($jsonData, true);
 }
-function saveDataJSON($fileName, $Ho ,$Ten, $NgaySinh, $DiaChi, $ViTriCongViec){
+function saveDataJSON($fileName, $Ho,$Ten, $NgaySinh, $DiaChi, $ViTriCongViec){
     try{
         $contact = array(
             'ho' => $Ho,
@@ -68,90 +68,7 @@ $ViTriCongViecErr = null;
         }
 
     }
-    if($Ho != '' && $Ten != '' && $NgaySinh != '' && $DiaChi != '' && $ViTriCongViec !=''){
-
-
-class NhanVien{
-    public string $Ho;
-    public string $Ten;
-    public $NgaySinh;
-    public string $DiaChi;
-    public string $ViTriCongViec;
-    public array $mang = [];
-    public function __construct($Ho ='',$Ten='',$NgaySinh=0,$DiaChi='',$ViTriCongViec=''){
-        $this->Ho = $Ho;
-        $this->Ten = $Ten;
-        $this->NgaySinh = $NgaySinh;
-        $this->DiaChi = $DiaChi;
-        $this->ViTriCongViec = $ViTriCongViec;
-    }
-    public function setInfo(){
-        $mang1($this->Ho,$this->Ten,$this->NgaySinh,$this->DiaChi,$this->ViTriCongViec);
-
-        $this->mang[]=$mang1;
-    }
-    public function getInfo(){
-        return $this->mang;
-    }
-    public function getHo(){
-        return $this->Ho;
-    }
-    public function getTen(){
-        return $this->Ten;
-    }
-    public function getNgaySinh(){
-        return $this->NgaySinh;
-    }
-    public function getDiaChi(){
-        return $this->DiaChi;
-    }
-    public function getViTriCongViec(){
-        return $this->ViTriCongViec;
-    }
-}
-$Ten = new NhanVien($Ho,$Ten,$NgaySinh,$DiaChi,$ViTriCongViec);
-class QuanLy{
-    private array $Employee;
-    static array $ds;
-    public function __construct()
-    {
-        $this->Employee=[];
-        self::$ds=[];
-    }
-    public function add($employees)///thêm nhân sự
-    {
-        $this->Employee[]=$employees;
-    }
-    public function getEmployee(): array///in ra chi tiết nhân sự
-    {
-        return $this->Employee;
-    }
-
-    // public static $danhsach =[];
-
-    // public function hienthi(){
-        
-    // }
-    // public function them(){
-
-    // }
-    // public function xemchitiet(){
-
-    // }
-    // public function xoa(){
-
-    // }
-
-    // public function chinhsua(){
-
-    // }
-}
-$Quanly1 = new Quanly();
-$Quanly1->add($Ten);
-// $Quanly1->add($Ten);'
-// $employee = $Quanly1->getEmployee();
-}
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -241,5 +158,3 @@ $Quanly1->add($Ten);
  
 </body>
 </html>
-
-       
