@@ -1,16 +1,1 @@
-[
-    {
-        "ho": "phan",
-        "ten": "n\u1ee3n",
-        "ngaysinh": "2002-03-16",
-        "diachi": "qu\u1ea3ng",
-        "vitricongviec": "hs thcs"
-    },
-    {
-        "ho": "h\u00e0",
-        "ten": "l\u1ee3n",
-        "ngaysinh": "2012-06-18",
-        "diachi": "cam l\u1ed9",
-        "vitricongviec": "hs"
-    }
-]
+[{"ho":"2771 Trinh Plains1","ten":"Gi\u00e0y vi\u1ec7c \u1edd ch\u1ebft v\u00e1 v\u1ebd l\u00e0m qu\u00ea d\u00e9p b\u00e8.","ngaysinh":"2023-02-27","diachi":"Ch\u1ebft v\u00e1 \u00e1c ch\u1ebft m\u01b0\u1ee3n l\u00e0 t\u00f4i.","vitricongviec":"Thu\u00ea gi\u00e0y xanh s\u00e1u c\u1eeda th\u1ebf \u0111\u00e3 l\u1ea7u v\u1ebd h\u01b0\u01a1ng."},{"ho":"887 B\u1eedu Viaduct","ten":"B\u1ea1n nh\u00e0 m\u00e2y t\u1ee7 vi\u1ec7c \u0111\u1eadp con bi\u1ec3n l\u1ed7i.","ngaysinh":"2023-03-18","diachi":"\u0110\u1ecf qu\u1ea7n thu\u00ea kho\u1ea3ng s\u00e1u m\u01b0\u1edbn ph\u00e1 xanh.","vitricongviec":"Xanh ng\u1ecdt xu\u1ed3ng kho\u1ea3ng ba t\u00e1m n\u00f3n l\u00e0 t\u00f4."},{"ho":"29646 Phan Via","ten":"D\u00e9p tr\u0103ng b\u00e8 v\u1ebd xe m\u00e2y.","ngaysinh":"2022-04-03","diachi":"May kh\u00e2u vi\u1ec7c thu\u00ea h\u1ebft mua.","vitricongviec":"S\u00e1u b\u01a1i h\u00f3a."}]

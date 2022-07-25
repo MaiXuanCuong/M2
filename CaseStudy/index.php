@@ -134,8 +134,10 @@ $ViTriCongViecErr = null;
                 <td width="100px">Ngày Sinh</td>
                 <td width="550px">Địa Chỉ</td>
                 <td width="350px">Công việc</td>
-                <td>Thao tác</td>
+                <td width="350px">Thao tác</td>
+                <!-- <td>Thao tác</td> -->
             </tr>
+            <hr>
             <?php
             $employee = loadRegistrations('dulieu.json');
             if ($employee != '') {
@@ -148,9 +150,8 @@ $ViTriCongViecErr = null;
                 <td><?= $registration['diachi'];  ?></td>
                 <td><?= $registration['vitricongviec']; ?></td>
                 <td>
-                    <a href="show.php?id=<?php echo $key; ?>">Show</a>
-                    <a href="edit.php?id=<?php echo $key; ?>">Edit</a>
-                    <a href="edit.php?id=<?php echo $key; ?>">Delete</a>
+                    <a href="edit.php?id=<?php echo $key; ?>" >Edit</a>
+                    <a href="delete.php?id=<?php echo $key; ?>" >Delete</a>
                 </td>
             </tr>
         <?php } } ?>
