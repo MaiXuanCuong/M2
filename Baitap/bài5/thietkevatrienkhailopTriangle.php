@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" method="post">
-        <input type="number" name="a" placeholder="Nhập độ dài cạnh a"><br><br>
-        <input type="number" name="b" placeholder="Nhập độ dài cạnh b"><br><br>
-        <input type="number" name="c" placeholder="Nhập độ dài cạnh c"><br><br>
-        <input type="submit">
-    </form>
-</body>
-</html>
+
+
 <?php
+$cerr =null;
+$aerr =null;
+$berr =null;
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $a = $_POST['a'];
     $b = $_POST['b'];
     $c = $_POST['c'];
-    try {
-        if(!(is_numeric($a))) throw new Exception("Vui lòng nhập số");
-        if(!(is_numeric($b))) throw new Exception("Vui lòng nhập số");
-        if(!(is_numeric($c))) throw new Exception("Vui lòng nhập số");
-    } catch (Exception $e) {
-       echo " lỖi :".  $e->getMessage();
-       die();
+   
+    $hasError = false;
+    if (empty($a)) {
+        $aerr = "Hãy nhập số a!";
+        $hasError = true;
     }
+    if (empty($b)) {
+        $berr = "Hãy nhập số b!";
+        $hasError = true;
+    } 
+    if (empty($c)) {
+        $cerr = "Hãy nhập số b!";
+        $hasError = true;
+    }
+    if (!$hasError) {
+        
+      
+  
+
 class Shape {
 public float $side1= 1;
 public float $side2= 1;
@@ -72,4 +71,39 @@ echo $tamgiac->toString();
 class Triangle extends Shape {
 }
 }
+$a = null;
+        $b = null;
+        $c = null;
+}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td> <input type="number" name="a" placeholder="Nhập độ dài cạnh a"><br><br></td>
+                <td><?php echo $aerr ?></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="b" placeholder="Nhập độ dài cạnh b"><br><br></td>
+                <td><?php echo $berr ?></td>
+            </tr>
+            <tr>
+                <td> <input type="number" name="c" placeholder="Nhập độ dài cạnh c"><br><br></td>
+                <td><?php echo $cerr ?></td>
+            </tr>
+            <tr>
+               
+                <td> <input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
