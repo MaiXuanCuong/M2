@@ -17,6 +17,16 @@
             color: brown;
 
         }
+        .a
+        {text-decoration: none;
+            /* background-color: #cbcbcb; */
+    background-color:#00ffff;
+    float: right;
+    color: blue;
+    text-align: center;
+    padding: 4px 10px;
+    text-decoration: none;
+    font-size: 17px;}
 
         /* body {
             background-image: url(picture/img3.jpg);
@@ -111,9 +121,9 @@
         </td>
         </tr>
         <tr>
-        <td><input type="submit" name="submit" value="Thêm"></td>
-        <td><a href="index.php">Cancel</a></td>
         <td></td>
+        <td colspan="2"><input type="submit" name="submit" value="Lưu"><a class ="a" href="index.php">Cancel</a></td>
+       
         </tr>
     </fieldset>
     </table>

@@ -92,6 +92,16 @@ $ViTriCongViecErr = null;
         form {
             width: 450px;
         }
+        .a
+        {text-decoration: none;
+            /* background-color: #cbcbcb; */
+    background-color:#00ffff;
+    /* float: right; */
+    color: blue;
+    text-align: center;
+    padding: 4px 10px;
+    text-decoration: none;
+    font-size: 17px;}
     </style>
 </head>
 <body>
@@ -143,15 +153,15 @@ $ViTriCongViecErr = null;
             if ($employee != '') {
              foreach ($employee as $key => $registration){  ?>
             <tr>
-                <td><?php echo $key ?></td>
+                <td><?php echo ++$key ?></td>
                 <td><?= $registration['ho']; ?></td>
                 <td><?= $registration['ten'];  ?></td>
                 <td><?= $registration['ngaysinh'];  ?></td>
                 <td><?= $registration['diachi'];  ?></td>
                 <td><?= $registration['vitricongviec']; ?></td>
                 <td>
-                    <a href="edit.php?id=<?php echo $key; ?>" >Edit</a>
-                    <a href="delete.php?id=<?php echo $key; ?>" >Delete</a>
+                    <a class="a" href="edit.php?id=<?php echo --$key; ?>" >Edit</a>
+                    <a class="a" href="delete.php?id=<?php echo --$key; ?>" >Delete</a>
                 </td>
             </tr>
         <?php } } ?>
