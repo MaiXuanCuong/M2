@@ -51,7 +51,7 @@ $hinh[3] = new Rectangle(190,12);
 
 foreach($hinh as $key => $value){
     echo $value->getArea()."<br>";
-   if ($value instanceof Square){
+   if ($value instanceof Square){ 
         echo  $value->howToColor()."<br>";
    }
 }
