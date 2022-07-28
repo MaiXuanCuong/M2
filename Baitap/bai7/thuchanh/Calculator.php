@@ -6,9 +6,9 @@ const division = '/';
 
 class Calculator
 {
-    public function calculate($numberOne, $numberTwo, $calculation)
+    public function calculate($firstOperand, $secondOperand, $operator)
     {
-        switch ($calculation) {
+        switch ($operator) {
             case addition:
                 return $numberOne + $numberTwo;
             case subtraction:
