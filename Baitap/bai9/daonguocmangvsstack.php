@@ -10,6 +10,7 @@ class Stack{
             $phantu = array_shift($this->arrayList);
             array_unshift($this->stack, $phantu);
         }
+        $this->pop();
     }
     public function pop(){  
         while (count($this->stack) > 0){
@@ -23,7 +24,7 @@ $songuyen = new Stack($arraylist);
 echo "<pre>";
 print_r($songuyen);
 $songuyen->push();
-$songuyen->pop();
+// $songuyen->pop();
 echo "<pre>";
 print_r($songuyen);
 
