@@ -33,7 +33,7 @@ class Patient {
 $benhnhan = new Patient();
 $benhnhan->push("Phi",5);
 $benhnhan->push("Tâm",1);
-$benhnhan->push("Cường",3);
+$benhnhan->push("Cường",1);
 $benhnhan->push("Tân",4);
 $benhnhan->push("Thắng",2);
 echo "<pre>";
