@@ -9,13 +9,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     for($i = 0; $i < count($nhap); $i++){
         $element = substr($nhap[$i],0,3);
         if(strlen($nhap[$i]) == 10){
-            // if($element == '033'){
-            //     array_push($arrVT, $nhap[$i]);
-            // }elseif($element == '088'){
-            //     array_push($arrVN, $nhap[$i]);
-            // }elseif($element == '089'){
-            //     array_push($arrMB, $nhap[$i]);
-            // }
             switch ($element){
                 case '086':
                 case '096':
@@ -92,5 +85,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     echo '<br>';
 }
-// 0331, 0332, 0881, 0882, 0891, 0892
 ?>
