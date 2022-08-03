@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                  body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #cbcbcb;
+      
+      width: 100%;
+        display: block;
+        box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+        /*Đổ bóng cho menu*/
+        position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
+        top: 0; /*Nằm trên cùng*/
+        left: 0; /*Nằm sát bên trái*/
+        z-index: 100000; /*Hiển thị lớp trên cùng*/
+    }
+    
+    .topnav a {
+      float: left;
+      color: #000;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: rgb(204, 150, 255);
+      color: rgb(255, 0, 0);
+    }
+    
+    /* .topnav a.active {
+      background-color: #04AA6D;
+      color: white;
+    } */
+    
+    .topnav-right {
+      float: right;
+    }
+        html {
+          background-color: #b7f5f5;
+            background-size: cover;
+        }
+        table  {
+          margin-left:900px;
+          margin-top: -200px;
+          height: 200px;
+          border: solid 4px rgb(245, 23, 7);
+          background-image: linear-gradient(to right bottom, rgb(246, 20, 65), #f0f558);
+          border-radius: 20px/20px;
+        }
+        td {
+          padding: 5px 30px;
+        }
+        input,
+        textarea,
+        select {
+          border: solid 1px #ddd;
+          padding: 5px 10px;
+          width: 100%;
+        }
+        select {
+          width: 180px;
+        }
+        input[type="submit"] {
+          width: auto;
+          background: blue;
+          color: #fff;
+        }
+        img {
+          width: 150px;
+          margin-left: 480px;
+          margin-top: 20px;
+          border-radius: 20px/20px;
+        }
+        #k1 {
+          margin-left: 400px;
+          margin-top: 50px;
+          border: solid 3px rgb(4, 252, 28);
+          background-image: linear-gradient(to right bottom, rgba(13, 239, 20, 0.615), #c22ccf);
+        }
+        #k2{
+            margin-left:25px;
+            margin-top: 5px;
+        }
+        #k3, #k4 {
+          border-radius: 25px/20px;
+        }
+        #myImage {
+          margin-top: -400px;
+          margin-left:1px;
+        }
+        alert {
+        margin:0;
+        font:bold 0.9em verdana,arial;
+        background-color:#3073BB;
+        color:#FFF;
+        border-bottom:1px solid #000;
+        padding:2px 0 2px 5px;
+    }
+    #hh, #hh1 {
+        border-radius: 10px/10px;
+        margin:0;
+        font:bold 0.9em verdana,arial;
+        background-color:#3073BB;
+        color:#FFF;
+        border-bottom:1px solid #000;
+        padding:2px 0 2px 5px;
+    }
+      </style>
+</head>
+<body>
+  <div class="topnav">
+    <span class="top1">  
+      <a class="active" href="./index.php">Trang Chủ</a>
+    </span>
+      <div class="topnav-right" style="padding-left:16px">
+        <a href="https://www.tiktok.com/@xc.2k2" >Tik Tok</a>
+        <a href="https://www.facebook.com/hihihihi.cuong/" >FaceBook</a>
+      </div>
+  </div><br><br><br><br><br><br><br>
+   
+    </div>
+    <form method="" action="./index.php">
+        <div id="div2"><table id="k1">
+        <tr>
+            <th colspan="2" style="text-align: center;">
+                Đăng nhập
+            </th>
+        </tr>
+      <tr>
+        <th>Tài khoản</th>
+        <td>
+          <input placeholder="Email hoặc số điện thoại" value="" name="name" />
+        </td>
+      </tr>
+      <tr>
+        <th>Mật khẩu</th>
+        <td>
+          <input placeholder="Mật khẩu" type="password" id="#ipnPassword" value="" name="password" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+          <input id="k3" style="background-image: linear-gradient(to right bottom, rgb(0, 21, 255), #f0f558);" type="submit" value="Đăng nhập" />
+        </td>
+      </tr>
+    </table></div>
+    <div id="div1">  <table id="k22">
+        <tr >
+            <th  colspan="2" style="text-align:center;">
+                Đăng ký
+            </th>
+        </tr>
+        <tr>
+          <td>Tên của bạn</td>
+          <td>
+            <input placeholder="Tên của bạn" type="text" value="" name="name" />
+          </td>
+        </tr>
+        <tr>
+          <td>Mật khẩu
+          </td>
+            </td>
+            <td>
+              <input placeholder="Mật khẩu" type="password" id="#ipnPassword" value="" name="password" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              
+            </td>
+            <td>
+              <input placeholder="Nhập lại mật khẩu" type="password" id="#ipnPassword" value="" name="password" />
+            </td>
+          </tr>
+        <tr>
+          <td>Email của bạn</td>
+          <td>
+            <input placeholder="Email của bạn" type="text" value="" name="email" />
+          </td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td>
+              <input placeholder="Ngày/Tháng/Năm" type="date" value="" name="date-of-birth" />
+            </td>
+          </tr>
+        <tr>
+            <td>
+
+            </td>
+         
+          <td>
+            <input id="k4"  style="background-image: linear-gradient(to right bottom, rgb(0, 21, 255), #f0f558);"  type="submit" value="Đăng ký" />
+          </td>
+         
+        </tr>
+
+      </table></div>
+    </form>
+    <script>
+        var dn1 = document.getElementById("div2")
+        dn1.disabled = true
+        function dangnhap1(){
+            dn1.disabled = false
+        }
+        var dk1 = document.getElementById("div1")
+        dk1.disabled = true
+        function dangnhap(){
+            dk1.disabled = false
+        }
+    </script>
+</body>
+</html>
