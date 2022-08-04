@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(isset($_SESSION['left'])){
+if(isset($_SESSION['arr'])){
     $arr = $_SESSION['arr'];
     $left = $_SESSION['left'];
     $right = $_SESSION['right'];
