@@ -1,5 +1,4 @@
 <?php
-
 function selectionSort($list,$count){
     for ($i = 0; $i < $count; $i++){
         $min = $i;
@@ -7,14 +6,12 @@ function selectionSort($list,$count){
             if ($list[$j] < $list[$min]){
                 $min = $j;
             }
-    
         }
         if ($min != $i){
             $temp = $list[$min];
             $list[$min] = $list[$i];
             $list[$i] = $temp;
         }
-    
     }
     return $list;
 }
@@ -25,6 +22,4 @@ print_r($list);
 
 echo "<pre>";
 print_r(selectionSort($list,$count));
-
-
 ?>
