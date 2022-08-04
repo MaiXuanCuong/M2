@@ -1,26 +1,26 @@
 <?php
-class Country{
-   public $name;
-   public $totalGoldMedals;
-   public $rank=[];
-    public function push($name,$totalGoldMedals) {
-        array_push($this->rank, [$name,$totalGoldMedals]);
+class Country
+{
+    public static array $arrCountry;
+    public function __construct($name, $Medals)
+    {
+        self::$arrCountry[$name]=$Medals;
     }
-   public function sortTotalGoldMedals(){
-($this->rank);
-            return $this->rank;
-   }
 }
-$QuocGia = new Country();
-$QuocGia->push("Vn",4);
-$QuocGia->push("tq",5);
-$QuocGia->push("nb",2);
-$QuocGia->push("hq",9);
-$QuocGia->push("nga",2);
-$QuocGia->push("cmp",1);
-$QuocGia->push("lao",9);
-$QuocGia->push("plp",0);
-echo "<pre>";
-print_r($QuocGia->sortTotalGoldMedals()) ;
 
+$vn= new Country("Việt Nam",50);
+$usa= new Country("Mỹ",20);
+$france= new Country("Pháp",30);
+$korea= new Country("Hàn Quốc",40);
+if(isset(Country::$arrCountry))
+{
+    arsort(Country::$arrCountry);
+    $i=1;
+    foreach(Country::$arrCountry as $name=>$Medals)
+{
+    echo "Top".$i.": ".$name."<br>";
+    echo "Medals: ".$Medals."<br>";
+    $i++;
+}
+}
 ?>
