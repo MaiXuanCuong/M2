@@ -13,7 +13,7 @@ function saveDataJSON($fileName, $Ho,$Ten, $NgaySinh, $DiaChi, $ViTriCongViec){
             'vitricongviec' => $ViTriCongViec
         );
         $arrData = loadRegistrations($fileName);
-        array_push($arrData, $contact);
+        array_push($arrData,$contact);
         $jsonData = json_encode($arrData, JSON_PRETTY_PRINT);
         file_put_contents($fileName, $jsonData);
 }
