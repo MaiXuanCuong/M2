@@ -1,19 +1,25 @@
 <?php
 include_once '../database.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$name = $_REQUEST['name'] ;
-// $price    = $_REQUEST['price'] ;
-// $category_id = $_REQUEST['category_id'] ;
-$sql = "INSERT INTO `categories` 
-        (`name_category`) 
-        VALUES 
-        ('$name')";
 
-// echo $sql;
 
-$conn->exec($sql);
-header('location:index.php');
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_REQUEST['name'] ;
+$err=[];
+if($name=='')
+{
+    $err['name']='Bạn không thể để trống mục này!';
 }
+if(empty($err))
+{
+    $sql = "INSERT INTO `categories` 
+    (`name_category`) 
+    VALUES 
+    ('$name')";
+
+    $conn->exec($sql);
+    header('location:index.php');
+}
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +45,8 @@ header('location:index.php');
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Name</label>
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="">
-                <span><?php if (isset($errors['name'])) {
-                            echo $errors['name'];
+                <span><?php if (isset($err['name'])) {
+                            echo $err['name'];
                         }
                           ?></span>
             </div>

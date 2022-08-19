@@ -1,0 +1,60 @@
+1. Tao controller
+    CategoryController.php
+
+2   tao lop 
+    class CategoryController {
+        public function index(){}
+        public function add(){}
+        public function edit(){}
+        public function delete(){}
+    }
+
+    //khoi tao doi tuong
+    $objController = new CategoryController();
+    
+    //lay action tu url
+    if( isset($_REQUEST['action']) ){
+        $action = $_REQUEST['action'];
+    }else{
+        $action = 'index';
+    }
+    switch ($action) {
+        case 'index':
+            $objController->index();
+            break;
+        case 'add':
+            $objController->add();
+            break;
+        case 'edit':
+            $objController->edit();
+            break;
+        case 'delete':
+            $objController->delete();
+            break;
+        default:
+            # code...
+            break;
+    }
+
+3. Tao CategoryModel.php
+
+    //ket noi voi database
+    include_once 'db.php';
+    
+    class CategoryModel {
+        //lay tat ca
+        public function all(){ }
+        //lay tat ca
+        public function find($id){  }
+        //them moi du lieu
+        public function create(){  }
+        //cap nhat du lieu
+        public function update(){ }
+        //xoa 1 du lieu
+        public function destroy(){ }
+    }
+
+4. Mo browser go vao
+   CategoryController.php?action=index
+   CategoryController.php?action=add
+   CategoryController.php?action=edit

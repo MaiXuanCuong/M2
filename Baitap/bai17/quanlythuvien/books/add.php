@@ -11,17 +11,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $name = $_REQUEST['name'] ;
 $category = $_REQUEST['category'] ;
 $price = $_REQUEST['price'] ;
+$err=[];
+if($name=='')
+{
+    $err['name']='Bạn không thể để trống mục này!';
+}
+if ($price==''){
+    $err['price']='Bạn không thể để trống mục này!';
+}
+if(empty($err))
+{
+
+    $sql = "INSERT INTO `books` 
+            (`name`,`price`,`category_id`) 
+            VALUES 
+            ('$name','$price','$category')";
+
+    $conn->exec($sql);
+    header('location:index.php');
+}
 // $price    = $_REQUEST['price'] ;
 // $category_id = $_REQUEST['category_id'] ;
-$sql = "INSERT INTO `books` 
-        (`name`,`price`,`category_id`) 
-        VALUES 
-        ('$name','$price','$category')";
-
-// echo $sql;
-
-$conn->exec($sql);
-header('location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -48,6 +58,7 @@ header('location:index.php');
             <div class="mb-3">
                 Name
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="">
+                <span><?php if(isset($err['name'])){echo $err['name'];}?></span>
                 <br>Category<br>
                 <select name="category" class="form-control" id="">
                     <?php foreach ($rows as $key=>$item) : ?>
@@ -56,6 +67,7 @@ header('location:index.php');
                 </select><br>
                 Price
                 <input type="text" name="price" id="" class="form-control" placeholder="" value="">
+                <span><?php if(isset($err['price'])){echo $err['price'];}?></span>
 
             </div>
             

@@ -1,27 +1,40 @@
 <?php
 include_once '../database.php';
-$sql = "SELECT * FROM books JOIN categories ON categories.id = books.category_id";
+$sql = "SELECT * FROM categories";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
 $rows = $stmt->fetchAll();
-// print_r ($rows);
-$category = $_REQUEST['id'] ;
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$name = $_REQUEST['name'] ;
 
-$price = $_REQUEST['price'] ;
-// $price    = $_REQUEST['price'] ;
-// $category_id = $_REQUEST['category_id'] ;
-$sql = "INSERT INTO `books` 
-        (`name`,`price`,`category_id`) 
-        VALUES 
-        ('$name','$price','$category')";
 
-// echo $sql;
+if(isset($_REQUEST['id']))
+{
+    $id = $_REQUEST['id'];
 
-$conn->exec($sql);
-header('location:index.php');
+    $sql = "SELECT * FROM books where id = '$id'";
+    $stmt = $conn->query($sql);
+    $stmt->setFetchMode(PDO::FETCH_OBJ);
+    //fetchALL se tra ve du lieu nhieu hon 1 ket qua
+    $items = $stmt->fetch();
+    
+    // print_r ($rows);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_REQUEST['name'] ;
+    $category = $_REQUEST['category'] ;
+    
+    $price = $_REQUEST['price'] ;
+    // $price    = $_REQUEST['price'] ;
+    // $category_id = $_REQUEST['category_id'] ;
+    $sql = "UPDATE `books` SET `name`='$name',`category_id`='$category',`price`='$price' WHERE `id` = '$id'";
+    
+    // echo $sql;
+    
+    $conn->exec($sql);
+    header('location:index.php');
+}
+}
+else {
+    header('location:../err.php');
 }
 ?>
 <!DOCTYPE html>
@@ -47,15 +60,15 @@ header('location:index.php');
           
             <div class="mb-3">
                 Name
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="">
-                Category<br>
-                <select name="category" id="">
-                    <?php foreach ($rows as $key => $item) : ?>
-                    <option <?=$item->id == $category ? "selected" : "" ?>  value="<?=$item->id;?>"><?=$item->name_category;?></option>
-                    <?php endforeach; ?>
+                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php /*if(isset($items)) {}*/ echo $items->name;?>">
+                <br>Category<br>
+                <select name="category" class="form-control" id="">
+                    <?php foreach ($rows as $key => $row) {?>
+                    <option <?=$row->id == $items->category_id ? "selected" : " " ?> value="<?php echo $row->id;?>"><?=$row->name_category;?></option>
+                    <?php } ?>
                 </select><br>
                 Price
-                <input type="text" name="price" id="" class="form-control" placeholder="" value="">
+                <input type="text" name="price" id="" class="form-control" placeholder="" value="<?php /*if(isset($items)){} */echo $items->price;?>">
 
             </div>
             

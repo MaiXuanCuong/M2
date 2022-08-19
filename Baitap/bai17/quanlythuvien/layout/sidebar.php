@@ -3,12 +3,10 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <!-- <div class="sb-sidenav-menu-heading">Core</div> -->
                             <a class="nav-link" href="./../index/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                Trang chủ
                             </a>
-                            <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
                             <a class="nav-link collapsed" href="../books/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Sách
@@ -27,16 +25,12 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Thể loại
                             </a>
-                         
-                                    
-                                    
                                 </nav>
                             </div>
-                    
                         </div>
                     </div>
                     </div>
                 </nav>
             </div>
-           
         </div>
+        <hr>

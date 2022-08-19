@@ -27,7 +27,7 @@ $rows = $stmt->fetchAll();
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Code</th>
+                            <th scope="col"></th>
                             <th scope="col">Name</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -36,7 +36,7 @@ $rows = $stmt->fetchAll();
                        
                         <tbody>
                             <tr>
-                                <td width="170px"><?=$row->id?></td>
+                                <td width="170px"><?=$key + 1 ?></td>
                                 <td><?=$row->name_category?></td>
                                <td width="250px" >
                                     <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Edit</a>

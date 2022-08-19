@@ -4,21 +4,36 @@ include_once "../database.php";
 <?php include_once "./../layout/sidebar.php";?>
 
 <?php
-$id = $_REQUEST['id'];
-// echo $id;
+
+
+
+if (isset($_REQUEST['id'])){
+
+    $id = $_REQUEST['id'];
+     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $books = $_REQUEST['name'];
+        // echo $books;
+        $err=[];
+        if(empty($books)){
+            $err['books'] = "Bạn không thể để trống phần này!";
+        }
+        else{
+            $sql = "UPDATE Categories SET name_category='$books' WHERE id='$id'";
+            $conn->query($sql);
+            header('location:index.php');    
+        }
+      
+     }
+     // echo $id;
 $sql = "SELECT * FROM categories WHERE id='$id'";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetch se tra ve du lieu 1 ket qua
 $rows = $stmt->fetch();
-
- if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $books = $_REQUEST['name'];
-    // echo $books;
-    $sql = "UPDATE Categories SET name_category='$books' WHERE id='$id'";
-    $conn->query($sql);
-    header('location:index.php');
- }
+}
+else {
+    header('location:../err.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
