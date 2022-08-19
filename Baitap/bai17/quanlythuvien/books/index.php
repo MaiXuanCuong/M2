@@ -21,7 +21,7 @@ $rows = $stmt->fetchAll();
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Books</h1>
+                <h2 class="mt-4">Books</h2>
                 <a class="btn btn-success" href="add.php">Add Books</a>
                 <table class="table table-bordered">
                     <thead class="thead-dark">

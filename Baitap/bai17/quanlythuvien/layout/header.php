@@ -13,8 +13,10 @@
         <style>
             p {
                 color: red;
+                text-align: center;
             }
-     h1 {
+            h1 {
+                color: #8d949e;
                 text-align: center;
             }
         </style>

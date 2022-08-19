@@ -25,12 +25,25 @@ if(isset($_REQUEST['id']))
     $price = $_REQUEST['price'] ;
     // $price    = $_REQUEST['price'] ;
     // $category_id = $_REQUEST['category_id'] ;
-    $sql = "UPDATE `books` SET `name`='$name',`category_id`='$category',`price`='$price' WHERE `id` = '$id'";
     
-    // echo $sql;
+    $err=[];
+    if($name=='')
+    {
+        $err['name']='Bạn không thể để trống mục này!';
+    }
+    if ($price==''){
+        $err['price']='Bạn không thể để trống mục này!';
+    }
+    if(empty($err))
+    {
+        $sql = "UPDATE `books` SET `name`='$name',`category_id`='$category',`price`='$price' WHERE `id` = '$id'";
+        
+        // echo $sql;
+        
+        $conn->exec($sql);
+        header('location:index.php');
+    }
     
-    $conn->exec($sql);
-    header('location:index.php');
 }
 }
 else {
@@ -61,6 +74,7 @@ else {
             <div class="mb-3">
                 Name
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php /*if(isset($items)) {}*/ echo $items->name;?>">
+               
                 <br>Category<br>
                 <select name="category" class="form-control" id="">
                     <?php foreach ($rows as $key => $row) {?>
@@ -69,7 +83,7 @@ else {
                 </select><br>
                 Price
                 <input type="text" name="price" id="" class="form-control" placeholder="" value="<?php /*if(isset($items)){} */echo $items->price;?>">
-
+      
             </div>
             
             
