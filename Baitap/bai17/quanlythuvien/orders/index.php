@@ -50,7 +50,7 @@ $rows = $stmt->fetchAll();
                                 <td><?=$row->name_students?></td>
                                 <td><?=$row->name?></td>
                                 <td><?=$row->name_category?></td>
-                                <td><?=$row->quantity?></td>
+                                <td><?=$row->quantity?></td>    
                                <td width="250px" >
                                     <!-- <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Edit</a> -->
                                     <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id?>">Show</a>

@@ -23,7 +23,6 @@ $rows3 = $stmt3->fetchAll();
 // global $id_b ;
 // echo $id_b;
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $books = $_REQUEST['books'] ;
 $category = $_REQUEST['category'] ;
@@ -48,13 +47,14 @@ if(empty($err))
     $sql = "INSERT INTO `orders_book` 
     (`student_id`,`date_borrow`,`date_pay`) 
     VALUES 
-    ('$students','$borrow','$pay')";
-  
+    ('$students','$borrow','$pay')"
+    ;
+   $conn->exec($sql);
 $sql4 = "SELECT * FROM orders_book WHERE student_id = $students ";
 $stmt4 = $conn->query($sql4);
 $stmt4->setFetchMode(PDO::FETCH_OBJ);
 $rows4 = $stmt4->fetch();
-
+$rows4->id;
 $sql1 = "SELECT * FROM books WHERE category_id = $category ";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);

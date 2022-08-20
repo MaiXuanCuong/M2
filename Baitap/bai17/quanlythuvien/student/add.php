@@ -28,7 +28,7 @@ if($phone=='')
 if(empty($err))
 {
     $sql = "INSERT INTO `students` 
-    (`name`,`class`,`address`,`phone`) 
+    (`name_students`,`class`,`address`,`phone`) 
     VALUES 
     ('$name','$class','$address','$phone')";
 
@@ -61,16 +61,16 @@ if(empty($err))
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Name</label>
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="">
+                <span><?php if (isset($err['name'])) {echo $err['name'];}?></span><br>
                 <label for="disabledTextInput" class="form-label">Class</label>
                 <input type="text" name="class" id="" class="form-control" placeholder="" value="">
+                <span><?php if (isset($err['class'])) {echo $err['name'];}?></span><br>
                 <label for="disabledTextInput" class="form-label">Address</label>
                 <input type="text" name="address" id="" class="form-control" placeholder="" value="">
+                <span><?php if (isset($err['address'])) {echo $err['name'];}?></span><br>
                 <label for="disabledTextInput" class="form-label">Phone</label>
                 <input type="text" name="phone" id="" class="form-control" placeholder="" value="">
-                <span><?php if (isset($err['name'])) {
-                            echo $err['name'];
-                        }
-                          ?></span>
+                <span><?php if (isset($err['phone'])) {echo $err['name'];}?></span><br>
             </div>
             
             

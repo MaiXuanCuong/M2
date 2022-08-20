@@ -3,6 +3,8 @@ include_once "../database.php";
 ?>
 
 <?php 
+if(isset($_REQUEST['id']))
+{
 $id = $_REQUEST['id'];
 global $conn;
 $sql = "SELECT students.id , students.name_students, students.class, students.address, students.phone, books.name, categories.name_category, books.price, orders_detail.quantity, orders_detail.total_price ,orders_book.date_borrow, orders_book.date_pay FROM `orders_detail` 
@@ -13,12 +15,15 @@ ON orders_detail.orders_book_id = orders_book.id
 JOIN students 
 ON orders_book.student_id = students.id 
 JOIN categories 
-ON books.category_id = categories.id WHERE books.id = $id ";
+ON books.category_id = categories.id WHERE students.id = $id ";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
 $rows = $stmt->fetchAll();
 // print_r ($rows);
+}else {
+    header('location:../err.php');
+}
 ?>
 <!-- <a href="add.php">Add</a> -->
 
@@ -72,7 +77,5 @@ $rows = $stmt->fetchAll();
     </div>
 </div>
 <?php include_once "./../layout/footer.php";?>
-
-
 
 
