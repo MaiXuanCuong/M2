@@ -6,25 +6,25 @@
                         <div class="nav">
                             <a class="nav-link" href="./../index/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                               Trang chủ
+                               HOME
                             </a>
                             <a class="nav-link collapsed" href="../books/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Sách
+                                BOOKS
                             </a>
                             <a class="nav-link collapsed" href="../orders/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Mượn sách
-                            </a><a class="nav-link collapsed" href="../order_detail/index.php">
+                                ORDER BOOKS
+                            <!-- </a><a class="nav-link collapsed" href="../order_detail/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Đơn hàng
+                                Đơn hàng -->
                             </a><a class="nav-link collapsed" href="../student/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Người mượn
+                                STUDENTS
                             </a>
                             </a><a class="nav-link collapsed" href="../categories/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Thể loại
+                                CATEGORIES
                             </a>
                                 </nav>
                             </div>

@@ -40,7 +40,7 @@ $rows = $stmt->fetchAll();
                                 <td width="170px"><?=$row->id?></td>
                                 <td><?=$row->name?></td>
                                 <td><?=$row->name_category?></td>
-                                <td><?=$row->price?></td>
+                                <td><?= number_format($row->price)?></td>
                                <td width="250px" >
                                     <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Edit</a>
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>

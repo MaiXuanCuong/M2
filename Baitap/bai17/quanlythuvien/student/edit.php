@@ -21,7 +21,7 @@ if (isset($_REQUEST['id'])){
             $err['phone'] = "Bạn không thể để trống phần này!";
         }
         if(empty($err)){
-            $sql = "UPDATE students SET `name` ='$name' , `class` ='$class' , `address` ='$address' , `phone` ='$phone' WHERE id='$id'";
+            $sql = "UPDATE students SET `name_students` ='$name' , `class` ='$class' , `address` ='$address' , `phone` ='$phone' WHERE id='$id'";
             $conn->query($sql);
             header('location:index.php');    
         }
@@ -56,7 +56,7 @@ else {
             <legend>Student edit</legend>
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Name</label>
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name; ?>">
+                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name_students; ?>">
                 <span><?php if (isset($err['name'])) {echo $err['name'];}?></span>
                 <label for="disabledTextInput" class="form-label">Class</label>
                 <input type="text" name="class" id="" class="form-control" placeholder="" value="<?php echo $rows->class; ?>">

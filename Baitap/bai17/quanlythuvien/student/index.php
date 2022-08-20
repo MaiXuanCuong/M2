@@ -40,7 +40,7 @@ $rows = $stmt->fetchAll();
                         <tbody>
                             <tr>
                                 <td width="170px"><?=$key + 1 ?></td>
-                                <td><?=$row->name?></td>
+                                <td><?=$row->name_students?></td>
                                 <td><?=$row->class?></td>
                                 <td><?=$row->address?></td>
                                 <td><?=$row->phone?></td>
