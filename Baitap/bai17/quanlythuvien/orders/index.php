@@ -4,7 +4,6 @@ include_once "../database.php";
 <?php include_once "./../layout/sidebar.php";?>
 
 <?php 
-
 global $conn;
 $sql = "SELECT orders_detail.id_orders_detail, students.id,orders_detail.orders_book_id , students.name_students,
  students.class, students.address, students.phone,
@@ -23,7 +22,7 @@ $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
 $rows = $stmt->fetchAll();
-// print_r ($rows);
+print_r ($rows);
 ?>
 <!-- <a href="add.php">Add</a> -->
 
@@ -57,7 +56,6 @@ $rows = $stmt->fetchAll();
                                 <td><?=$row->name_category?></td>
                                 <td><?=$row->quantity?></td>    
                                <td width="250px" >
-                                    <!-- <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Edit</a> -->
                                     <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id_orders_detail?>">Show</a>
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id_orders_detail?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
                                 </td>

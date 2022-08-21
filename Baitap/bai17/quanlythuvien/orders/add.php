@@ -32,9 +32,9 @@ $borrow = $_REQUEST['borrow'] ;
 $pay = $_REQUEST['pay'] ;
 // $total 
 $err=[];
-if ($quantity==''){
-    $err['quantity']='Bạn không thể để trống mục này!';
-}
+    if ($quantity==''){
+        $err['quantity']='Bạn không thể để trống mục này!';
+    }
 
 if ($borrow==''){
     $err['borrow']='Bạn không thể để trống mục này!';
@@ -110,12 +110,12 @@ $sql = "INSERT INTO `orders_detail`
                 <br>Date Borrow<br>
         
                <input type="date"  name="borrow" class="form-control">
-               <span><?php if(isset($err['borrow'])){echo $err['quantity'];}?></span>
+               <span><?php if(isset($err['borrow'])){echo $err['borrow'];}?></span>
                 <br>Date Pay<br>
                <input type="date" name="pay" class="form-control">
-               <span><?php if(isset($err['pay'])){echo $err['quantity'];}?></span>
+               <span><?php if(isset($err['pay'])){echo $err['pay'];}?></span>
                <br>Quantity<br>
-                <input type="Number" name="quantity" id="" class="form-control" placeholder="" value="">
+                <input type="Number" name="quantity" id="" class="form-control" placeholder="" value="1">
                 <span><?php if(isset($err['quantity'])){echo $err['quantity'];}?></span>
                 
             </div>
