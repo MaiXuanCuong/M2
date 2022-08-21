@@ -6,11 +6,15 @@ include_once "../database.php";
 <?php 
 
 global $conn;
-$sql = "SELECT students.id , students.name_students, students.class, students.address, students.phone, books.name, categories.name_category, books.price, orders_detail.quantity, orders_detail.total_price ,orders_book.date_borrow, orders_book.date_pay FROM `orders_detail` 
+$sql = "SELECT orders_detail.id_orders_detail, students.id,orders_detail.orders_book_id , students.name_students,
+ students.class, students.address, students.phone,
+  books.name, categories.name_category, books.price,
+   orders_detail.quantity, orders_detail.total_price ,
+   orders_book.date_borrow, orders_book.id_orders_book ,orders_book.date_pay FROM `orders_detail` 
 JOIN books 
 ON books.id = orders_detail.book_id 
 JOIN orders_book 
-ON orders_detail.orders_book_id = orders_book.id 
+ON orders_detail.orders_book_id = orders_book.id_orders_book 
 JOIN students 
 ON orders_book.student_id = students.id 
 JOIN categories 
@@ -31,6 +35,7 @@ $rows = $stmt->fetchAll();
             <div class="container-fluid px-4">
                 <h2 class="mt-4">Order</h2>
                 <a class="btn btn-success" href="add.php">Order</a>
+                <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');">Delete ALL</a>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
@@ -53,8 +58,8 @@ $rows = $stmt->fetchAll();
                                 <td><?=$row->quantity?></td>    
                                <td width="250px" >
                                     <!-- <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Edit</a> -->
-                                    <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id?>">Show</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
+                                    <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id_orders_detail?>">Show</a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_orders_detail?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
                                 </td>
                             </tr>
                         </tbody>

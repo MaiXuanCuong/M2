@@ -56,7 +56,7 @@ else {
             <legend>Student edit</legend>
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Name</label>
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name_students; ?>">
+                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name_; ?>">
                 <span><?php if (isset($err['name'])) {echo $err['name'];}?></span>
                 <label for="disabledTextInput" class="form-label">Class</label>
                 <input type="text" name="class" id="" class="form-control" placeholder="" value="<?php echo $rows->class; ?>">

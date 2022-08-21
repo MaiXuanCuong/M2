@@ -54,8 +54,8 @@ $sql4 = "SELECT * FROM orders_book WHERE student_id = $students ";
 $stmt4 = $conn->query($sql4);
 $stmt4->setFetchMode(PDO::FETCH_OBJ);
 $rows4 = $stmt4->fetch();
-$rows4->id;
-$sql1 = "SELECT * FROM books WHERE category_id = $category ";
+$rows4->id_orders_book;
+$sql1 = "SELECT * FROM books WHERE id = $books ";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetch();
@@ -63,7 +63,7 @@ $total1 = ($quantity * $rows1->price);
 $sql = "INSERT INTO `orders_detail` 
             (`orders_book_id`,`book_id`,`quantity`,`total_price`) 
             VALUES 
-            ('$rows4->id','$books','$quantity','$total1')";
+            ('$rows4->id_orders_book','$books','$quantity','$total1')";
     $conn->exec($sql);
     header('location:index.php');
 }
@@ -109,10 +109,10 @@ $sql = "INSERT INTO `orders_detail`
                 </select><br>
                 <br>Date Borrow<br>
         
-               <input type="date" value="" name="borrow" class="form-control">
+               <input type="date"  name="borrow" class="form-control">
                <span><?php if(isset($err['borrow'])){echo $err['quantity'];}?></span>
                 <br>Date Pay<br>
-               <input type="date" value="" name="pay" class="form-control">
+               <input type="date" name="pay" class="form-control">
                <span><?php if(isset($err['pay'])){echo $err['quantity'];}?></span>
                <br>Quantity<br>
                 <input type="Number" name="quantity" id="" class="form-control" placeholder="" value="">
