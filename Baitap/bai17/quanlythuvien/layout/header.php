@@ -19,6 +19,9 @@
                 color: #8d949e;
                 text-align: center;
             }
+            td,th{
+                text-align: center;
+            }
         </style>
 </head>
 <body>
