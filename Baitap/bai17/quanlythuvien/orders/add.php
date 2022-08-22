@@ -10,7 +10,7 @@ $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetchAll();
 // print_r ($rows);
-$sql2 = "SELECT * FROM orders_book ";
+$sql2 = "SELECT * FROM orders_books ";
 $stmt2 = $conn->query($sql2);
 $stmt2->setFetchMode(PDO::FETCH_OBJ);
 $rows2 = $stmt2->fetchAll();
@@ -44,26 +44,26 @@ if ($pay==''){
 }
 if(empty($err))
 {
-    $sql = "INSERT INTO `orders_book` 
+    $sql = "INSERT INTO `orders_books` 
     (`student_id`,`date_borrow`,`date_pay`) 
     VALUES 
     ('$students','$borrow','$pay')"
     ;
    $conn->exec($sql);
-$sql4 = "SELECT * FROM orders_book WHERE student_id = $students ";
+$sql4 = "SELECT * FROM orders_books WHERE student_id = $students ";
 $stmt4 = $conn->query($sql4);
 $stmt4->setFetchMode(PDO::FETCH_OBJ);
 $rows4 = $stmt4->fetch();
-$rows4->id_orders_book;
-$sql1 = "SELECT * FROM books WHERE id = $books ";
+$rows4->id_order_book;
+$sql1 = "SELECT * FROM books WHERE id_book = $books ";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetch();
 $total1 = ($quantity * $rows1->price);
 $sql = "INSERT INTO `orders_detail` 
-            (`orders_book_id`,`book_id`,`quantity`,`total_price`) 
+            (`order_book_id`,`book_id`,`quantity`,`total_price`) 
             VALUES 
-            ('$rows4->id_orders_book','$books','$quantity','$total1')";
+            ('$rows4->id_order_book','$books','$quantity','$total1')";
     $conn->exec($sql);
     header('location:index.php');
 }
@@ -91,20 +91,20 @@ $sql = "INSERT INTO `orders_detail`
             <br>Student<br>
                 <select name="students" class="form-control" id="">
                     <?php foreach ($rows3 as $key3=>$item3) : ?>
-                    <option value="<?=$item3->id;?>"><?=$item3->name_students;?></option>
+                    <option value="<?=$item3->id_student;?>"><?=$item3->name_student;?></option>
                     <?php endforeach; ?>
                 </select><br>
                 <br>Category<br>
                 <select name="category" class="form-control" id="">
 
                     <?php foreach ($rows as $key=>$item) : ?>
-                    <option value="<?=$item->id;?>"><?=$item->name_category;?></option>
+                    <option value="<?=$item->id_category;?>"><?=$item->name_category;?></option>
                     <?php endforeach; ?>
                 </select><br>
                 <br>Books<br>
                 <select name="books" class="form-control" id="">
                     <?php foreach ($rows1 as $key1=>$item1) : ?>
-                    <option value="<?=$item1->id;?>"><?=$item1->name;?></option>
+                    <option value="<?=$item1->id_book;?>"><?=$item1->name_book;?></option>
                     <?php endforeach; ?>
                 </select><br>
                 <br>Date Borrow<br>

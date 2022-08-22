@@ -10,7 +10,7 @@ $id = $_REQUEST['id'];
 if (isset($_REQUEST['id'])){
 
 // echo $id;
-$sql = "DELETE FROM `categories` WHERE `id` = $id ";
+$sql = "DELETE FROM `categories` WHERE `id_category` = $id ";
 // echo $sql;
 $conn->exec($sql);
 //chuyen huong ve trang list.php

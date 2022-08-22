@@ -23,7 +23,7 @@ if(empty($err))
 {
 
     $sql = "INSERT INTO `books` 
-            (`name`,`price`,`category_id`) 
+            (`name_book`,`price`,`category_id`) 
             VALUES 
             ('$name','$price','$category')";
 
@@ -62,7 +62,7 @@ if(empty($err))
                 <br>Category<br>
                 <select name="category" class="form-control" id="">
                     <?php foreach ($rows as $key=>$item) : ?>
-                    <option value="<?=$item->id;?>"><?=$item->name_category;?></option>
+                    <option value="<?=$item->id_category;?>"><?=$item->name_category;?></option>
                     <?php endforeach; ?>
                 </select><br>
                 Price

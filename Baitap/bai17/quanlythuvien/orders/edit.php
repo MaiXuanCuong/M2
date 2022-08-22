@@ -11,7 +11,7 @@ if(isset($_REQUEST['id']))
 {
     $id = $_REQUEST['id'];
 
-    $sql = "SELECT * FROM orders_book where id = '$id'";
+    $sql = "SELECT * FROM orders_book where id_order_book = '$id'";
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     //fetchALL se tra ve du lieu nhieu hon 1 ket qua
@@ -32,7 +32,7 @@ if(isset($_REQUEST['id']))
     }
     if(empty($err))
     {
-        $sql = "UPDATE `orders` SET `date_borrow`='$date_borrow',`date_pay`='$date_pay',`student_id`='$id' WHERE `id` = '$id'";
+        $sql = "UPDATE `orders_books` SET `date_borrow`='$date_borrow',`date_pay`='$date_pay',`student_id`='$id' WHERE `id_order_book` = '$id'";
         
         // echo $sql;
         

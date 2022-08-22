@@ -11,7 +11,7 @@ if(isset($_REQUEST['id']))
 {
     $id = $_REQUEST['id'];
 
-    $sql = "SELECT * FROM books where id = '$id'";
+    $sql = "SELECT * FROM books where id_book = '$id'";
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     //fetchALL se tra ve du lieu nhieu hon 1 ket qua
@@ -36,7 +36,7 @@ if(isset($_REQUEST['id']))
     }
     if(empty($err))
     {
-        $sql = "UPDATE `books` SET `name`='$name',`category_id`='$category',`price`='$price' WHERE `id` = '$id'";
+        $sql = "UPDATE `books` SET `name_book`='$name',`category_id`='$category',`price`='$price' WHERE `id_book` = '$id'";
         
         // echo $sql;
         
@@ -73,12 +73,12 @@ else {
           
             <div class="mb-3">
                 Name
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php /*if(isset($items)) {}*/ echo $items->name;?>">
+                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php /*if(isset($items)) {}*/ echo $items->name_book;?>">
                
                 <br>Category<br>
                 <select name="category" class="form-control" id="">
                     <?php foreach ($rows as $key => $row) {?>
-                    <option <?=$row->id == $items->category_id ? "selected" : " " ?> value="<?php echo $row->id;?>"><?=$row->name_category;?></option>
+                    <option <?=$row->id_category == $items->category_id ? "selected" : " " ?> value="<?php echo $row->id_category;?>"><?=$row->name_category;?></option>
                     <?php } ?>
                 </select><br>
                 Price

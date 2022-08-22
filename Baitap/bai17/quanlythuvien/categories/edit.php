@@ -18,14 +18,14 @@ if (isset($_REQUEST['id'])){
             $err['books'] = "Bạn không thể để trống phần này!";
         }
         else{
-            $sql = "UPDATE Categories SET name_category='$books' WHERE id='$id'";
+            $sql = "UPDATE Categories SET name_category='$books' WHERE id_category='$id'";
             $conn->query($sql);
             header('location:index.php');    
         }
       
      }
      // echo $id;
-$sql = "SELECT * FROM categories WHERE id='$id'";
+$sql = "SELECT * FROM categories WHERE id_category='$id'";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetch se tra ve du lieu 1 ket qua

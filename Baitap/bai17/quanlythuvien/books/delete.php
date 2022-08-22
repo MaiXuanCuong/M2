@@ -5,7 +5,7 @@ $id = $_REQUEST['id'];
 if (isset($_REQUEST['id'])){
 
 // echo $id;
-$sql = "DELETE FROM `books` WHERE `id` = $id ";
+$sql = "DELETE FROM `books` WHERE `id_book` = $id ";
 // echo $sql;
 $conn->exec($sql);
 //chuyen huong ve trang list.php

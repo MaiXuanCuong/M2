@@ -7,15 +7,15 @@ if(isset($_REQUEST['id']))
 {
 $id = $_REQUEST['id'];
 global $conn;
-$sql = "SELECT students.id , students.name_students, students.class, students.address, students.phone, books.name, categories.name_category, books.price, orders_detail.quantity, orders_detail.total_price ,orders_book.date_borrow, orders_book.date_pay FROM `orders_detail` 
+$sql = "SELECT students.id_student , students.name_student, students.class, students.address, students.phone, books.name_book, categories.name_category, books.price, orders_detail.quantity, orders_detail.total_price ,orders_books.date_borrow, orders_books.date_pay FROM `orders_detail` 
 JOIN books 
-ON books.id = orders_detail.book_id 
-JOIN orders_book 
-ON orders_detail.orders_book_id = orders_book.id_orders_book 
+ON books.id_book = orders_detail.book_id 
+JOIN orders_books 
+ON orders_detail.order_book_id = orders_books.id_order_book 
 JOIN students 
-ON orders_book.student_id = students.id 
+ON orders_books.student_id = students.id_student
 JOIN categories 
-ON books.category_id = categories.id WHERE orders_detail.id_orders_detail = $id";
+ON books.category_id = categories.id_category WHERE orders_detail.id_order_detail = $id";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
@@ -56,12 +56,12 @@ $rows = $stmt->fetchAll();
                        
                         <tbody>
                             <tr>
-                                <td><?=$row->id?></td>
-                                <td><?=$row->name_students?></td>
+                                <td><?=$row->id_student?></td>
+                                <td><?=$row->name_student?></td>
                                 <td><?=$row->class?></td>
                                 <td><?=$row->address?></td>
                                 <td><?=$row->phone?></td>
-                                <td><?=$row->name?></td>
+                                <td><?=$row->name_book?></td>
                                 <td><?=$row->name_category?></td>
                                 <td><?=$row->price?></td>
                                 <td><?=$row->quantity?></td>

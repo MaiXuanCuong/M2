@@ -39,8 +39,8 @@ $rows = $stmt->fetchAll();
                                 <td width="170px"><?=$key + 1 ?></td>
                                 <td><?=$row->name_category?></td>
                                <td width="250px" >
-                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Edit</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
+                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id_category?>">Edit</a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_category?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
                                 </td>
                             </tr>
                         </tbody>

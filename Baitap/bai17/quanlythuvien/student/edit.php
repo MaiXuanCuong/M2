@@ -21,12 +21,12 @@ if (isset($_REQUEST['id'])){
             $err['phone'] = "Bạn không thể để trống phần này!";
         }
         if(empty($err)){
-            $sql = "UPDATE students SET `name_students` ='$name' , `class` ='$class' , `address` ='$address' , `phone` ='$phone' WHERE id='$id'";
+            $sql = "UPDATE students SET `name_student` ='$name' , `class` ='$class' , `address` ='$address' , `phone` ='$phone' WHERE id_student='$id'";
             $conn->query($sql);
             header('location:index.php');    
         }
      }
-$sql = "SELECT * FROM students WHERE id='$id'";
+$sql = "SELECT * FROM students WHERE id_student='$id'";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetch se tra ve du lieu 1 ket qua
@@ -56,7 +56,7 @@ else {
             <legend>Student edit</legend>
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Name</label>
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name_; ?>">
+                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name_student; ?>">
                 <span><?php if (isset($err['name'])) {echo $err['name'];}?></span>
                 <label for="disabledTextInput" class="form-label">Class</label>
                 <input type="text" name="class" id="" class="form-control" placeholder="" value="<?php echo $rows->class; ?>">

@@ -6,7 +6,7 @@ include_once "../database.php";
 <?php 
 global $conn;
 $sql = "SELECT books.*, categories.name_category FROM `books` JOIN categories 
-ON books.category_id = categories.id";
+ON books.category_id = categories.id_category";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
@@ -37,13 +37,13 @@ $rows = $stmt->fetchAll();
                        
                         <tbody>
                             <tr>
-                                <td width="170px"><?=$row->id?></td>
-                                <td><?=$row->name?></td>
+                                <td width="170px"><?=$row->id_book?></td>
+                                <td><?=$row->name_book?></td>
                                 <td><?=$row->name_category?></td>
                                 <td><?= number_format($row->price)?></td>
                                <td width="250px" >
-                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Edit</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
+                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id_book?>">Edit</a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_book?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
                                 </td>
                             </tr>
                         </tbody>

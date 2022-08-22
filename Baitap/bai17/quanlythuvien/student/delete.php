@@ -10,7 +10,7 @@ $id = $_REQUEST['id'];
 if (isset($_REQUEST['id'])){
 
     // echo $id;
-    $sql = "DELETE FROM `students` WHERE `id` = $id ";
+    $sql = "DELETE FROM `students` WHERE `id_student` = $id ";
     // echo $sql;
     $conn->exec($sql);
     //chuyen huong ve trang list.php

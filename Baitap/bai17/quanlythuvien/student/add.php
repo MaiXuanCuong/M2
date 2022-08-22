@@ -28,7 +28,7 @@ if($phone=='')
 if(empty($err))
 {
     $sql = "INSERT INTO `students` 
-    (`name_students`,`class`,`address`,`phone`) 
+    (`name_student`,`class`,`address`,`phone`) 
     VALUES 
     ('$name','$class','$address','$phone')";
 
@@ -56,7 +56,7 @@ if(empty($err))
 <body>
     <div class="container">
         <form method="post" action="">
-            <legend>Add Product</legend>
+            <legend>Add Student</legend>
           
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Name</label>
