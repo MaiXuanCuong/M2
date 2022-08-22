@@ -63,9 +63,9 @@ $rows = $stmt->fetchAll();
                                 <td><?=$row->phone?></td>
                                 <td><?=$row->name_book?></td>
                                 <td><?=$row->name_category?></td>
-                                <td><?=$row->price?></td>
+                                <td><?=number_format($row->price)." VNĐ"?></td>
                                 <td><?=$row->quantity?></td>
-                                <td><?=$row->total_price?></td>
+                                <td><?=number_format($row->total_price)." VNĐ"?></td>
                                 <td><?=$row->date_borrow?></td>
                                 <td><?=$row->date_pay?></td>
                             </tr>
