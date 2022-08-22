@@ -1,6 +1,6 @@
-<?php include_once "../layout/header.php";
-include_once "../layout/sidebar.php";
-include_once "../database.php";?>
+<?php include_once "layout/header.php";
+include_once "layout/sidebar.php";
+include_once "database.php";?>
 <?php 
 $sql = "SELECT books.name_book, categories.name_category, books.price FROM `books` 
 JOIN categories 
@@ -42,7 +42,7 @@ $rows = $stmt->fetchAll();
         </main>
     </div>
 </div>
-<?php include_once "../layout/footer.php";?>
+<?php include_once "layout/footer.php";?>
 
 
 
