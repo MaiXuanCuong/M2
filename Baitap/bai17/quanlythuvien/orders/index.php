@@ -5,11 +5,11 @@ include_once "../database.php";
 
 <?php 
 global $conn;
-$sql = "SELECT orders_detail.id_order_detail, students.id_student ,orders_detail.order_book_id , students.name_student,
+$sql = "SELECT  orders_detail.id_order_detail, students.id_student ,orders_detail.order_book_id , students.name_student,
  students.class, students.address, students.phone,
-  books.name_book, categories.name_category, books.price,
-   orders_detail.quantity, orders_detail.total_price ,
-   orders_books.date_borrow, orders_books.id_order_book ,orders_books.date_pay FROM `orders_books` 
+books.name_book, categories.name_category, books.price,
+ orders_detail.quantity, orders_detail.total_price ,
+ orders_books.date_borrow, orders_books.id_order_book ,orders_books.date_pay FROM `orders_books` 
 JOIN orders_detail
 ON orders_detail.order_book_id = orders_books.id_order_book 
 JOIN books 
@@ -18,19 +18,7 @@ JOIN students
 ON orders_books.student_id = students.id_student 
 JOIN categories 
 ON books.category_id = categories.id_category";
-// $sql = "SELECT orders_detail.id_orders_detail, students.id,orders_detail.orders_book_id , students.name_students,
-//  students.class, students.address, students.phone,
-//   books.name, categories.name_category, books.price,
-//    orders_detail.quantity, orders_detail.total_price ,
-//    orders_book.date_borrow, orders_book.id_orders_book ,orders_book.date_pay FROM `orders_detail` 
-// JOIN books 
-// ON books.id = orders_detail.book_id 
-// JOIN orders_book 
-// ON orders_detail.orders_book_id = orders_book.id_orders_book 
-// JOIN students 
-// ON orders_book.student_id = students.id 
-// JOIN categories 
-// ON books.category_id = categories.id";
+
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
@@ -38,10 +26,6 @@ $rows = $stmt->fetchAll();
 // echo '<pre>';
 // print_r ($rows);
 ?>
-<!-- <a href="add.php">Add</a> -->
-
-
-
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
@@ -70,8 +54,8 @@ $rows = $stmt->fetchAll();
                                 <td><?=$row->name_category?></td>
                                 <td><?=$row->quantity?></td>    
                                <td width="250px" >
-                                    <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id_order_detail?>">Show</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_order_detail?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
+                                    <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id_order_detail?>"><?=$row->id_order_detail?>Show</a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_order_detail?>&id1=<?=$row->id_order_book + $key?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><?=$row->id_order_detail?>Delete<?=$row->id_order_book + $key?></a>
                                 </td>
                             </tr>
                         </tbody>
