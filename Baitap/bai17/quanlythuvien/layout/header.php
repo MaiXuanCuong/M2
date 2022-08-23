@@ -14,27 +14,36 @@
             p {
                 color: red;
                 text-align: center;
+    font-style: italic;
+
             }
             h1 {
                 color: #8d949e;
                 text-align: center;
+    font-style: italic;
+
             }
             td,th{
                 text-align: center;
+
             }
             body {
            
     background-color: linen;
-  
             }
             table, td, th {    
     border: 1px solid #ddd;
-    /* text-align: left; */
-}
+    background-color: #4CAF50;
+    color: white;   
+    font-style: italic;
 
+
+}
 table {
     border-collapse: collapse;
     width: 100%;
+    font-style: italic;
+
 }
         </style>
 </head>
