@@ -11,8 +11,11 @@ $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua
 $rows = $stmt->fetchAll();
+
+
 // print_r ($rows);
 ?>
+
 <!-- <a href="add.php">Add</a> -->
 
 
