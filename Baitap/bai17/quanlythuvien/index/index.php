@@ -25,6 +25,7 @@ $rows = $stmt->fetchAll();
                             <th scope="col">Price</th>
                         </tr>
                     </thead>
+                    <?php if(isset($rows)) :?>
                     <?php foreach ($rows as $key => $row) { ?>
                        
                         <tbody>
@@ -37,6 +38,7 @@ $rows = $stmt->fetchAll();
                             </tr>
                         </tbody>
                     <?php } ?>
+                    <?php else : echo ''; endif ;?>
                 </table>
             </div>
         </main>

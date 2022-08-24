@@ -30,11 +30,12 @@ $rows = $stmt->fetchAll();
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col"></th>
+                            <th scope="col">STT</th>
                             <th scope="col">Name</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
+                    <?php if(isset($rows)) :?>
                     <?php foreach ($rows as $key => $row) { ?>
                        
                         <tbody>
@@ -46,8 +47,10 @@ $rows = $stmt->fetchAll();
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id_category?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
                                 </td>
                             </tr>
+                           
                         </tbody>
                     <?php } ?>
+                    <?php else : echo ''; endif; ?>
                 </table>
             </div>
         </main>
