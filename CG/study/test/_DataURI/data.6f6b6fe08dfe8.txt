@@ -1,0 +1,1 @@
+chrome-extension://gchcfdihakkhjgfmokemfeembfokkajj/js/integrations/angular-material.integration.js

@@ -15,7 +15,7 @@ ON orders_detail.order_book_id = orders_books.id_order_book
 JOIN students 
 ON orders_books.student_id = students.id_student
 JOIN categories 
-ON books.category_id = categories.id_category WHERE orders_detail.id_order_detail = $id";
+ON books.category_id = categories.id_category WHERE orders_detail.order_book_id= $id";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 //fetchALL se tra ve du lieu nhieu hon 1 ket qua

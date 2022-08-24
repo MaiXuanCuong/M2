@@ -25,6 +25,7 @@ $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
 // echo '<pre>';
 // print_r ($rows);
+
 ?>
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
@@ -45,7 +46,6 @@ $rows = $stmt->fetchAll();
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
-                       
                         <tbody>
                             <tr>
                                 <td width="170px"><?=$row->id_student?></td>
@@ -54,8 +54,18 @@ $rows = $stmt->fetchAll();
                                 <td><?=$row->name_category?></td>
                                 <td><?=$row->quantity?></td>    
                                <td width="250px" >
-                                    <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id_order_detail?>"><?=$row->id_order_detail?>Show</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_order_detail?>&id1=<?=$row->id_order_book + $key?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><?=$row->id_order_detail?>Delete<?=$row->id_order_book + $key?></a>
+                                    <a class="btn btn-success" href="../order_detail/index.php?id=<?=$row->id_order_book?>">Show</a>
+                                    <?php $sql4 = "SELECT id_order_book FROM `orders_books`";
+                                        $stmt4 = $conn->query($sql4);
+                                        $stmt4->setFetchMode(PDO::FETCH_OBJ);
+                                        $rows4 = $stmt4->fetchAll();
+                                        $max=0;
+                                        foreach ($rows4 as $key0 => $row0){
+                                            if($row0->id_order_book == $row->id_order_detail){
+                                                $max =$row0->id_order_book;
+                                            }
+                                        } ?>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_order_detail?>&id1=<?=$max?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete></a>
                                 </td>
                             </tr>
                         </tbody>

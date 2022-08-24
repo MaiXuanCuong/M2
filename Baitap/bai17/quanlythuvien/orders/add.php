@@ -50,20 +50,33 @@ if(empty($err))
     ('$students','$borrow','$pay')"
     ;
    $conn->exec($sql);
-$sql4 = "SELECT * FROM orders_books WHERE student_id = $students ";
+
+
+$sql4 = "SELECT id_order_book FROM `orders_books`";
 $stmt4 = $conn->query($sql4);
 $stmt4->setFetchMode(PDO::FETCH_OBJ);
-$rows4 = $stmt4->fetch();
-$rows4->id_order_book;
+$rows4 = $stmt4->fetchAll();
+$max=0;
+// print_r ($rows4);
+// die();
+foreach ($rows4 as $key0 => $row0){
+    if($row0->id_order_book > $max){
+        $max =$row0->id_order_book;
+    }
+}
+// print_r ($max);
+// die();
+
 $sql1 = "SELECT * FROM books WHERE id_book = $books ";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetch();
+
 $total1 = ($quantity * $rows1->price);
 $sql = "INSERT INTO `orders_detail` 
             (`order_book_id`,`book_id`,`quantity`,`total_price`) 
             VALUES 
-            ('$rows4->id_order_book','$books','$quantity','$total1')";
+            ('$max','$books','$quantity','$total1')";
     $conn->exec($sql);
     header('location:index.php');
 }

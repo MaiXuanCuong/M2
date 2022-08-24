@@ -1,0 +1,1 @@
+chrome-extension://gchcfdihakkhjgfmokemfeembfokkajj/js/integrations/page_functions/_func_select2.integration.js
