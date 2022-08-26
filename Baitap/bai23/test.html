@@ -6,6 +6,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        #dt10 {
+            background-color: aqua;
+            margin-left: auto;
+            border: solid 10px rgb(245, 23, 7);
+           
+        }
+        #dt11 {
+            background-color: rgb(200, 248, 8);
+            margin-right: auto;
+            border: solid 10px rgb(245, 23, 7);
+        }
+        #dt1{
+            background-color: rgb(255, 0, 238)
+        }
+        #dt2 {
+            background-color: rgb(255, 0, 238)
+
+        }
+    </style>
+</head>
+<body>
+   <table id="dt10">
+        <tr>
+            <td colspan="2">
+                <p id="pin"></p>
+                <p id="bat"></p>
+                <td>
+                    <button type="button" id="dt1" onclick="SacPin()">🔋</button
+                        ><br /><br />
+                </td>
+    
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" id="dt1" onclick="BatDienThoai()">
+                🔓</button
+              ><br /><br /></td>
+            <td> <button type="button" id="dt1" onclick="TatDienThoai()">
+                🔒</button
+              ><br /><br /></td>
+            <td>
+                <button type="button" id="dt1" onclick="GuiTinNhan()">➤ </button
+                    ><br /><br />
+               </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="dt1" onclick="XemTinNhan()">📩 </button
+                    ><br /><br />
+            </td>
+            <td>
+                <button type="button" id="dt1" onclick="XemTinNhanDaGui()">
+                    ✉</button
+                  ><br /><br />
+            </td>
+            <td>
+                <button type="button" id="dt1" onclick="SoanTinNhan()">📝</button
+                    ><br /><br />
+            </td>
+        </tr>
+    </table>
+    <table id="dt11">
+        <tr>
+            <td colspan="2">
+                <p id="pin1"></p>
+                <p id="bat1"></p>
+            </td>
+            <td>
+                <button type="button" id="dt2" onclick="SacPin1()"> 🔋</button
+                    ><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="dt2" onclick="BatDienThoai1()">
+                    🔓</button
+                  ><br /><br />
+            </td>
+            <td>
+                <button type="button" id="dt2" onclick="TatDienThoai1()">
+                    🔒</button
+                  ><br /><br />
+            </td>
+            <td>
+                <button type="button" id="dt2" onclick="SoanTinNhan1()">
+                    📝</button
+                  ><br /><br />
+            </td>
+          
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="dt2" onclick="XemTinNhan1()">📩 </button
+                    ><br /><br />
+            </td>
+            <td>
+                <button type="button" id="dt2" onclick="XemTinNhanDaGui1()">
+                    ✉</button
+                  ><br /><br />
+            </td>
+            <td>
+                <button type="button" id="dt2" onclick="GuiTinNhan1()">➤ </button
+                    ><br /><br />
+            </td>
+        </tr>
+</table>
+    <script>
+      var DienThoai = function () {
+        // thuộc tính
+        this.pin = 100;
+        this.tinnhandangsoan = "";
+        this.tindagui = [];
+        this.hopthuden = [];
+        this.trangthai = false;
+        this.noidung = "";
+        // phương thức
+        this.batdienthoai = function () {
+         return this.trangthai = true;
+        };
+        this.tatdienthoai = function () {
+          this.trangthai = false;
+          document.getElementById("bat").innerHTML =
+            "Realme đang tắt";
+            document.getElementById("bat1").innerHTML =
+            "Iphone đang tắt";
+        };
+
+        this.Trangthai = function () {
+          if (this.pin > 0) {
+            if (this.trangthai == true) {
+              document.getElementById("bat").innerHTML =
+                "Realme đang bật";
+              document.getElementById("bat1").innerHTML =
+              "Iphone đang bật";
+              this.soantinnhan = function (tinnhan) {
+                this.noidung = tinnhan;
+                this.pin--;
+                return this.pin;
+              };
+              this.guitinhnhan = function (Dt) {
+                if (this.noidung != ""){
+                this.tindagui.push(this.noidung);
+                Dt.hopthuden.push(this.noidung);
+                this.noidung= ""
+                this.pin--;
+                alert("Đang gửi")
+                alert("Đã gửi")
+                return this.pin;}
+              };
+              this.xemtinnhan = function () {
+                alert(this.hopthuden);
+                this.pin--;
+                return this.pin;
+              };
+              this.xemtindagui = function () {
+                alert(this.tindagui);
+                this.pin--;
+                return this.pin;
+              };
+            }
+          } else {
+            this.trangthai = false;
+            document.getElementById("bat").innerHTML =
+              "Realme đang tắt";
+              document.getElementById("bat1").innerHTML =
+              "Iphone đang tắt";
+            
+            return (this.pin = 0);
+            return this.trangthai;
+          }
+        };
+        this.nhantinnhan = function (tinnhanden) {
+          this.hopthuden.push(tinnhanden);
+        };
+        this.sacpin = function () {
+          for (var i = this.pin; i <= 100; i++) {
+            if (this.pin == 100) {
+              alert("Pin đầy vui lòng rút sạc");
+              break;
+            }
+            this.pin++;
+          }
+        };
+      };
+      var Realme = new DienThoai();
+      var Iphone = new DienThoai();
+      Realme.pin = 5;
+      function BatDienThoai() {
+        Realme.batdienthoai();
+      }
+      function TatDienThoai() {
+        Realme.tatdienthoai();
+      }
+      function XemTinNhan() {
+        Realme.xemtinnhan();
+      }
+      function XemTinNhanDaGui() {
+        Realme.xemtindagui();
+      }
+
+      function SoanTinNhan() {
+        if (Realme.trangthai == true) {
+          var guitn = prompt("Nhập Tin Nhắn");
+          Realme.soantinnhan(guitn);
+        }
+      }
+
+      function GuiTinNhan() {
+        Realme.guitinhnhan(Iphone);
+      }
+      function SacPin() {
+        Realme.sacpin();
+      }
+      //   function XemPin() {
+//         var kiemtra = Realme.trangthai
+// if (kiemtra) {
+      setInterval(function () {
+        Realme.Trangthai();
+        document.getElementById("pin").innerHTML =
+          "Pin " + Realme.pin + "%";
+        }, 1000)
+    // };
+
+      //   }
+      Iphone.pin = 9;
+      function BatDienThoai1() {
+        Iphone.batdienthoai();
+      }
+      function TatDienThoai1() {
+        Iphone.tatdienthoai();
+      }
+      function XemTinNhan1() {
+        Iphone.xemtinnhan();
+      }
+      function XemTinNhanDaGui1() {
+        Iphone.xemtindagui();
+      }
+
+      function SoanTinNhan1() {
+        if (Iphone.trangthai == true) {
+          var guitn1 = prompt("Nhập Tin Nhắn");
+          Iphone.soantinnhan(guitn1);
+        }
+      }
+
+      function GuiTinNhan1() {
+        Iphone.guitinhnhan(Realme);
+      }
+      function SacPin1() {
+        Iphone.sacpin();
+      }
+    //   if (Iphone.trangthai) {
+        setInterval(function () {
+          Iphone.Trangthai();
+          document.getElementById("pin1").innerHTML =
+            "Pin " + Iphone.pin + "%";
+        }, 1000);
+    //   }
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
         body{
     font-family: Arial, Tahoma;
     font-size: 12px;
@@ -241,4 +512,4 @@ body{
         </div>
     </div>
 </body>
-</html>
+</html> -->
