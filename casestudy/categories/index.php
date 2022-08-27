@@ -14,15 +14,15 @@ $rows = $stmt->fetchAll();
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h2 class="mt-4">Categories</h2>
-                <a class="btn btn-success" href="add.php">Add Categories</a>
+                <h2 class="mt-4">Thể Loại</h2>
+                <a class="btn btn-success" href="add.php">Thêm Thể Loại</a>
                 
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">STT</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Tên Thể Loại</th>
+                            <th scope="col">Thao Tác</th>
                         </tr>
                     </thead>
                     <?php if(isset($rows)) :?>

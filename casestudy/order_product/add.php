@@ -1,7 +1,7 @@
 <?php
 include_once '../database.php';
 include_once './../layout/header.php';
-include_once './../layout/sidebar.php';
+// include_once './../layout/sidebar.php';
 $sql = "SELECT * FROM categories ";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -17,10 +17,10 @@ $stmt2 = $conn->query($sql2);
 $stmt2->setFetchMode(PDO::FETCH_OBJ);
 $rows2 = $stmt2->fetchAll();
 // print_r ($rows);
-$sql3 = "SELECT * FROM customer ";
-$stmt3 = $conn->query($sql3);
-$stmt3->setFetchMode(PDO::FETCH_OBJ);
-$rows3 = $stmt3->fetchAll();
+// $sql3 = "SELECT * FROM customer ";
+// $stmt3 = $conn->query($sql3);
+// $stmt3->setFetchMode(PDO::FETCH_OBJ);
+// $rows3 = $stmt3->fetchAll();
 // print_r ($rows);
 // global $id_b ;
 // echo $id_b;
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $product = $_REQUEST['product'] ;
 $category = $_REQUEST['category'] ;
 $quantity = $_REQUEST['quantity'] ;
-$customer = $_REQUEST['customer'] ;
+$customer = $_REQUEST['id'] ;
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 
 $borrow = date("Y-m-d H:i:s");
@@ -94,32 +94,20 @@ $sql = "INSERT INTO `orders_detail`
 <body>
     <div class="container">
         <form method="post" action="">
-            <legend><h1>Orders</h1></legend>
+            <legend><h1>Đặt Hàng</h1></legend>
             <div class="mb-3">
-            <br>Student<br>
-                <select name="customer" class="form-control" id="">
-                    <?php foreach ($rows3 as $key3=>$item3) : ?>
-                    <option value="<?=$item3->id_customer;?>"><?=$item3->name_customer;?></option>
-                    <?php endforeach; ?>
-                </select><br>
-                <br>Category<br>
-                <select name="category" class="form-control" id="">
-                    <?php foreach ($rows as $key=>$item) : ?>
-                    <option value="<?=$item->id_category;?>"><?=$item->name_category;?></option>
-                    <?php endforeach; ?>
-                </select><br>
-                <br>Product<br>
+                <br>Sản Phẩm<br>
                 <select name="product" class="form-control" id="">
                     <?php foreach ($rows1 as $key1=>$item1) : ?>
                     <option value="<?=$item1->id_product;?>"><?=$item1->name_product;?></option>
                     <?php endforeach; ?>
                 </select><br>
-               <br>Quantity<br>
+               <br>Số Lượng<br>
                 <input type="Number" name="quantity" id="" class="form-control" placeholder="" value="1">
                 <span><?php if(isset($err['quantity'])){echo $err['quantity'];}?></span>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="index.php" class="btn btn-danger">cancel</a>
+            <button type="submit" class="btn btn-primary">Đặt Hàng</button>
+            <a href="index.php" class="btn btn-danger">Hủy</a>
         </form>
     </div>
 </body>

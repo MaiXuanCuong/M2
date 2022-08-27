@@ -1,4 +1,5 @@
 <?php include_once "./../layout/header.php";
+include_once "./../layout/sidebar.php";
 include_once "../database.php";?>
 <?php 
 if(isset($_REQUEST['id'])){
@@ -17,7 +18,21 @@ $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
 // print_r ($rows);
-}else {
+}else if (!isset($_REQUEST['id'])){
+    $sql = "SELECT * FROM `orders_detail` 
+JOIN product 
+ON product.id_product = orders_detail.product_id 
+JOIN order_product 
+ON orders_detail.order_product_id = order_product.id_order_product 
+JOIN customer 
+ON order_product.customer_id = customer.id_customer
+JOIN categories 
+ON product.category_id = categories.id_category";
+$stmt = $conn->query($sql);
+$stmt->setFetchMode(PDO::FETCH_OBJ);
+$rows = $stmt->fetchAll();
+}
+else {
     header('location:../err.php');
 }
 ?>
@@ -26,21 +41,21 @@ $rows = $stmt->fetchAll();
         <main>
             <div class="container-fluid px-4">
                 <h2 class="mt-4">ORDER DETAIL</h2>
-                <a class="btn btn-success" href="../order_product/index.php">BACK</a>
+                <a class="btn btn-success" href="<?php if(isset($_REQUEST['id'])){ echo '../order_product/index.php';} else {echo '../index/index.php';}?>">BACK</a>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total Price</th>
-                            <th scope="col">Order Date</th>
-                            <th scope="col">Image</th>
+                            <th scope="col">Khách Hàng</th>
+                            <th scope="col">Giới Tính</th>
+                            <th scope="col">Địa Chỉ</th>
+                            <th scope="col">Số ĐT</th>
+                            <th scope="col">Sản Phẩm</th>
+                            <th scope="col">Hãng</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">SL</th>
+                            <th scope="col">Tổng Tiền</th>
+                            <th scope="col">Ngày Đặt Hàng</th>
+                            <th scope="col">Ảnh Sản Phẩm</th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>

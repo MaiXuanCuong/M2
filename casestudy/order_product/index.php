@@ -23,16 +23,16 @@ $rows = $stmt->fetchAll();
         <main>
             <div class="container-fluid px-4">
                 <h2 class="mt-4">Order</h2>
-                <a class="btn btn-success" href="add.php">Order</a>
+                <a class="btn btn-success" href="add.php?id=<?php echo $_SESSION['id_nguoidung']?>">Order</a>
                 <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');">Delete ALL</a>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Book</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Tên Khách Hàng</th>
+                            <th scope="col">Sản Phẩm</th>
+                            <th scope="col">Thể Loại</th>
+                            <th scope="col">Số Lượng</th>
+                            <th scope="col">Thao Tác</th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>

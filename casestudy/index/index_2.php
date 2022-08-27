@@ -19,11 +19,11 @@ $rows = $stmt->fetchAll();
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">STT</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Image</th>
+                            <th scope="col">Sản Phẩm</th>
+                            <th scope="col">Thể Loại</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Số Lượng</th>
+                            <th scope="col">Ảnh</th>
                         </tr>
                     </thead>
                     <?php if(isset($rows)) :?>

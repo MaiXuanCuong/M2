@@ -81,7 +81,8 @@ else {
                 <img src="../product/image/<?php echo $items->image?>" width="120px" height="120px" alt=""><br><br>
                 <input type="file" name="image" id="" class="form-control" placeholder="" value="">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="index.php" class="btn btn-danger">cancel</a>
+                <a href="index.php" class="btn btn-danger">Cancel</a>
+                <a href="./../index/index.php" class="btn btn-danger">Back Home</a>
         </form>
     </div>
 </body>

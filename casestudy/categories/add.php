@@ -41,15 +41,15 @@ if(empty($err))
             <legend>Add Product</legend>
           
             <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Name</label>
+                <label for="disabledTextInput" class="form-label">Tên Thể Loại</label>
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="">
                 <span><?php if (isset($err['name'])) {
                             echo $err['name'];
                         }
                           ?></span>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="index.php" class="btn btn-danger">cancel</a>
+            <button type="submit" class="btn btn-primary">Thêm</button>
+            <a href="index.php" class="btn btn-danger">Hủy</a>
         </form>
     </div>
 </body>
