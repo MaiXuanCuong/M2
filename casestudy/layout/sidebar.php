@@ -35,9 +35,9 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="./../startbootstrap-sb-admin-gh-pages/login.html">Đăng nhập</a>
-                                            <a class="nav-link" href="../startbootstrap-sb-admin-gh-pages/register.html">Tạo Tài Khoản</a>
-                                            <a class="nav-link" href="../startbootstrap-sb-admin-gh-pages/password.html">Xem Tài Khoản và Mật khẩu</a>
+                                            <a class="nav-link" href="./../login/login.html">Đăng nhập</a>
+                                            <a class="nav-link" href="./../login/register.html">Tạo Tài Khoản</a>
+                                            <a class="nav-link" href="./../login/password.html">Xem Tài Khoản và Mật khẩu</a>
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -54,11 +54,11 @@
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Khác</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="https://www.facebook.com/hihihihi.cuong">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Liên Hệ
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
