@@ -13,6 +13,9 @@ $rows = $stmt->fetchAll();
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
             <div class="container-fluid px-4">
                 <h2 class="mt-4">Thể Loại</h2>
                 <a class="btn btn-success" href="add.php">Thêm Thể Loại</a>

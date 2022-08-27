@@ -24,16 +24,21 @@ $stmt2 = $conn->query($sql2);
 $stmt2->setFetchMode(PDO::FETCH_OBJ);
 $rows2 = $stmt2->fetch();
 // print_r ($rows);
-$sql3 = "SELECT COUNT(id_customer) as KH, COUNT(`role`) as AD FROM customer ";
+$sql3 = "SELECT COUNT(id_customer) as KH FROM customer";
 $stmt3 = $conn->query($sql3);
 $stmt3->setFetchMode(PDO::FETCH_OBJ);
 $rows3 = $stmt3->fetch();
+
+$sql5 = "SELECT COUNT(`role`) as AD FROM customer WHERE `role`='Admin'";
+$stmt5 = $conn->query($sql5);
+$stmt5->setFetchMode(PDO::FETCH_OBJ);
+$rows5 = $stmt5->fetch();
 ?>
             <!--sidebar-->
 <div id="layoutSidenav_content">
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Shop Của Cường</h1><br>Điều Hành Bởi: <?php echo $rows3->AD ?> Admin
+        <h1 class="mt-4">Shop Của Cường</h1><br>Điều Hành Bởi: <?php echo $rows5->AD ?> Admin
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
         </ol>
@@ -58,7 +63,7 @@ $rows3 = $stmt3->fetch();
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-success text-white mb-4">
-                    <div class="card-body">Có <?php echo ($rows3->KH - $rows3->AD ) ;?> Khách Hàng</div>
+                    <div class="card-body">Có <?php echo ($rows3->KH - $rows5->AD) ;?> Khách Hàng</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="./../customer/index.php">Xem Chi tiết</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>

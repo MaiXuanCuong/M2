@@ -23,9 +23,9 @@ if (isset($_REQUEST['id'])){
             $err['phone'] = "Bạn không thể để trống phần này!";
         }
         if(empty($err)){
-            $sql = "UPDATE customer SET `name_customer` ='$name' , `gender_customer` ='$gender' , `address_customer` ='$address' , `phone_customer` ='$phone' WHERE id_customer='$id'";
+            $sql = "UPDATE customer SET `name_customer`='$name' , `gender_customer` ='$gender' , `address_customer` ='$address' , `phone_customer` ='$phone' WHERE id_customer='$id'";
             $conn->query($sql);
-            header('location:index.php');    
+            header('location:../index/index.php');    
         }
      }
 $sql = "SELECT * FROM customer WHERE id_customer='$id'";
@@ -52,6 +52,9 @@ else {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
     <div class="container">
         <form method="post" action="">
             <legend>Student edit</legend>
@@ -76,9 +79,11 @@ else {
                 <input type="text" name="phone" id="" class="form-control" placeholder="" value="<?php echo $rows->phone_customer; ?>">
                 <span><?php if (isset($err['phone'])) {echo $err['phone'];}?></span>
             </div>
-            <button type="submit" class="btn btn-primary">Lưu</button>
+            <input type="submit" value="Lưu" class="btn btn-primary"></input>
             <a href="index.php" class="btn btn-danger">Hủy</a>
         </form>
+    </div>
+    </div>
     </div>
 </body>
 </html>
