@@ -11,14 +11,19 @@ if(isset($_REQUEST['id']))
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $items = $stmt->fetch();
-    // print_r ($rows);
+    // print_r ($items);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_REQUEST['name'] ;
     $category = $_REQUEST['category'] ;
-    
+    $specifications = $_REQUEST['specifications'] ;
+    $describe = $_REQUEST['describe'] ;
     $price = $_REQUEST['price'] ;
     $quantity = $_REQUEST['quantity'] ;
+ 
     $image = $_REQUEST['image'] ;
+    if ($image==''){
+        $image = $items->image;
+    }
     $err=[];
     if($name=='')
     {
@@ -33,11 +38,17 @@ if(isset($_REQUEST['id']))
     if ($image==''){
         $err['image']='Bạn không thể để trống mục này!';
     }
+    if ($specifications==''){
+        $err['specifications']='Bạn không thể để trống mục này!';
+    }
+    if ($describe==''){
+        $err['describe']='Bạn không thể để trống mục này!';
+    }
     if(empty($err))
     {
-        $sql = "UPDATE `product` SET `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' WHERE `id_product` = '$id'";
+        $sql = "UPDATE `product` SET `specifications`='$specifications',`describe`='$describe', `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' WHERE `id_product` = '$id'";
         $conn->exec($sql);
-        header('location:index.php');
+        header('location:../index/index.php');
     }
 }
 }
@@ -62,27 +73,31 @@ else {
 <body>
     <div class="container">
         <form method="post" action="">
-            <legend>Add Product</legend>
+            <legend>Thêm Sản Phẩm</legend>
             <div class="mb-3">
-                Name
+                Sản Phẩm
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $items->name_product;?>">
-                <br>Category<br>
+                <br>Danh Mục<br>
                 <select name="category" class="form-control" id="">
                     <?php foreach ($rows as $key => $row) {?>
                     <option <?=$row->id_category == $items->category_id ? "selected" : " " ?> value="<?php echo $row->id_category;?>"><?=$row->name_category;?></option>
                     <?php } ?>
                 </select><br>
-                Price
+                Cấu Hình
+                <textarea name="specifications" id="" cols="30" class="form-control" rows="5" ><?php echo $items->specifications;?></textarea>
+                Mô Tả
+                <textarea name="describe" id="" cols="30" class="form-control"  rows="5" ><?php echo $items->describe;?></textarea>
+                Giá
                 <input type="text" name="price" id="" class="form-control" placeholder="" value="<?php echo $items->price;?>">
             </div>
-                Quantity
+                Số Lượng
                 <input type="text" name="quantity" id="" class="form-control" placeholder="" value="<?php echo $items->quantity;?>">
-                Image<br>
+                Ảnh<br>
                 <img src="../product/image/<?php echo $items->image?>" width="120px" height="120px" alt=""><br><br>
-                <input type="file" name="image" id="" class="form-control" placeholder="" value="">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="index.php" class="btn btn-danger">Cancel</a>
-                <a href="./../index/index.php" class="btn btn-danger">Back Home</a>
+                <input type="file" name="image" id="" class="form-control" placeholder="" value="<?php echo $items->image?>">
+                <button type="submit" class="btn btn-primary">Lưu</button>
+                <a href="index.php" class="btn btn-danger">Hủy</a>
+                <a href="./../index/index.php" class="btn btn-danger">Về Trang Chủ</a>
         </form>
     </div>
 </body>

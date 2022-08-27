@@ -19,11 +19,13 @@ $rows = $stmt->fetchAll();
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Code</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">price</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Mã</th>
+                            <th scope="col">Sản Phẩm</th>
+                            <th scope="col">Danh Mục</th>
+                            <th scope="col">Cấu Hình</th>
+                            <th scope="col">Mô Tả</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Thao Tác</th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
@@ -32,6 +34,8 @@ $rows = $stmt->fetchAll();
                                 <td width="170px"><?=$row->id_product?></td>
                                 <td><?=$row->name_product?></td>
                                 <td><?=$row->name_category?></td>
+                                <td><?=$row->specifications?></td>
+                                <td><?=$row->describe?></td>
                                 <td><?= number_format($row->price)." VNĐ"?></td>
                                 <td><img src="./image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
                                <td width="250px" >
