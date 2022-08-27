@@ -1,3 +1,52 @@
+<?php 
+include_once '../database.php'; 
+global $conn; ?>
+<?php  
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $ho = $_REQUEST['ho'];
+    $ten = $_REQUEST['ten'] ;
+    $name = $ho.' '.$ten ;
+    $pass = $_REQUEST['pass'];
+    $matkhau = $_REQUEST['matkhau'];
+    $gmail = $_REQUEST['gmail'];
+    $phone = null;
+    $role = null;
+    $gender = null;
+    $address = null;
+    $err = [];
+    if(empty($ho)){
+        $err['ho'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($ten)){
+        $err['ten'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($gmail)){
+        $err['gmail'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($matkhau)){
+        $err['pass'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($matkhau)){
+        $err['matkhau1'] = 'Bạn không thể để trống mục này!';
+    }
+    if($pass != $matkhau  ){
+        $err['loi'] = 'Xác Thực Mật Khẩu Không đúng';
+    }
+
+    if(empty($err)){
+        
+    $sql = "INSERT INTO `customer` 
+    (`name_customer`,`gender_customer`,`address_customer`,`phone_customer`,`gmail_customer`,`pass`,`role`) 
+    VALUES 
+    ('$name','$gender','$address','$phone','$gmail',$pass,'$role')";
+
+    $conn->exec($sql);
+    header('location:../login/login.php');
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,41 +69,53 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Tạo tài khoản</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form method="post">
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
+                                                        <input name="ho" class="form-control" id="inputFirstName" type="text" placeholder="Nhập Họ" />
+                                                        <span><?php if (isset($err['ho'])) {
+                                                         echo $err['ho'];}?></span>
                                                         <label for="inputFirstName">Họ</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
+                                                        <input name="ten" class="form-control" id="inputLastName" type="text" placeholder="Nhập Tên" />
+                                                        <span><?php if (isset($err['ten'])) {
+                                                         echo $err['ten'];}?></span>
                                                         <label for="inputLastName">Tên</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                <input name="gmail" class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                <span><?php if (isset($err['gmail'])) {
+                                                         echo $err['gmail'];}?></span>
                                                 <label for="inputEmail">Địa Chỉ Email</label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" />
+                                                        <input name="pass" class="form-control" id="inputPassword" type="password" placeholder="Nhập Mật Khẩu" />
+                                                        <span><?php if (isset($err['pass'])) {
+                                                         echo $err['pass'];}?></span>
                                                         <label for="inputPassword">Mật Khẩu</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
+                                                        <input name="matkhau" class="form-control" id="inputPasswordConfirm" type="password" placeholder="Nhập Lại Mật Khẩu" />
+                                                        <span><?php if (isset($err['matkhau1'])) {
+                                                         echo $err['matkhau1'];} else if(isset($err['loi'])){
+                                                            echo $err['loi'];} ?></span>
                                                         <label for="inputPasswordConfirm">Xác nhận mật khẩu</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="../login/login.php">Tạo tài khoản</a></div>
+                                                <div class="d-grid">
+                                                   <input type="submit" class="btn btn-primary btn-block" value=" Tạo tài khoản"></></div>
                                             </div>
                                         </form>
                                     </div>

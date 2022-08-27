@@ -21,7 +21,7 @@ if (empty($err)) {
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $row = $stmt->fetch();
-    if ($err != '') {
+    if ($err != '' && $row != '') {
     if($row->gmail_customer != $taikhoan ){
         $err['sai_tk'] = "Tài khoản không đúng";
     }
