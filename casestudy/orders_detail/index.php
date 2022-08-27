@@ -45,17 +45,17 @@ else {
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Khách Hàng</th>
-                            <th scope="col">Giới Tính</th>
-                            <th scope="col">Địa Chỉ</th>
-                            <th scope="col">Số ĐT</th>
-                            <th scope="col">Sản Phẩm</th>
-                            <th scope="col">Hãng</th>
-                            <th scope="col">Giá</th>
-                            <th scope="col">SL</th>
-                            <th scope="col">Tổng Tiền</th>
-                            <th scope="col">Ngày Đặt Hàng</th>
-                            <th scope="col">Ảnh Sản Phẩm</th>
+                            <th width="200px" >Khách Hàng</th>
+                            <th width="200px" >Giới Tính</th>
+                            <th width="200px" >Địa Chỉ</th>
+                            <th width="200px" >Số ĐT</th>
+                            <th width="200px" >Sản Phẩm</th>
+                            <th width="200px" >Hãng</th>
+                            <th width="200px" >Giá</th>
+                            <th width="100px" >SL</th>
+                            <th width="200px" >Tổng Tiền</th>
+                            <th width="200px" >Ngày Đặt Hàng</th>
+                            <th width="200px" >Ảnh Sản Phẩm</th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
