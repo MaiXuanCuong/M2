@@ -1,5 +1,7 @@
 <?php
 include_once '../database.php';
+include_once './../layout/header.php';
+include_once './../layout/sidebar.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_REQUEST['name'] ;
 $err=[];
@@ -53,3 +55,4 @@ if(empty($err))
 </body>
 
 </html>
+<?php include_once "../layout/footer.php"; ?>

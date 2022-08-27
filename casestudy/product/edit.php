@@ -86,3 +86,6 @@ else {
     </div>
 </body>
 </html>
+
+<?php include_once './../layout/footer.php';
+ ?>

@@ -1,49 +1,123 @@
-<?php include_once "../layout/header.php";
-include_once "../layout/sidebar.php";
-include_once "../database.php";?>
-<?php 
-$sql = "SELECT * FROM `product` 
-JOIN categories 
-ON product.category_id = categories.id_category";
-$stmt = $conn->query($sql);
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-$rows = $stmt->fetchAll();
-// print_r ($rows);
+<?php
+include './../layout/header.php';
+include './../layout/sidebar.php';
 ?>
-<div id="layoutSidenav">
-    <div id="layoutSidenav_content">
-        <main>
-            <div class="container-fluid px-4">
-                <h2 class="mt-4">LIBRARY</h2>
-                <table class="table table-bordered">
-                    <thead class="thead-dark">
+
+
+
+
+
+            <!--sidebar-->
+<div id="layoutSidenav_content">
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Shop Của Cường</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active"></li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Primary Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Warning Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Success Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Danger Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        Area Chart Example
+                    </div>
+                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar me-1"></i>
+                        Bar Chart Example
+                    </div>
+                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                DataTable Example
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
                         <tr>
-                            <th scope="col">STT</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Image</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
                         </tr>
                     </thead>
-                    <?php if(isset($rows)) :?>
-                    <?php foreach ($rows as $key => $row) { ?>
-                       
-                        <tbody>
-                            <tr>
-                                <td><?=$key +1 ?></td>
-                                <td><?=$row->name_product?></td>
-                                <td><?=$row->name_category?></td>
-                                <td><?=number_format($row->price)." VNĐ"?></td>
-                                <td><?=$row->quantity?></td>
-                                <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
-                            </tr>
-                        </tbody>
-                    <?php } ?>
-                    <?php else : echo ''; endif ;?>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        
+                    </tbody>
                 </table>
             </div>
-        </main>
+        </div>
     </div>
-</div>
-<?php include_once "../layout/footer.php";?>
+</main>
+
+
+
+
+
+
+
+
+
+
+<?php
+include './../layout/footer.php';
+?>

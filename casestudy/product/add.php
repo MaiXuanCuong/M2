@@ -1,5 +1,7 @@
 <?php
 include_once '../database.php';
+include_once './../layout/header.php';
+include_once './../layout/sidebar.php';
 $sql = "SELECT * FROM categories ";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -96,3 +98,6 @@ if(empty($err))
     </div>
 </body>
 </html>
+
+<?php include_once './../layout/footer.php';
+?>
