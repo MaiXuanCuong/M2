@@ -1,6 +1,6 @@
 <?php 
-include_once "layout/header.php"; 
-include_once "layout/sidebar.php";?>
+include_once "../layout/header.php"; 
+include_once "../layout/sidebar.php";?>
 <?php 
 global $conn;
 $id = $_REQUEST['id'];
@@ -68,5 +68,5 @@ $rows = $stmt->fetchAll();
     </div>
 </main>
 <?php
-include 'layout/footer.php';
+include '../layout/footer.php';
 ?>

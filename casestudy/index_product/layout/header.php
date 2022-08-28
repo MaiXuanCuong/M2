@@ -1,5 +1,5 @@
 <?php 
-include_once '../database.php';
+// include_once '../database.php';
 session_start();
     
 !isset($_SESSION['user'])==true;
