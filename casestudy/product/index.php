@@ -25,6 +25,7 @@ $rows = $stmt->fetchAll();
                             <th scope="col">Cấu Hình</th>
                             <th scope="col">Mô Tả</th>
                             <th scope="col">Giá</th>
+                            <th scope="col">Ảnh</th>
                             <th scope="col">Thao Tác</th>
                         </tr>
                     </thead>
