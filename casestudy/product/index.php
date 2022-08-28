@@ -12,7 +12,7 @@ $rows = $stmt->fetchAll();
 ?>
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
-        <main>
+        <!-- <main> -->
             <div class="container-fluid px-4">
                 <h2 class="mt-4">Product</h2>
                 <a class="btn btn-success" href="add.php">Add Product</a>

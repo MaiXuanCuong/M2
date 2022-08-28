@@ -36,7 +36,7 @@ $rows5 = $stmt5->fetch();
 ?>
             <!--sidebar-->
 <div id="layoutSidenav_content">
-<main>
+<!-- <main> -->
     <div class="container-fluid px-4">
         <h1 class="mt-4">Shop Của Cường</h1><br>Điều Hành Bởi: <?php echo $rows5->AD ?> Admin
         <ol class="breadcrumb mb-4">

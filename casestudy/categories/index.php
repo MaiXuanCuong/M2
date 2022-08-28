@@ -15,7 +15,7 @@ $rows = $stmt->fetchAll();
         <main>
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
-        <main>
+        <!-- <main> -->
             <div class="container-fluid px-4">
                 <h2 class="mt-4">Thể Loại</h2>
                 <a class="btn btn-success" href="add.php">Thêm Thể Loại</a>
@@ -23,9 +23,9 @@ $rows = $stmt->fetchAll();
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">STT</th>
-                            <th scope="col">Tên Thể Loại</th>
-                            <th scope="col">Thao Tác</th>
+                            <th width="400px" >STT</th>
+                            <th width="400px" >Tên Thể Loại</th>
+                            <th width="400px" >Thao Tác</th>
                         </tr>
                     </thead>
                     <?php if(isset($rows)) :?>
@@ -47,5 +47,7 @@ $rows = $stmt->fetchAll();
             </div>
         </main>
     </div>
+</div>
+</div>
 </div>
 <?php include_once "./../layout/footer.php";?>

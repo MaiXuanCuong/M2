@@ -1,4 +1,6 @@
-
+<?php 
+session_start();
+?>
 <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
@@ -37,7 +39,7 @@
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="./../login/login.php">Đăng nhập</a>
                                             <a class="nav-link" href="./../login/register.php">Tạo Tài Khoản</a>
-                                            <a class="nav-link" href="./../login/password.php">Xem Tài Khoản và Mật khẩu</a>
+                                            <a class="nav-link" href="./../login/password.php?id=<?php if($_SESSION['id_nguoidung'] != ''){echo $_SESSION['id_nguoidung'];} ?>">Xem Tài Khoản và Mật khẩu</a>
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">

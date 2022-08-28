@@ -5,6 +5,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_REQUEST['email'];
     $password = $_REQUEST['password'];
     $err = [];
+    $id = $_REQUEST['id'];
 
 if (empty($email)) {
     $err['email'] = 'Bạn cần nhập email của mình';
@@ -12,8 +13,14 @@ if (empty($email)) {
 if (empty($password)) {
     $err['password'] = 'Bạn cần nhập mật khẩu của mình';
 }
+if($id != ""){
+    $sql = "SELECT * FROM customer WHERE id_customer = '$id'";
+    $stmt = $conn->query($sql);
+    $stmt->setFetchMode(PDO::FETCH_OBJ);
+    $row = $stmt->fetch();
+}
 if (empty($err)) {
-    $sql = "SELECT * FROM customer WHERE gmail_customer = '$email'"; //and pass = '$matkhau' and `role` = 'Admin'
+    $sql = "SELECT * FROM customer WHERE gmail_customer = '$email'";
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $row = $stmt->fetch();
@@ -55,11 +62,11 @@ if (empty($err)) {
                                         <div class="small mb-3 text-muted">Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu của bạn.</div>
                                         <form method="post">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                <input class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" value="<?php echo $row->gmail_customer?>"/>
                                                 <label for="inputEmail">Địa Chỉ Email</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="password" id="inputEmail" type="text" placeholder="Nhập Lại Mật Khẩu" />
+                                                <input class="form-control" name="password" id="inputEmail" type="text" value="<?php echo $row->pass?>" placeholder="Nhập Lại Mật Khẩu" />
                                                 <label for="inputEmail">Nhập Mật Khẩu Mới</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">

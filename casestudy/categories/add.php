@@ -38,14 +38,14 @@ if(empty($err))
 <body>
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
-        <main>
+        <!-- <main> -->
     <div class="container">
         <form method="post" action="">
-            <legend>Add Product</legend>
+            <legend>Thêm Danh Mục</legend>
           
-            <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Tên Thể Loại</label>
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="">
+            <div class="mb-3" >
+                <label for="disabledTextInput" class="form-label">Tên Danh Mục</label>
+                <input type="text" name="name"  id="" class="form-control" placeholder="" value="">
                 <span><?php if (isset($err['name'])) {
                             echo $err['name'];
                         }
@@ -54,6 +54,8 @@ if(empty($err))
             <button type="submit" class="btn btn-primary">Thêm</button>
             <a href="index.php" class="btn btn-danger">Hủy</a>
         </form>
+    </div>
+    </div>
     </div>
 </body>
 

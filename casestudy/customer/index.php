@@ -12,7 +12,7 @@ $rows = $stmt->fetchAll();
 ?>
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
-        <main>
+        <!-- <main> -->
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
