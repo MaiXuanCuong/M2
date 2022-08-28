@@ -1,4 +1,34 @@
 <?php 
+include_once "../database.php";
+global $conn;
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $email = $_REQUEST['email'];
+    $password = $_REQUEST['password'];
+    $err = [];
+
+if (empty($email)) {
+    $err['email'] = 'Bạn cần nhập email của mình';
+}
+if (empty($password)) {
+    $err['password'] = 'Bạn cần nhập mật khẩu của mình';
+}
+if (empty($err)) {
+    $sql = "SELECT * FROM customer WHERE gmail_customer = '$email'"; //and pass = '$matkhau' and `role` = 'Admin'
+    $stmt = $conn->query($sql);
+    $stmt->setFetchMode(PDO::FETCH_OBJ);
+    $row = $stmt->fetch();
+    if ($err != '' && $row != '') {
+    if($row->gmail_customer != $email ){
+        $err['sai_tk'] = "Tài khoản không đúng";
+            } else {
+                $sql = "UPDATE customer SET pass ='$password' WHERE gmail_customer ='$email'";
+                $conn->query($sql);
+                header('location:login.php');    
+            }
+        }
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,14 +53,18 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Khôi Phục Mật Khẩu</h3></div>
                                     <div class="card-body">
                                         <div class="small mb-3 text-muted">Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu của bạn.</div>
-                                        <form>
+                                        <form method="post">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                <input class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" />
                                                 <label for="inputEmail">Địa Chỉ Email</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" name="password" id="inputEmail" type="text" placeholder="Nhập Lại Mật Khẩu" />
+                                                <label for="inputEmail">Nhập Mật Khẩu Mới</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="../login/login.php">Trở Về Trang Đăng Nhập</a>
-                                                <a class="btn btn-primary" href="../login/login.php">Xóa Mật Khẩu</a>
+                                                <input class="btn btn-primary" type="submit" value="Đặt Lại Mật Khẩu"></input>
                                             </div>
                                         </form>
                                     </div>

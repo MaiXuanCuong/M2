@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $matkhau = $_REQUEST['matkhau'];
     $gmail = $_REQUEST['gmail'];
     $phone = null;
-    $role = null;
+    $role = 'User';
     $gender = null;
     $address = null;
     $err = [];

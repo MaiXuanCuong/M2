@@ -9,6 +9,7 @@ include_once './../layout/sidebar.php';
     $phone = $_REQUEST['phone'] ;
     $gmail = $_REQUEST['gmail'] ;
     $pass = $_REQUEST['pass'] ;
+    $User = 'User';
 $err=[];
 if($name=='')
 {
@@ -38,9 +39,9 @@ if($pass=='')
 if(empty($err))
 {
     $sql = "INSERT INTO `customer` 
-    (`name_customer`,`gender_customer`,`address_customer`,`phone_customer`,`gmail_customer`,`pass`) 
+    (`name_customer`,`gender_customer`,`address_customer`,`phone_customer`,`gmail_customer`,`pass`,`role`) 
     VALUES 
-    ('$name','$gender','$address','$phone','$gmail',$pass)";
+    ('$name','$gender','$address','$phone','$gmail',$pass,'$User')";
 
     $conn->exec($sql);
     header('location:index.php');
