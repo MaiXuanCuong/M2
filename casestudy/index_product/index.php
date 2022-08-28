@@ -59,6 +59,8 @@ $rows = $stmt->fetchAll();
                         <div style="text-align: center">
                             <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/><br>
                             <a href="dm.php?id=<?php echo $value->id_product?>"><?php echo $value->name_product?></a><br>
+                            <p><del><?php echo number_format($value->price + 1234525)." VNĐ"?></p></del>
+
                             <p><?php echo number_format($value->price)." VNĐ"?></p>
                         </div>
                 </div>

@@ -48,6 +48,9 @@ if(isset($_SESSION['user'])==false){
   -o-animation: my 700ms infinite; 
   animation: my 700ms infinite;
 }
+del{
+    text-decoration: line-through;
+}
         </style>
     </head>
     <body class="sb-nav-fixed">

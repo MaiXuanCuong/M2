@@ -22,28 +22,28 @@ $rows = $stmt->fetchAll();
         <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="product/category/index.php"><img width="290px" height="50px" src="../product/image/hang1_1629782045.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=3"><img width="290px" height="50px" src="../product/image/hang1_1629782045.png"></a>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="product/category/index.php"><img width="290px" height="50px" src="../product/image/hang2_1629782097.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=4"><img width="290px" height="50px" src="../product/image/hang2_1629782097.png"></a>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class="d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="product/category/index.php"><img width="290px" height="50px" src="../product/image/hang3_1629782127.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=1"><img width="290px" height="50px" src="../product/image/hang3_1629782127.png"></a>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="product/category/index.php"><img width="290px" height="50px" src="../product/image/hang4_1629782113.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=2"><img width="290px" height="50px" src="../product/image/hang4_1629782113.png"></a>
                     </div>
                 </div>
             </div>
@@ -55,11 +55,12 @@ $rows = $stmt->fetchAll();
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                       <b>Sản Phẩm HOT</b>
+                    <p class="test">Sản Phẩm HOT</p>
                     </div>
                         <div style="text-align: center">
                             <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/><br>
                             <b style="color: blue" ><?php echo $value->name_product?></b><br>
+                            <p><del><?php echo number_format($value->price + 1234525)." VNĐ"?></p></del>
                             <b><?php echo number_format($value->price)." VNĐ"?></b>
                         </div>
                 </div>
@@ -73,7 +74,7 @@ $rows = $stmt->fetchAll();
                            <table width="100%">
                        <form action="" method="post">
                             <tr>
-                                <td><hr>
+                                <td><br>
                                     <b>Tình Trạng: <div style="color:blue">Còn <?php echo $value->quantity.' Sản Phẩm' ?></b></td></div>
                             </tr>
                             <tr>
@@ -135,8 +136,16 @@ $rows = $stmt->fetchAll();
                             <tr>
                                 <td>
                                 <div style="text-align: center" class="card-header">
-                       <b> Có Thể Bạn Quan Tâm</b>
+                                <p class="test">Có Thể Bạn Quan Tâm</p><br>
                     </div>
+                    <div style="text-align: center">
+                    <b>Khuyến Mãi</b><br>
+                    <b><em>➣CHỈ BÁN HÀNG NGUYÊN SEAL 100%, nói không với hàng Fullbox</em><br>
+                    <em>➣Tặng dán cường lực Fullview khi nâng cấp sVIP</em><br>
+                    <em>➣Hỗ trợ trả góp nhanh, tra góp lãi suất 0% từ xa (*)</em><br>
+                    <em>➣Mua Online: Giao hàng tận nhà- Nhận hàng thanh toán</em><br>
+                    <em>➣Mọi Thắc Mắc Vui Lòng Liên Hệ: 0843.442.357 Để Được Tư vấn Và Hỗ Trợ</em><br></b>
+                   </div>
                                 </td>
                             </tr>
                             </form>
