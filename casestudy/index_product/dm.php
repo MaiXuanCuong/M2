@@ -1,11 +1,12 @@
 <?php 
-include_once "../layout/header.php"; 
-include_once "../layout/sidebar.php";?>
+include_once "../database.php";
+include_once "layout/header.php"; 
+include_once "layout/sidebar.php";?>
 <?php 
 global $conn;
 $id = $_REQUEST['id'];
 $sql = "SELECT * FROM `product` JOIN categories 
-ON product.category_id = categories.id_category";
+ON product.category_id = categories.id_category WHERE id_product = $id";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
@@ -63,10 +64,35 @@ $rows = $stmt->fetchAll();
                         </div>
                 </div>
             </div>
+            <div class="col-xl-8">
+                <div class="card mb-4">
+                    <div style="text-align: center" class="card-header">
+                        Cấu Hình Chi Tiết
+                    </div>
+                        <div style="text-align: center">
+                           <table>
+                            <tr>
+                                <td>
+                                <?php echo $value->specifications ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><hr>
+                                    <p>Tình Trạng: Còn <?php echo $value->quantity.' Sản Phẩm' ?></p></td>
+                            </tr>
+                            <tr>
+                                <td><hr>
+                                    <p>Chọn Màu: </p></td>
+                            </tr>
+                           </table>
+                        </div>
+                </div>
+            </div>
+            
     <?php } ?>
 
     </div>
 </main>
 <?php
-include '../layout/footer.php';
+include 'layout/footer.php';
 ?>
