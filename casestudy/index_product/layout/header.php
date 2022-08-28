@@ -51,6 +51,36 @@ if(isset($_SESSION['user'])==false){
 del{
     text-decoration: line-through;
 }
+/*
+#wrapper{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        h1{
+            flex-basis: 100%;
+            text-align: center;
+        }
+        .box{
+            width: 400px;
+            height: 600px;
+            background: chocolate;
+            overflow: hidden;
+            box-shadow: 2px 2px 5px #888;
+            position: relative;
+        }
+        .box img{
+            max-width: 100%;
+            position: absolute;
+            bottom: -1235px;
+            transition: bottom 3.5s ease-in-out;
+           
+        }
+        .box:hover img{
+            bottom: 0px;
+            cursor: pointer;
+        }
+        */
         </style>
     </head>
     <body class="sb-nav-fixed">
@@ -79,4 +109,8 @@ del{
                 </li>
             </ul>
         </nav>
+
+
+    
+
         
