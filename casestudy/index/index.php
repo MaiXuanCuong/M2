@@ -100,11 +100,7 @@ $rows5 = $stmt5->fetch();
                 </div>
             </div>
         </div>
-        <!-- <div class="card mb-4"> -->
-            <!-- <div class="card-header"> -->
-                <!-- <i class="fas fa-table me-1"></i> -->
-                <!-- DataTable Example -->
-            <!-- </div> -->
+      
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
@@ -117,16 +113,7 @@ $rows5 = $stmt5->fetch();
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <!-- <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot> -->
+                 
                     <tbody>
                                 <?php foreach ($rows4 as $key => $row) { ?>
                                                         <tbody>

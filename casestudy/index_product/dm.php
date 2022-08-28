@@ -55,40 +55,91 @@ $rows = $stmt->fetchAll();
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                        Sản Phẩm HOT
+                       <b>Sản Phẩm HOT</b>
                     </div>
                         <div style="text-align: center">
                             <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/><br>
-                            <a href="product/index.php?id=<?php echo $value->id_product?>"><?php echo $value->name_product?></a><br>
-                            <p><?php echo number_format($value->price)." VNĐ"?></p>
+                            <b style="color: blue" ><?php echo $value->name_product?></b><br>
+                            <b><?php echo number_format($value->price)." VNĐ"?></b>
                         </div>
                 </div>
             </div>
-            <div class="col-xl-8">
+            <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                        Cấu Hình Chi Tiết
+                       <b> Thông Số Kĩ Thuật</b>
                     </div>
-                        <div style="text-align: center">
-                           <table>
+                        <div style="text-align: center ; color:red ">
+                           <table width="100%">
+                       
                             <tr>
-                                <td>
-                                <?php echo $value->specifications ?>
-                                </td>
+                                <td><hr>
+                                    <b>Tình Trạng: <div style="color:blue">Còn <?php echo $value->quantity.' Sản Phẩm' ?></b></td></div>
                             </tr>
                             <tr>
                                 <td><hr>
-                                    <p>Tình Trạng: Còn <?php echo $value->quantity.' Sản Phẩm' ?></p></td>
+                                <b>Chọn Màu: 
+										<div style="color:blue">
+
+                                    <input name="color" type="radio" checked="checked">Mặc định</input></b></td></div>
                             </tr>
                             <tr>
                                 <td><hr>
-                                    <p>Chọn Màu: </p><input type="radio">Trắng</input></td>
+                                    <b>Chọn Cấu Hình: <div> 
+									<div class=" ">
+										<div style="color:blue">
+                                        <input name="cauhinh" type="radio" checked="checked">Mặc định</input></div>
+										
+									</div>
+									
+								</div></td>
+                            </tr>
+                            <tr>
+                                <td><hr>
+                                    <b>Số Lượng:<div> 
+
+									<div class=" ">
+										<div style="color:blue">
+                                        <input  name="soluong" type="number" value="1"></input></div>
+									</div>
+									
+								</div></td>
+                            </tr>
+                            <tr>
+                                <td><hr>
+                                    <b>Đặt Hàng<div> 
+									
+									
+								</div></td>
                             </tr>
                            </table>
                         </div>
+                        
                 </div>
+                
             </div>
-            
+            <div class="col-xl-4">
+                <div class="card mb-4">
+                    <div style="text-align: center" class="card-header">
+                       <b> Thông Số Kĩ Thuật</b>
+                    </div>
+                       
+                        <table>
+                        <tr>
+                                <td>
+                                <div style="text-align: center ; color:red ">
+                                <b><?php echo $value->specifications ?></b></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <div style="text-align: center" class="card-header">
+                       <b> Có Thể Bạn Quan Tâm</b>
+                    </div>
+                                </td>
+                            </tr>
+                            </table>
+                            </div>
     <?php } ?>
 
     </div>
