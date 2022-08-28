@@ -82,7 +82,7 @@ $rows = $stmt->fetchAll();
                             </tr>
                             <tr>
                                 <td><hr>
-                                    <p>Chọn Màu: </p></td>
+                                    <p>Chọn Màu: </p><input type="radio" ><input type="radio" ></td>
                             </tr>
                            </table>
                         </div>
