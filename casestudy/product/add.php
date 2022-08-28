@@ -15,6 +15,7 @@ $image = $_REQUEST['image'] ;
 $describe  = $_REQUEST['describe'] ;
 $quantity = $_REQUEST['quantity'] ;
 $specifications = $_REQUEST['specifications'] ;
+$color = null;
 $err=[];
 if($name=='')
 {
@@ -38,9 +39,9 @@ if ($image==''){
 if(empty($err))
 {
     $sql = "INSERT INTO `product` 
-            (`name_product`,`price`,`category_id`,`describe`,`quantity`,`specifications`,`image`) 
+            (`name_product`,`price`,`category_id`,`describe`,`quantity`,`specifications`,`image`,`color`) 
             VALUES 
-            ('$name','$price','$category','$describe','$quantity','$specifications','$image')";
+            ('$name','$price','$category','$describe','$quantity','$specifications','$image',$color)";
     $conn->exec($sql);
     header('location:../index/index.php');
 }

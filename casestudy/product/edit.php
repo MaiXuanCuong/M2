@@ -46,7 +46,7 @@ if(isset($_REQUEST['id']))
     }
     if(empty($err))
     {
-        $sql = "UPDATE `product` SET `specifications`='$specifications',`describe`='$describe', `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' WHERE `id_product` = '$id'";
+        $sql = "UPDATE `product` SET `specifications`='$specifications',`describe`='$describe', `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' `color`= 'Mặc Định' WHERE `id_product` = '$id'";
         $conn->exec($sql);
         header('location:../index/index.php');
     }
