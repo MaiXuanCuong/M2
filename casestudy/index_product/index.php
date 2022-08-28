@@ -21,28 +21,28 @@ $rows = $stmt->fetchAll();
         <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php"><img width="290px" height="50px" src="../product/image/hang1_1629782045.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=3"><img width="290px" height="50px" src="../product/image/hang1_1629782045.png"></a>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php"><img width="290px" height="50px" src="../product/image/hang2_1629782097.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=4"><img width="290px" height="50px" src="../product/image/hang2_1629782097.png"></a>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class="d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php"><img width="290px" height="50px" src="../product/image/hang3_1629782127.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=1"><img width="290px" height="50px" src="../product/image/hang3_1629782127.png"></a>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php"><img width="290px" height="50px" src="../product/image/hang4_1629782113.png"></a>
+                        <a class="small text-white stretched-link" href="cate.php?id=2"><img width="290px" height="50px" src="../product/image/hang4_1629782113.png"></a>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@ $rows = $stmt->fetchAll();
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                        Sản Phẩm HOT
+                    <p class="test">Sản Phẩm HOT</p>
                     </div>
                         <div style="text-align: center">
                             <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/><br>

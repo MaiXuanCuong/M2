@@ -19,6 +19,36 @@ if(isset($_SESSION['user'])==false){
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            @-webkit-keyframes my {
+  0% { color: #F8CD0A; } 
+  50% { color: #fff;  } 
+  100% { color: #F8CD0A;  } 
+}
+@-moz-keyframes my { 
+  0% { color: #F8CD0A;  } 
+  50% { color: #fff;  }
+  100% { color: #F8CD0A;  } 
+}
+@-o-keyframes my { 
+  0% { color: #F8CD0A; } 
+  50% { color: #fff; } 
+  100% { color: #F8CD0A;  } 
+}
+@keyframes my { 
+  0% { color: #F8CD0A;  } 
+  50% { color: #fff;  }
+  100% { color: #F8CD0A;  } 
+} 
+.test {
+        font-size:24px;
+        font-weight:bold;
+  -webkit-animation: my 700ms infinite;
+  -moz-animation: my 700ms infinite; 
+  -o-animation: my 700ms infinite; 
+  animation: my 700ms infinite;
+}
+        </style>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-light bg-danger">

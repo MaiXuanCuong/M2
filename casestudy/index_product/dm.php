@@ -71,7 +71,7 @@ $rows = $stmt->fetchAll();
                     </div>
                         <div style="text-align: center ; color:red ">
                            <table width="100%">
-                       
+                       <form action="" method="post">
                             <tr>
                                 <td><hr>
                                     <b>Tình Trạng: <div style="color:blue">Còn <?php echo $value->quantity.' Sản Phẩm' ?></b></td></div>
@@ -107,7 +107,8 @@ $rows = $stmt->fetchAll();
                             </tr>
                             <tr>
                                 <td><hr>
-                                    <b>Đặt Hàng<div> 
+                                    <input type="submit" class="btn btn-danger" value="Đặt Hàng">
+                                        <div> 
 									
 									
 								</div></td>
@@ -138,6 +139,7 @@ $rows = $stmt->fetchAll();
                     </div>
                                 </td>
                             </tr>
+                            </form>
                             </table>
                             </div>
     <?php } ?>
