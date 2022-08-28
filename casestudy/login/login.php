@@ -28,13 +28,18 @@ if (empty($err)) {
     if($row->pass != $matkhau ){
         $err['sai_mk'] = "Mật khẩu không đúng";
     }
-    if($row->role != 'Admin' ){
-        $err['not_admin'] = "Chỉ có Admin mới có thể Đăng Nhập";
-    }
-    if (empty($err)){
-        $_SESSION['tennguoidung'] = $row->name_customer;
-        $_SESSION['id_nguoidung'] = $row->id_customer;
+    // if($row->role != 'Admin' ){
+    //     $err['not_admin'] = "Chỉ có Admin mới có thể Đăng Nhập";
+    // }
+    if(empty($err) && $row->role == 'Admin'){
+        $_SESSION['admin'] = $row->name_customer;
+        $_SESSION['id_admin'] = $row->id_customer;
         header("location:../index/index.php");}
+    } 
+    if(empty($err) && $row->role == 'User'){
+        $_SESSION['user'] = $row->name_customer;
+        $_SESSION['id_user'] = $row->id_customer;
+        header("location:../index_product/index.php");
     } else {
         $err['err'] = "Chỉ có Admin mới có thể Đăng Nhập";
     }
@@ -79,9 +84,10 @@ if (empty($err)) {
                                                 <label for="inputPassword">Mật Khẩu</label>
                                                 <span><?php if (isset($err['mk'])) {
                                                          echo $err['mk'];
-                                                            } else if (isset($err['sai_mk'])){echo $err['sai_mk'];} else if(isset($err['not_admin'])){
+                                                            } else if (isset($err['sai_mk'])){echo $err['sai_mk'];}  ?></span><br>
+                                                            <!-- else if(isset($err['not_admin'])){
                                                                 echo $err['not_admin'];
-                                                            } ?></span><br>
+                                                            } -->
                                              
                                             </div>
                                             <div class="form-check mb-3">
