@@ -1,7 +1,7 @@
 <?php
 include_once '../database.php';
 include_once './../layout/header.php';
-include_once './../layout/sidebar.php';
+// include_once './../layout/sidebar.php';
 $sql = "SELECT * FROM categories ";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -42,7 +42,7 @@ if(empty($err))
             VALUES 
             ('$name','$price','$category','$describe','$quantity','$specifications','$image')";
     $conn->exec($sql);
-    header('location:index.php');
+    header('location:../index/index.php');
 }
 }
 ?>
