@@ -44,10 +44,11 @@ $rows = $stmt->fetchAll();
                     <?php } ?>
                     <?php else : echo ''; endif; ?>
                 </table>
-            </div>
+      
         </main>
     </div>
 </div>
 </div>
 </div>
+
 <?php include_once "./../layout/footer.php";?>
