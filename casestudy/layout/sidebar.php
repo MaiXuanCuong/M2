@@ -68,7 +68,7 @@ session_start();
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Login by</div>
-                        Admin Xuân Cường
+                        Admin <?php echo $_SESSION['admin']?>
                     </div>
                 </nav>
             </div>

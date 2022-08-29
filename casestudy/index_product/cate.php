@@ -67,8 +67,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
     <?php } ?>
-    </div>
-</main>
-<?php
+    <?php
 include 'layout/footer.php';
 ?>
+    </div>
+</main>

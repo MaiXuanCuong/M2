@@ -66,9 +66,8 @@ $rows = $stmt->fetchAll();
                 </div>
             </div>
     <?php } ?>
-
-    </div>
-</main>
-<?php
+    <?php
 include 'layout/footer.php';
 ?>
+    </div>
+</main>
