@@ -39,23 +39,23 @@
 <div class="col-sm">
 <h3  style="color: #696969; font-size: 25px; font-weight: bold">Khách Hàng</h3>
 <ul class="list-unstyled links">
-<li><a href="#">Buyer</a></li>
-<li><a href="#">Supplier</a></li>
+<li><a href="#">Người mua</a></li>
+<li><a href="#">Nhà cung cấp</a></li>
 </ul>
 </div>
 <div class="col-sm">
 <h3  style="color: #696969; font-size: 25px; font-weight: bold">Công Ty</h3>
 <ul class="list-unstyled links">
-<li><a href="#">About us</a></li>
-<li><a href="#">Careers</a></li>
-<li><a href="#">Contact us</a></li>
+<li><a href="#">Về chúng tôi</a></li>
+<li><a href="#">Nghề nghiệp</a></li>
+<li><a href="#">Liên hệ chúng tôi</a></li>
 </ul>
 </div>
 <div class="col-sm">
 <h3  style="color: #696969; font-size: 25px; font-weight: bold">Thông Tin</h3>
 <ul class="list-unstyled links">
-<li><a href="#">Terms &amp; Conditions</a></li>
-<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Điều khoản &amp; điều kiện</a></li>
+<li><a href="#">Chính sách bảo mật</a></li>
 </ul>
 </div>
 <div class="col-md-3">
