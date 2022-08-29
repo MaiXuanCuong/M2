@@ -39,7 +39,7 @@ if(isset($_SESSION['admin'])==false){
                         <li><a class="dropdown-item" href="../login/password.php?id=<?php echo $_SESSION['id_admin'];?>">Cài Đặt</a></li>
                         <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="../login/login.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="../login/login.php?idss=1">Logout</a></li>
                     </ul>
                 </li>
             </ul>

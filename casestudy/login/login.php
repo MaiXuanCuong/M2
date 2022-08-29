@@ -1,6 +1,19 @@
 <?php 
 include_once "../database.php";
 session_start();
+if(isset($_REQUEST['idss'])){
+    $idss = $_REQUEST['idss'];
+    if($idss == 1){
+        unset($_SESSION['admin']);
+        unset($_SESSION['id_admin']);
+    } if($idss == 2){
+        unset($_SESSION['user']);
+        unset($_SESSION['id_user']);
+    }
+}
+
+
+
 ?>
 <?php 
 global $conn;

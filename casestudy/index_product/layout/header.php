@@ -51,7 +51,7 @@ if(isset($_SESSION['user'])==false){
 del{
     text-decoration: line-through;
 }
-/*
+/* 
 #wrapper{
             display: flex;
             justify-content: center;
@@ -92,10 +92,8 @@ del{
                 <div class="input-group">
                     <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" /> -->
                     <!-- <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>-->
-                    <b style="color:black"> <?php echo $_SESSION['user'] ?></b>
+                    <b style="color:black"><?php echo $_SESSION['user'] ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php ?> ">
                 </div>
-           
-
                 </form>
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -104,7 +102,7 @@ del{
                         <li><a class="dropdown-item" href="../login/password.php?id=<?php echo $_SESSION['id_user'];?>">Cài Đặt</a></li>
                         <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="../login/login.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="../login/login.php?idss=2">Logout</a></li>
                     </ul>
                 </li>
             </ul>
