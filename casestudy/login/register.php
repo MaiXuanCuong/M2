@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $gmail = $_REQUEST['gmail'];
     $phone = null;
     $role = 'User';
-    $gender = null;
+    $gender = $_REQUEST['gioitinh'];
     $address = null;
     $err = [];
     if(empty($ho)){
@@ -28,6 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     if(empty($matkhau)){
         $err['matkhau1'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($gender)){
+        $err['gioitinh'] = 'Bạn không thể để trống mục này!';
     }
     if($pass != $matkhau  ){
         $err['loi'] = 'Xác Thực Mật Khẩu Không đúng';
@@ -71,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                     <div class="card-body">
                                         <form method="post">
                                             <div class="row mb-3">
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input name="ho" class="form-control" id="inputFirstName" type="text" placeholder="Nhập Họ" />
                                                         <span><?php if (isset($err['ho'])) {
@@ -79,12 +82,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                                         <label for="inputFirstName">Họ</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-floating">
                                                         <input name="ten" class="form-control" id="inputLastName" type="text" placeholder="Nhập Tên" />
                                                         <span><?php if (isset($err['ten'])) {
                                                          echo $err['ten'];}?></span>
                                                         <label for="inputLastName">Tên</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-floating">
+                                                        <span><?php if (isset($err['gioitinh'])) {
+                                                         echo $err['gioitinh'];}?></span>
+
+
+                                                        <select name="gioitinh" class="form-control" id="">
+                                                            <option value="Nam">Nam</option>
+                                                            <option value="Nữ">Nữ</option>
+                                                        </select>
+                                                        <label for="inputLastName">Giới Tính</label>
                                                     </div>
                                                 </div>
                                             </div>
