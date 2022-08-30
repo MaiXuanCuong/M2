@@ -19,7 +19,8 @@ if(isset($_REQUEST['id']))
     $describe = $_REQUEST['describe'] ;
     $price = $_REQUEST['price'] ;
     $quantity = $_REQUEST['quantity'] ;
- 
+    $color = $_REQUEST['color'] ;
+    $configuration = $_REQUEST['configuration'] ;
     $image = $_REQUEST['image'] ;
     if ($image==''){
         $image = $items->image;
@@ -28,6 +29,14 @@ if(isset($_REQUEST['id']))
     if($name=='')
     {
         $err['name']='Bạn không thể để trống mục này!';
+    }
+    if($configuration=='')
+    {
+        $err['configuration']='Bạn không thể để trống mục này!';
+    }
+    if($color=='')
+    {
+        $err['color']='Bạn không thể để trống mục này!';
     }
     if ($price==''){
         $err['price']='Bạn không thể để trống mục này!';
@@ -46,7 +55,7 @@ if(isset($_REQUEST['id']))
     }
     if(empty($err))
     {
-        $sql = "UPDATE `product` SET `specifications`='$specifications',`describe`='$describe', `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' ,`color`= 'Mặc Định' WHERE `id_product` = '$id'";
+        $sql = "UPDATE `product` SET `specifications`='$specifications',`describe`='$describe', `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' ,`color`= '$color', `configuration` = '$configuration' WHERE `id_product` = '$id'";
         $conn->exec($sql);
         header('location:../index/index.php');
     }
@@ -92,6 +101,10 @@ else {
             </div>
                 Số Lượng
                 <input type="text" name="quantity" id="" class="form-control" placeholder="" value="<?php echo $items->quantity;?>">
+                Màu Sắc
+                <input type="text" name="color" id="" class="form-control" placeholder="" value="<?php echo $items->color;?>">
+               Cấu Hình
+                <input type="text" name="configuration" id="" class="form-control" placeholder="" value="<?php echo $items->configuration;?>">
                 Ảnh<br>
                 <img src="../product/image/<?php echo $items->image?>" width="120px" height="120px" alt=""><br><br>
                 <input type="file" name="image" id="" class="form-control" placeholder="" value="<?php echo $items->image?>">
