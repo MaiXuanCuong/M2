@@ -81,6 +81,33 @@ del{
             cursor: pointer;
         }
         */
+        ul {
+		padding: 0;
+        margin: 50px 20px;
+        list-style: none;
+    }
+    ul li {
+        margin: 0px;
+        display: inline-block;
+    }
+    ul li a {
+        padding: 0px;
+        display: inline-block;      
+        border: 1px solid #f2f2f2;
+    }
+    ul li a img {
+        width: 250px;
+        height: 60px;
+        display: block;
+    }
+    ul li a:hover img {
+        transform: scale(1.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .img_product:hover img{
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
         </style>
     </head>
     <body class="sb-nav-fixed">
@@ -95,7 +122,7 @@ del{
                     <b style="color:black"><?php echo $_SESSION['user'] ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php ?> ">
                 </div>
                 </form>
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ol class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -105,7 +132,7 @@ del{
                         <li><a class="dropdown-item" href="../login/login.php?idss=2">Logout</a></li>
                     </ul>
                 </li>
-            </ul>
+            </ol>
         </nav>
 
 

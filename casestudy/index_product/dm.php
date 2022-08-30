@@ -12,6 +12,7 @@ $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
  ?>
 <br><br><br><br>
+
 <div id="layoutSidenav_content">
 <!-- <main> -->
     <div class="container-fluid px-4">
@@ -20,32 +21,40 @@ $rows = $stmt->fetchAll();
         </ol>
         <div class="row">
         <div class="col-xl-3 col-md-6">
+     
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php?id=3"><img width="290px" height="50px" src="../product/image/hang1_1629782045.png"></a>
-                    </div>
+        <ul>
+                   
+        <li>     <a class="small text-white stretched-link" href="cate.php?id=3"><img width="290px" height="50px" src="../product/image/hang1_1629782045.png"></a>
+        </li> </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php?id=4"><img width="290px" height="50px" src="../product/image/hang2_1629782097.png"></a>
-                    </div>
+                    <ul>
+        <li>       <a class="small text-white stretched-link" href="cate.php?id=4"><img width="290px" height="50px" src="../product/image/hang2_1629782097.png"></a>
+        </li> </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class="d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php?id=1"><img width="290px" height="50px" src="../product/image/hang3_1629782127.png"></a>
-                    </div>
+                    <ul>
+        <li>        <a class="small text-white stretched-link" href="cate.php?id=1"><img width="290px" height="50px" src="../product/image/hang3_1629782127.png"></a>
+        </li> </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div style="border-radius: 10px/10px" class="card  text-white mb-4">
                     <div class=" d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="cate.php?id=2"><img width="290px" height="50px" src="../product/image/hang4_1629782113.png"></a>
-                    </div>
+                    <ul>
+        <li>        <a class="small text-white stretched-link" href="cate.php?id=2"><img width="290px" height="50px" src="../product/image/hang4_1629782113.png"></a>
+        </li> </div>
                 </div>
+            </ul>
+
             </div>
         </div>
         <hr>
@@ -58,7 +67,9 @@ $rows = $stmt->fetchAll();
                     <p class="test">Sản Phẩm HOT</p>
                     </div>
                         <div style="text-align: center">
-                            <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/><br>
+                        <ul?>
+        <li class="img_product">
+                            <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/></li></ul><br>
                             <b style="color: blue" ><?php echo $value->name_product?></b><br>
                             <p><del><?php echo number_format($value->price + 1234525)." VNĐ"?></p></del>
                             <b><?php echo number_format($value->price)." VNĐ"?></b>
