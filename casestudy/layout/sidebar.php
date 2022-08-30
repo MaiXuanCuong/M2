@@ -39,7 +39,7 @@ session_start();
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="./../login/login.php">Đăng nhập</a>
                                             <a class="nav-link" href="./../login/register.php">Tạo Tài Khoản</a>
-                                            <a class="nav-link" href="./../login/password.php?id=<?php if($_SESSION['id_user'] != ''){echo $_SESSION['id_user'];} ?>">Xem Tài Khoản và Mật khẩu</a>
+                                            <!-- <a class="nav-link" href="./../login/password.php?id=<?php if($_SESSION['id_admin'] != ''){echo $_SESSION['id_admin'];} ?>">Xem Tài Khoản và Mật khẩu</a> -->
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -48,7 +48,7 @@ session_start();
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="./../orders_detail/index.php">Xem Chi Tiết</a>
+                                            <a class="nav-link" href="./../order_product/index.php">Xem Chi Tiết</a>
                                             <!-- <a class="nav-link" href="404.html">404 Page</a>
                                             <a class="nav-link" href="500.html">500 Page</a> -->
                                         </nav>

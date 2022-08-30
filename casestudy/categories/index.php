@@ -10,22 +10,20 @@ $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
 // print_r ($rows);
 ?>
-<div id="layoutSidenav">
+<div  id="layoutSidenav" >
     <div id="layoutSidenav_content">
-        <main>
-<div id="layoutSidenav">
-    <div id="layoutSidenav_content">
-        <!-- <main> -->
+        <main >
+
             <div class="container-fluid px-4">
                 <h2 class="mt-4">Thể Loại</h2>
                 <a class="btn btn-success" href="add.php">Thêm Thể Loại</a>
                 
-                <table class="table table-bordered">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th width="400px" >STT</th>
-                            <th width="400px" >Tên Thể Loại</th>
-                            <th width="400px" >Thao Tác</th>
+                <table  class="table table-bordered">
+                    <thead style="text-align:center;" class="thead-dark">
+                        <tr >
+                            <th width="500px" >STT</th>
+                            <th width="500px" >Tên Thể Loại</th>
+                            <th width="500px" >Thao Tác</th>
                         </tr>
                     </thead>
                     <?php if(isset($rows)) :?>
@@ -33,9 +31,9 @@ $rows = $stmt->fetchAll();
                        
                         <tbody>
                             <tr>
-                                <td width="170px"><?=$key + 1 ?></td>
-                                <td><?=$row->name_category?></td>
-                               <td width="250px" >
+                                <td style="text-align:center;" width="170px"><?=$key + 1 ?></td>
+                                <td style="text-align:center;"><?=$row->name_category?></td>
+                               <td style="text-align:center;"  width="250px" >
                                     <a class="btn btn-success" href="edit.php?id=<?=$row->id_category?>">Edit</a>
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id_category?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
                                 </td>

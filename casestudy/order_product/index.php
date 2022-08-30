@@ -28,12 +28,12 @@ $rows = $stmt->fetchAll();
                 <table  class="table table-bordered ">
                     <thead class="thead-dark">
                         <tr>
-                            <th width="200px" >Tên Khách Hàng</th>
-                            <th width="200px" >Sản Phẩm</th>
-                            <th width="200px" >Thể Loại</th>
-                            <th width="200px" >Số Lượng</th>
-                            <th width="200px" >Ảnh</th>
-                            <th width="200px" >Thao Tác</th>
+                            <th width="230px" >Tên Khách Hàng</th>
+                            <th width="230px" >Sản Phẩm</th>
+                            <th width="230px" >Thể Loại</th>
+                            <th width="230px" >Số Lượng</th>
+                            <th width="230px" >Ảnh</th>
+                            <th width="230px" >Thao Tác</th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>

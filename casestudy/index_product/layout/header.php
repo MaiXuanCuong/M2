@@ -162,17 +162,17 @@ border-radius: 4px;
                 <div class="input-group">
                     <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" /> -->
                     <!-- <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>-->
-                    <b style="color:black"><?php echo $_SESSION['user'] ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/anh-dai-dien-dep.jpg<?php ?> ">
+                    <b style="color:black"><?php echo $_SESSION['user'] ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php if($_SESSION['gioitinh'] == 'Nam'){ echo 'anh-dai-dien-dep.jpg';} else if($_SESSION['gioitinh'] == 'Nữ'){ echo 'avatar-dep-chat-nu.jpg';}?> ">
                 </div>
                 </form>
             <ol class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../login/password.php?id=<?php echo $_SESSION['id_user'];?>">Cài Đặt</a></li>
+                        <li><a class="dropdown-item" href="../login/password.php?id=<?php echo $_SESSION['id_user'];?>">Cài Đặt Tài Khoản</a></li>
                         <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="../login/login.php?idss=2">Logout</a></li>
+                        <li><a class="dropdown-item" href="../login/login.php?idss=2">Đăng Xuất</a></li>
                     </ul>
                 </li>
             </ol>
