@@ -1,19 +1,48 @@
 <?php 
 include_once "../database.php";
 include_once "layout/header.php"; 
-include_once "layout/sidebar.php";?>
+
+// include_once "layout/sidebar.php";
+?>
 <?php 
 global $conn;
-$id = $_REQUEST['id'];
-$sql = "SELECT * FROM `product` JOIN categories 
-ON product.category_id = categories.id_category WHERE id_product = $id";
-$stmt = $conn->query($sql);
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-$rows = $stmt->fetchAll();
+if(isset($_REQUEST['id'])){
+    $id = $_REQUEST['id'];
+    $sql = "SELECT * FROM `product` JOIN categories 
+    ON product.category_id = categories.id_category WHERE id_product = $id";
+    $stmt = $conn->query($sql);
+    $stmt->setFetchMode(PDO::FETCH_OBJ);
+    $rows = $stmt->fetchAll();
+}
  ?>
 <br><br><br><br>
 <?php 
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $color = $_REQUEST['color'];
+    $configuration = $_REQUEST['configuration'];
+    $quantity = $_REQUEST['quantity'];
+    
+    $err=[];
+    if ($color==''){
+        $err['color']='Bạn không thể để trống mục số lượng!';
+    }
+    if ($configuration==''){
+        $err['configuration']='Bạn không thể để trống mục số lượng!';
+    }
+    if ($quantity==''){
+        $err['quantity']='Bạn không thể để trống mục số lượng!';
+    }
+    if(empty($err)){
+        $_SESSION['color'] = $color;
+        $_SESSION['configuration'] = $configuration;
+        $_SESSION['quantity'] = $quantity;
+        $_SESSION['id_product'] = $id;
+
+        header('location:order.php');   
+    }
+
+}
 ?>
 
 <div id="layoutSidenav_content">
@@ -143,7 +172,7 @@ $rows = $stmt->fetchAll();
 
                                 <div class=" ">
                                     <div style="color:blue">
-                                        <input name="soluong" type="number" value="1"></input>
+                                        <input name="quantity" type="number" value="1"></input>
                                     </div>
                                 </div>
 

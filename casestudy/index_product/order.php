@@ -8,6 +8,10 @@ include_once "layout/sidebar.php";
 if(isset($_REQUEST['id']) && $_REQUEST['quantity']){
     $quantity = $_REQUEST['quantity'] ; 
     $id = $_REQUEST['id'];
+    $color  =  $_SESSION['color'];
+    $configuration  = $_SESSION['configuration'];
+    $quantity  = $_SESSION['quantity'];
+    $id_prd =  $_SESSION['id_product'];
 }
 
 
@@ -20,6 +24,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $address = $_REQUEST['address'];
     $address1 = "Tỉnh/Thành Phố: ".$city." Quận/Huyện: ".$district." Xã/Phường ".$ward;
     $notes = $_REQUEST['notes'];
+    if($notes == ''){
+        $notes = "Not Notes";
+    }
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $borrow = date("Y-m-d H:i:s");
     $err=[];
@@ -87,76 +94,88 @@ $sql = "INSERT INTO `orders_detail`
 
 ?>
 <div id="layoutSidenav_content">
-    <div  class="container">
+    <div class="container">
         <br>
         <div style="text-align:center">
-            <b  style="font-size:200%; color:orange "><i>Thông Tin Mua Hàng</i></b>
+            <b style="font-size:200%; color:orange "><i>Thông Tin Mua Hàng</i></b>
         </div>
-            <form method="post">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <br><br><br>
-                            <input name="name" type="text" class="form-control" placeholder="Nhập Họ Và Tên(*Bắt Buộc)" >
-                            <div  class="form-text"><b><i>Họ Và Tên</b></i></div>
-                        </div>
+        <form method="post">
+            <div class="row">
+                <div class="col-3">
+                    <div class="mb-3">
+                        <br><br><br>
+                        <input name="name" type="text" class="form-control" placeholder="Nhập Họ Và Tên(*Bắt Buộc)"></input><br>
+                        <span><?php if (isset($err['name'])) {echo $err['name'];}?></span>
+                        <div class="form-text"><b><i>Họ Và Tên</b></i></div>
                     </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <br><br><br>
-                            <input name="phone" type="text" class="form-control" placeholder="Nhập Số Điện Thoại(*Bắt Buộc)" >
-                            <div  class="form-text"><b><i>Số Điện Thoại</b></i></div>
-                        </div>
+                </div>
+                <div class="col-3">
+                    <div class="mb-3">
+                        <br><br><br>
+                        <input name="phone" type="text" class="form-control"
+                            placeholder="Nhập Số Điện Thoại(*Bắt Buộc)"></input><br>
+                        <span><?php if (isset($err['phone'])) {echo $err['phone'];}?></span>
+                        <div class="form-text"><b><i>Số Điện Thoại</b></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="mb-3">
+                        <br><br><br>
+                        <input name="city" type="text" class="form-control"
+                            placeholder="Nhập Tỉnh/Thành Phố(*Bắt Buộc)"></input><br>
+                        <span><?php if (isset($err['city'])) {echo $err['city'];}?></span>
+                        <div class="form-text"><b><i>Tỉnh/Thành Phố</b></i></div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="mb-3">
+                        <br><br><br>
+                        <input name="district" type="text" class="form-control"
+                            placeholder="Nhập Quận/Huyện(*Bắt Buộc)"></input><br>
+                        <span><?php if (isset($err['district'])) {echo $err['district'];}?></span>
+                        <div class="form-text"><b><i>Quận/Huyện</b></i></div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <br><br><br>
-                            <input name="city" type="text" class="form-control" placeholder="Nhập Tỉnh/Thành Phố(*Bắt Buộc)" >
-                            <div  class="form-text"><b><i>Tỉnh/Thành Phố</b></i></div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <br><br><br>
-                            <input name="district" type="text" class="form-control" placeholder="Nhập Quận/Huyện(*Bắt Buộc)" >
-                            <div  class="form-text"><b><i>Quận/Huyện</b></i></div>
-                        </div>
-                    </div>
 
-                
-                    <div class="col-3">
-                        <div class="mb-3">
-                            <br><br><br>
-                            <input name="ward" type="text" class="form-control" placeholder="Nhập Xã/Phường(*Bắt Buộc)" >
-                            <div  class="form-text"><b><i>Xã/Phường</b></i></div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-10">
-                        <div class="mb-3">
-                            <br><br><br>
-                            <input name="address" type="text" class="form-control" placeholder="Nhập Địa Chỉ Chi Tiết(*Bắt Buộc).VD Tên Nhà/Số Đường/Hẽm.." >
-                            <div  class="form-text"><b><i>Nhập Địa Chỉ Chi Tiết</b></i></div>
-                        </div>
+                <div class="col-3">
+                    <div class="mb-3">
+                        <br><br><br>
+                        <input name="ward" type="text" class="form-control" placeholder="Nhập Xã/Phường(*Bắt Buộc)"></input><br>
+                        <span><?php if (isset($err['ward'])) {echo $err['ward'];}?></span>
+                        <div class="form-text"><b><i>Xã/Phường</b></i></div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-10">
-                        <div class="mb-3">
-                            <br><br><br>
-                            <textarea name="notes" class="form-control" rows="5" cols="3" placeholder="Nhập Ghi Chú/Yêu Cầu Giao Hàng(*Không Bắt Buộc).VD Giao Hàng Buối Chiều or Giao Hàng Vào Chủ Nhật..." ></textarea>
-                            <div  class="form-text"><b><i>Nhập Ghi Chú/Yêu Cầu Giao Hàng</b></i></div>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <div class="mb-3">
+                        <br><br><br>
+                        <input name="address" type="text" class="form-control"
+                            placeholder="Nhập Địa Chỉ Chi Tiết(*Bắt Buộc).VD Tên Nhà/Số Đường/Hẽm.."></input><br>
+                        <span><?php if (isset($err['address'])) {echo $err['address'];}?></span>
+                        <div class="form-text"><b><i>Nhập Địa Chỉ Chi Tiết</b></i></div>
                     </div>
                 </div>
-                <button  onclick="return confirm('Bạn Đã Nhập Chính Xác Thông Tin Và Xác Nhận Đặt Hàng?')" type="submit" class="btn btn-primary"><b><i>Đặt Hàng</b></i></button>
-            </form>
-        </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <div class="mb-3">
+                        <br><br><br>
+                        <textarea name="notes" class="form-control" rows="5" cols="3"
+                            placeholder="Nhập Ghi Chú/Yêu Cầu Giao Hàng(*Không Bắt Buộc).VD Giao Hàng Buối Chiều or Giao Hàng Vào Chủ Nhật..."></textarea>
+                        <div class="form-text"><b><i>Nhập Ghi Chú/Yêu Cầu Giao Hàng</b></i></div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="return confirm('Bạn Đã Nhập Chính Xác Thông Tin Và Xác Nhận Đặt Hàng?')" type="submit"
+                class="btn btn-primary"><b><i>Đặt Hàng</b></i></button>
+        </form>
     </div>
-    <?php
+</div>
+<?php
 include 'layout/footer.php';
 ?>
