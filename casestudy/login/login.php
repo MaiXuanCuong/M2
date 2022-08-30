@@ -6,9 +6,12 @@ if(isset($_REQUEST['idss'])){
     if($idss == 1){
         unset($_SESSION['admin']);
         unset($_SESSION['id_admin']);
+        unset($_SESSION['gioitinh_ad']);
+
     } if($idss == 2){
         unset($_SESSION['user']);
         unset($_SESSION['id_user']);
+        unset($_SESSION['gioitinh']);
     }
 }
 
@@ -47,7 +50,7 @@ if (empty($err)) {
     if(empty($err) && $row->role == 'Admin'){
         $_SESSION['admin'] = $row->name_customer;
         $_SESSION['id_admin'] = $row->id_customer;
-        $_SESSION['gioitinh'] = $row->gender_customer;
+        $_SESSION['gioitinh_ad'] = $row->gender_customer;
         header("location:../index/index.php");}
     } 
     if(empty($err) && $row->role == 'User'){

@@ -29,7 +29,7 @@ if(isset($_SESSION['admin'])==false){
                 <div class="input-group">
                     <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" /> -->
                     <!-- <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button> -->
-                    Admin <b style="color:black"><?php echo $_SESSION['admin']; ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php if($_SESSION['gioitinh'] == 'Nam'){ echo 'anh-dai-dien-dep.jpg';} else if($_SESSION['gioitinh'] == 'Nữ'){ echo 'avatar-dep-chat-nu.jpg';}?> ">
+                    Admin <b style="color:black"><?php echo $_SESSION['admin']; ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php if($_SESSION['gioitinh_ad'] == 'Nam'){ echo 'anh-dai-dien-dep.jpg';} else if($_SESSION['gioitinh'] == 'Nữ'){ echo 'avatar-dep-chat-nu.jpg';}?> ">
 
                 </div>
             </form>
