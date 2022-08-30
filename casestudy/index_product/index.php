@@ -70,9 +70,9 @@ $rows = $stmt->fetchAll();
         <li class="img_product"><img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/></li></ul><br>
         <button class="button"><span><a href="dm.php?id=<?php echo $value->id_product?>"><?php echo $value->name_product?></a><br> </span></button>
                             
-                            <p><del><?php echo number_format($value->price + 1234525)." VNĐ"?></p></del>
+                            <small><p><del><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></p></del></small>
 
-                            <p><?php echo number_format($value->price)." VNĐ"?></p>
+                            <b><?php echo number_format($value->price)." VNĐ"?></b>
                         </div>
                        
                 </div>

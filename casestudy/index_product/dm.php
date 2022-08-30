@@ -80,7 +80,7 @@ $rows = $stmt->fetchAll();
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
                             <b style="color: red"><?php echo number_format($value->price)." VNĐ"?></b>
-                            <sub><b><del><small><?php echo number_format($value->price + 1234525)." VNĐ"?></small></del></b></sub>
+                            <sub><b><del><small><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></small></del></b></sub>
                     </div>
                         <div style="text-align: center ; color:red ">
                            <table width="100%">

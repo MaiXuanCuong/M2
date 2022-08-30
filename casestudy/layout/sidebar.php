@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 ?>
 <div id="layoutSidenav">
             <div id="layoutSidenav_nav">

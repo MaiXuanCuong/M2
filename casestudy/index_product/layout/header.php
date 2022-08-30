@@ -83,7 +83,7 @@ del{
         */
         ul {
 		padding: 0;
-        margin: 50px 20px;
+        margin: 1px 42px;
         list-style: none;
     }
     ul li {
@@ -92,7 +92,7 @@ del{
     }
     ul li a {
         padding: 0px;
-        display: inline-block;      
+        display: inline-block; 
      
     }
     a{
@@ -102,14 +102,17 @@ del{
         width: 250px;
         height: 60px;
         display: block;
+
     }
     ul li a:hover img {
-        transform: scale(1.2);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transform: scale(1.4);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        border-radius: 30px/30px;     
     }
     .img_product:hover img{
+        border-radius: 20px/20px;
         transform: scale(1.2);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         
     }
 
