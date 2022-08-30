@@ -71,7 +71,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <ul>
         <li class="img_product">
                             <img width="300px" height="330px" src="../product/image/<?php echo $value->image?>"/></li></ul><br>
-                            <a href="dm.php?id=<?php echo $value->id_product?>"><?php echo $value->name_product?></a><br>
+                            <button class="button"><span> <a href="dm.php?id=<?php echo $value->id_product?>"><?php echo $value->name_product?></a><br></span></button>
+                           
                             <p><?php echo number_format($value->price)." VNĐ"?></p>
                         </div>
                 </div>

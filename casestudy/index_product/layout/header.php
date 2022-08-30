@@ -93,8 +93,11 @@ del{
     ul li a {
         padding: 0px;
         display: inline-block;      
-        border: 1px solid #f2f2f2;
+     
     }
+    a{
+        text-decoration: none;
+       }
     ul li a img {
         width: 250px;
         height: 60px;
@@ -105,9 +108,49 @@ del{
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
     .img_product:hover img{
-        transform: scale(1);
+        transform: scale(1.2);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        
     }
+
+    .button {
+border-radius: 4px;
+  background-color: #FF9500;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
         </style>
     </head>
     <body class="sb-nav-fixed">
@@ -119,7 +162,7 @@ del{
                 <div class="input-group">
                     <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" /> -->
                     <!-- <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>-->
-                    <b style="color:black"><?php echo $_SESSION['user'] ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php ?> ">
+                    <b style="color:black"><?php echo $_SESSION['user'] ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/anh-dai-dien-dep.jpg<?php ?> ">
                 </div>
                 </form>
             <ol class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">

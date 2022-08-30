@@ -67,19 +67,20 @@ $rows = $stmt->fetchAll();
                     <p class="test">Sản Phẩm HOT</p>
                     </div>
                         <div style="text-align: center">
-                        <ul?>
+                        <ul>
         <li class="img_product">
                             <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/></li></ul><br>
-                            <b style="color: blue" ><?php echo $value->name_product?></b><br>
-                            <p><del><?php echo number_format($value->price + 1234525)." VNĐ"?></p></del>
-                            <b><?php echo number_format($value->price)." VNĐ"?></b>
+                            <b style="color: blue" ><?php echo $value->name_product?></b>
+                            <small><?php echo $value->describe;?></small>
                         </div>
                 </div>
             </div>
+            
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                       <b> Thông Số Kĩ Thuật</b>
+                            <b style="color: red"><?php echo number_format($value->price)." VNĐ"?></b>
+                            <sub><b><del><small><?php echo number_format($value->price + 1234525)." VNĐ"?></small></del></b></sub>
                     </div>
                         <div style="text-align: center ; color:red ">
                            <table width="100%">
@@ -140,12 +141,23 @@ $rows = $stmt->fetchAll();
                         <table>
                         <tr>
                                 <td>
-                                <div style="text-align: center ; color:red ">
-                                <b><?php echo $value->specifications ?></b></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
+                                <div style="text-align: left ; color:red ">
+                                <b><?php $explode = explode(';', $value->specifications);
+                               
+                                // var_dump($explode1);
+                                ?></b>
+                                <table>
+                                <?php foreach ($explode as $key1 => $value1) {?>
+                                    <tr>
+                                       
+                                        <td><small><b><?php echo $value1; ?></b></small>
+                                    <hr style="color:black;"></td>
+                                       
+                                    </tr>
+                                    
+                                   <?php } ?>
+                                </table>
+                            </div>
                                 <div style="text-align: center" class="card-header">
                                 <p class="test">Có Thể Bạn Quan Tâm</p><br>
                     </div>
@@ -155,7 +167,7 @@ $rows = $stmt->fetchAll();
                     <em>➣Tặng dán cường lực Fullview khi nâng cấp sVIP</em><br>
                     <em>➣Hỗ trợ trả góp nhanh, tra góp lãi suất 0% từ xa (*)</em><br>
                     <em>➣Mua Online: Giao hàng tận nhà- Nhận hàng thanh toán</em><br>
-                    <em>➣Mọi Thắc Mắc Vui Lòng Liên Hệ: 0843.442.357 Để Được Tư vấn Và Hỗ Trợ</em><br></b>
+                    <em>➣Mọi Thắc Mắc Vui Lòng Liên Hệ: 0843.442.357 Để Được Tư vấn Và Hỗ Trợ</em><br></b><br><br>
                    </div>
                                 </td>
                             </tr>
