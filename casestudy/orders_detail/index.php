@@ -1,7 +1,8 @@
 <?php
 
 include_once "../database.php";?>
-<?php 
+<?php
+
 if(isset($_REQUEST['id'])){
 $id = $_REQUEST['id'];
 global $conn;
@@ -41,9 +42,13 @@ include_once "./../layout/sidebar.php";
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h2 class="mt-4">ORDER DETAIL</h2>
-                <a class="btn btn-success" href="<?php if(isset($_REQUEST['id'])){ echo '../order_product/index.php';} else {echo '../index/index.php';}?>">BACK</a>
+        <h2 class="mt-4">ORDER DETAIL</h2>
+                <a class="btn btn-success" href="<?php if(isset($_REQUEST['id'])){ echo '../order_product/index.php';} else {echo '../index/index.php';}?>">BACK</a> 
+<div class="row">
+        <div class="col-xl-12">
+                <div class="card mb-4">
+                    <div  style="text-align: center" class="card-header">
+              
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
@@ -85,5 +90,6 @@ include_once "./../layout/sidebar.php";
             </div>
         </main>
     </div>
+</div>
 </div>
 <?php include_once "./../layout/footer.php";?>

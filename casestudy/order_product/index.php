@@ -22,9 +22,15 @@ $rows = $stmt->fetchAll();
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h2 class="mt-4">Order</h2>
+            <h2 class="mt-4">Order</h2>
                 <a class="btn btn-success" href="add.php?id=<?php echo $_SESSION['id_admin']?>">Order</a>
                 <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');">Delete ALL</a>
+
+<div class="row">
+        <div class="col-xl-12">
+                <div class="card mb-4">
+                    <div  style="text-align: center" class="card-header">
+               
                 <table  class="table table-bordered ">
                     <thead class="thead-dark">
                         <tr>

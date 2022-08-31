@@ -17,7 +17,10 @@ $rows = $stmt->fetchAll();
             <div class="container-fluid px-4">
                 <h2 class="mt-4">Thể Loại</h2>
                 <a class="btn btn-success" href="add.php">Thêm Thể Loại</a>
-                
+                <div class="row">
+        <div class="col-xl-12">
+                <div class="card mb-4">
+                    <div  style="text-align: center" class="card-header">
                 <table  class="table table-bordered">
                     <thead style="text-align:center;" class="thead-dark">
                         <tr >

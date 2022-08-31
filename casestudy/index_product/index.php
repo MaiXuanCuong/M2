@@ -78,6 +78,8 @@ include_once "layout/header.php";
             </div>
     <?php } ?>
     <?php
+
+    
 include 'layout/footer.php';
 ?>
     </div>

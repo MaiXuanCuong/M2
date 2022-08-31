@@ -11,11 +11,19 @@ $rows = $stmt->fetchAll();
 // print_r ($rows);
 ?>
 <div id="layoutSidenav">
+    
     <div id="layoutSidenav_content">
+        
         <!-- <main> -->
-            <div class="container-fluid px-4">
-                <h2 class="mt-4">Product</h2>
+        <div class="row">
+            
+        <div class="col-xl-12">
+        <!-- <h2 class="mt-4">Product</h2> -->
                 <a class="btn btn-success" href="add.php">Add Product</a>
+                <div class="card mb-4">
+                    <div  style="text-align: center" class="card-header">
+            <div class="container-fluid px-4">
+                
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
