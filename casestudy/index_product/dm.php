@@ -8,6 +8,8 @@ if(isset($_REQUEST['id'])){
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $rows = $stmt->fetchAll();
+} else{
+    header ('location:index.php');   
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $color = $_REQUEST['color'];
@@ -34,8 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 }
 include_once "layout/header.php"; 
+
 // include_once "layout/sidebar.php";
 ?>
+<br><br>
+<br>
 <div id="layoutSidenav_content">
     <div class="container-fluid px-4">
         <ol class="breadcrumb mb-4">
