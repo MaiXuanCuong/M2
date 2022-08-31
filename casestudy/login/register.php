@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     if(empty($err)){
-        
-    $sql = "INSERT INTO `customer` 
+        // echo $name;die;3                                                                                   
+     $sql = "INSERT INTO `customer` 
     (`name_customer`,`gender_customer`,`address_customer`,`phone_customer`,`gmail_customer`,`pass`,`role`) 
     VALUES 
     ('$name','$gender','$address','$phone','$gmail',$pass,'$role')";

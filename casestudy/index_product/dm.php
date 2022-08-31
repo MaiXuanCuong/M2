@@ -1,10 +1,9 @@
 <?php 
-include_once "../database.php";
 include_once "layout/header.php"; 
-
-// include_once "layout/sidebar.php";
+include_once "layout/sidebar.php";
 ?>
 <?php 
+include_once "../database.php";
 global $conn;
 if(isset($_REQUEST['id'])){
     $id = $_REQUEST['id'];
@@ -18,7 +17,7 @@ if(isset($_REQUEST['id'])){
 <br><br><br><br>
 <?php 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $color = $_REQUEST['color'];
     $configuration = $_REQUEST['configuration'];
     $quantity = $_REQUEST['quantity'];
@@ -38,9 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['configuration'] = $configuration;
         $_SESSION['quantity'] = $quantity;
         $_SESSION['id_product'] = $id;
-
-        header('location:order.php');   
+        // print_r($_SESSION);
+        // die();
     }
+    // header ('location: order.php');   
 
 }
 ?>
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <table width="100%">
 
 
-                            <form action="" method="post">
+                            <form action="order.php" method="get">
                                 <tr>
                                     <td><br>
                                         <b>Tình Trạng: <div style="color:blue">Còn
@@ -243,6 +243,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     </div>
     </main>
-    <?php
+<?php
 include 'layout/footer.php';
 ?>

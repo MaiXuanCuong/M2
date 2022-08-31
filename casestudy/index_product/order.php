@@ -5,15 +5,18 @@ include_once "layout/sidebar.php";
 ?>
 
 <?php 
-if(isset($_REQUEST['id']) && $_REQUEST['quantity']){
-    $quantity = $_REQUEST['quantity'] ; 
-    $id = $_REQUEST['id'];
+
+// print_r($_SESSION);
+// die();
+if(isset( $_SESSION['quantity'] ) && $_SESSION['id_product']){
+    $quantity = $_SESSION['quantity'] ; 
+    $id = $_SESSION['id_user'];
     $color  =  $_SESSION['color'];
     $configuration  = $_SESSION['configuration'];
     $quantity  = $_SESSION['quantity'];
     $id_prd =  $_SESSION['id_product'];
-}
 
+}
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $name = $_REQUEST['name'] ;
@@ -77,7 +80,7 @@ foreach ($rows2 as $key0 => $row0){
 }
 // print_r ($max);
 // die();
-$sql1 = "SELECT * FROM product WHERE id_product = $product ";
+$sql1 = "SELECT * FROM product WHERE id_product = $id_prd ";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetch();
@@ -86,9 +89,10 @@ $total1 = ($quantity * $rows1->price);
 $sql = "INSERT INTO `orders_detail` 
             (`order_product_id`,`product_id`,`total_price`) 
             VALUES 
-            ('$max','$product','$total1')";
+            ('$max','$id_prd','$total1')";
     $conn->exec($sql);
-    header('location:dm.php');
+    
+    // header('location:dm.php');
 }
 }
 
