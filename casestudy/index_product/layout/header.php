@@ -49,7 +49,7 @@ del{
 }
         ul {
 		padding: 0;
-        margin: 1px 72px;
+        margin: 1px 49px;
         list-style: none;
     }
     ul li {
