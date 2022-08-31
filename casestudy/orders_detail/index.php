@@ -52,6 +52,8 @@ include_once "./../layout/sidebar.php";
                             <th width="200px" >Địa Chỉ</th>
                             <th width="200px" >Số ĐT</th>
                             <th width="200px" >Sản Phẩm</th>
+                            <th width="200px" >Cấu hình</th>
+                            <th width="200px" >Màu Sắc</th>
                             <th width="200px" >Hãng</th>
                             <th width="200px" >Giá</th>
                             <th width="100px" >SL</th>
@@ -68,6 +70,8 @@ include_once "./../layout/sidebar.php";
                                 <td><?=$row->address_customer?></td>
                                 <td><?=$row->phone_customer?></td>
                                 <td><?=$row->name_product ?></td>
+                                <td><?=$row->configuration_order ?></td>
+                                <td><?=$row->color_order ?></td>
                                 <td><?=$row->name_category?></td>
                                 <td><?=number_format($row->price)." VNĐ"?></td>
                                 <td><?=$row->quantity_order?></td>

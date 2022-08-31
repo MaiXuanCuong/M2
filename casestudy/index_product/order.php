@@ -51,9 +51,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $conn->query($sql);
 
         $sql1 = "INSERT INTO `order_product` 
-        (`customer_id`,`date_borrow`,`quantity_order`,`note`,`delivery_address`) 
+        (`customer_id`,`date_borrow`,`quantity_order`,`note`,`delivery_address`,`configuration_order`,`	color_order`) 
         VALUES 
-        ($id,'$borrow','$quantity','$notes','$address')"
+        ($id,'$borrow','$quantity','$notes','$address','$configuration','$color')"
         ;
         $conn->exec($sql1);
         $sql2 = "SELECT id_order_product FROM `order_product`";
