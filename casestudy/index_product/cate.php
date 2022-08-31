@@ -1,7 +1,7 @@
 <?php 
 include_once "./../database.php"; 
-include_once "layout/header.php"; 
-include_once "layout/sidebar.php";?>
+
+?>
 <?php 
 $id = $_REQUEST['id'];
 global $conn;
@@ -12,6 +12,8 @@ $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetchAll();
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
+include_once "layout/header.php"; 
+// include_once "layout/sidebar.php";
 ?>
 <br><br><br><br>
 <div id="layoutSidenav_content">

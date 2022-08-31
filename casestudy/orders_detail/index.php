@@ -47,7 +47,7 @@ include_once "./../layout/sidebar.php";
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th width="200px" >Khách Hàng</th>
+                            <th width="200px" >Kh Hàng</th>
                             <th width="200px" >Giới Tính</th>
                             <th width="200px" >Địa Chỉ</th>
                             <th width="200px" >Số ĐT</th>
@@ -58,8 +58,8 @@ include_once "./../layout/sidebar.php";
                             <th width="200px" >Giá</th>
                             <th width="100px" >SL</th>
                             <th width="200px" >Tổng Tiền</th>
-                            <th width="200px" >Ngày Đặt Hàng</th>
-                            <th width="200px" >Ảnh Sản Phẩm</th>
+                            <th width="200px" >Ngày Đặt</th>
+                            <th width="200px" >Sản Phẩm</th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>

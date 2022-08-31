@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 }
 include_once "layout/header.php"; 
-include_once "layout/sidebar.php";
+// include_once "layout/sidebar.php";
 ?>
 <div id="layoutSidenav_content">
     <div class="container-fluid px-4">
