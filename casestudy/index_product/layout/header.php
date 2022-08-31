@@ -125,7 +125,7 @@ border-radius: 4px;
     <body class="sb-nav-fixed">
         <nav style="background-color: #00FFFF" class="sb-topnav navbar navbar-expand navbar-light">
     
-        <a class="navbar-brand ps-3" href="../index_product/index.php"><img width="50px" height="55px" src="../product/image/zyro-image.png">DienThoaiGM.vn</a><b>Liên Hệ: 0843.442.357</b>
+        <a class="navbar-brand ps-3" href="../index_product/index.php"><img width="50px" height="55px" src="../product/image/zyro-image.png">XC-SmartShop.vn</a><b>Liên Hệ: 0843.442.357</b>
             <!-- <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> -->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">

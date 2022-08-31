@@ -13,7 +13,10 @@ if(isset($_REQUEST['id_user'])){
     JOIN customer 
     ON order_product.customer_id = customer.id_customer
     JOIN categories 
-    ON product.category_id = categories.id_category WHERE customer.id_customer = $id1";
+    ON product.category_id = categories.id_category 
+    WHERE customer.id_customer = $id1
+    ORDER BY date_borrow DESC
+   ";
     $stmt1 = $conn->query($sql1);
     $stmt1->setFetchMode(PDO::FETCH_OBJ);
     $rows1 = $stmt1->fetchAll();
