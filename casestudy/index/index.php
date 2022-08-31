@@ -1,6 +1,5 @@
 <?php
-include_once './../layout/header.php';
-include_once './../layout/sidebar.php';
+
 include_once './../database.php';
 global $conn;
 $sql4 = "SELECT product.*, categories.name_category FROM `product` JOIN categories 
@@ -33,6 +32,8 @@ $sql5 = "SELECT COUNT(`role`) as AD FROM customer WHERE `role`='Admin'";
 $stmt5 = $conn->query($sql5);
 $stmt5->setFetchMode(PDO::FETCH_OBJ);
 $rows5 = $stmt5->fetch();
+include_once './../layout/header.php';
+include_once './../layout/sidebar.php';
 ?>
             <!--sidebar-->
 <div id="layoutSidenav_content">

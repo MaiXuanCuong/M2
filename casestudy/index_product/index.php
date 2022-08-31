@@ -1,7 +1,6 @@
 <?php 
 include_once "./../database.php"; 
-include_once "layout/header.php"; 
-include_once "layout/sidebar.php";?>
+?>
 <?php 
 global $conn;
 $sql = "SELECT * FROM `product` JOIN categories 
@@ -9,6 +8,8 @@ ON product.category_id = categories.id_category";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
+include_once "layout/header.php"; 
+include_once "layout/sidebar.php";
  ?>
 <br><br><br><br>
 <div id="layoutSidenav_content">
@@ -57,7 +58,6 @@ $rows = $stmt->fetchAll();
         </div>
         <hr>
         <br>
-       
         <div class="row">
         <?php foreach($rows as $key => $value){ ?>
             <div class="col-xl-4">
@@ -74,7 +74,6 @@ $rows = $stmt->fetchAll();
 
                             <b><?php echo number_format($value->price)." VNĐ"?></b>
                         </div>
-                       
                 </div>
             </div>
     <?php } ?>

@@ -1,6 +1,5 @@
 <?php 
 include_once "../database.php";
-session_start();
 if(isset($_REQUEST['idss'])){
     $idss = $_REQUEST['idss'];
     if($idss == 1){
@@ -57,6 +56,7 @@ if (empty($err)) {
         $_SESSION['user'] = $row->name_customer;
         $_SESSION['id_user'] = $row->id_customer;
         $_SESSION['gioitinh'] = $row->gender_customer;
+ 
 
         header("location:../index_product/index.php");
     } else {

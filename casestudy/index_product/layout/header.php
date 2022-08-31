@@ -1,11 +1,7 @@
 <?php 
-// include_once '../database.php';
-session_start();
-    
 !isset($_SESSION['user'])==true;
 if(isset($_SESSION['user'])==false){
     header("location:../login/login.php");
-
 } ?>
 <!DOCTYPE html>
 <html lang="en">

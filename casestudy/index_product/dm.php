@@ -1,8 +1,4 @@
 <?php 
-include_once "layout/header.php"; 
-include_once "layout/sidebar.php";
-?>
-<?php 
 include_once "../database.php";
 global $conn;
 if(isset($_REQUEST['id'])){
@@ -13,11 +9,7 @@ if(isset($_REQUEST['id'])){
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $rows = $stmt->fetchAll();
 }
- ?>
-<br><br><br><br>
-<?php 
-
-if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $color = $_REQUEST['color'];
     $configuration = $_REQUEST['configuration'];
     $quantity = $_REQUEST['quantity'];
@@ -37,16 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         $_SESSION['configuration'] = $configuration;
         $_SESSION['quantity'] = $quantity;
         $_SESSION['id_product'] = $id;
-        // print_r($_SESSION);
-        // die();
+        header ('location:order.php');   
     }
-    // header ('location: order.php');   
 
 }
+include_once "layout/header.php"; 
+include_once "layout/sidebar.php";
 ?>
-
 <div id="layoutSidenav_content">
-    <!-- <main> -->
     <div class="container-fluid px-4">
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
@@ -94,12 +84,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                     </div>
                 </div>
                 </ul>
-
             </div>
         </div>
         <hr>
         <br>
         <div class="row">
+            <?php if(isset($rows)){ ?>
             <?php foreach($rows as $key => $value){ ?>
             <div class="col-xl-4">
                 <div class="card mb-4">
@@ -128,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                         <table width="100%">
 
 
-                            <form action="order.php" method="get">
+                            <form action="" method="post">
                                 <tr>
                                     <td><br>
                                         <b>Tình Trạng: <div style="color:blue">Còn
@@ -141,13 +131,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                             <hr>
                             <b>Chọn Màu:
                                 <div style="color:blue">
-
                                     <?php $explode1 = explode(';', $value->color );?>
-
-                                        <?php foreach ($explode1 as $key2 => $value2) {?>
-                                        <input name="color" type="radio" checked="checked" value="<?php echo $value2; ?>"><?php echo $value2; ?></input>
-                                        
-                                        <?php } ?>
+                                    <?php foreach ($explode1 as $key2 => $value2) {?>
+                                    <input name="color" type="radio" checked="checked"
+                                        value="<?php echo $value2; ?>"><?php echo $value2; ?></input>
+                                    <?php } ?>
                         </td>
                 </div>
                 </tr>
@@ -155,27 +143,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                     <td>
                         <hr>
                         <b>Chọn Cấu Hình: <div>
-                                    <div style="color:blue">
-
+                                <div style="color:blue">
                                     <?php $explode2 = explode(';', $value->configuration );?>
-                                        <?php foreach ($explode2 as $key3 => $value3) {?>
-                                        <input name="configuration" type="radio" checked="checked" value="<?php echo $value3; ?>"><?php echo $value3; ?></input>
-                                        
-                                        <?php } ?>
-                            </div>
+                                    <?php foreach ($explode2 as $key3 => $value3) {?>
+                                    <input name="configuration" type="radio" checked="checked"
+                                        value="<?php echo $value3; ?>"><?php echo $value3; ?></input>
+                                    <?php } ?>
+                                </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <hr>
                         <b>Số Lượng:<div>
-
                                 <div class=" ">
                                     <div style="color:blue">
                                         <input name="quantity" type="number" value="1"></input>
                                     </div>
                                 </div>
-
                             </div>
                     </td>
                 </tr>
@@ -184,16 +169,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                         <hr>
                         <input type="submit" class="btn btn-danger" value="Đặt Hàng">
                         <div>
-
-
                         </div>
                     </td>
                 </tr>
                 </table>
             </div>
-
         </div>
-
     </div>
     <div class="col-xl-4">
         <div class="card mb-4">
@@ -206,19 +187,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                     <td>
                         <div style="text-align: left ; color:red ">
                             <b><?php $explode = explode(';', $value->specifications);
-                               
-                                // var_dump($explode1);
                                 ?></b>
                             <table>
                                 <?php foreach ($explode as $key1 => $value1) {?>
                                 <tr>
-
                                     <td><small><b><?php echo $value1; ?></b></small>
                                         <hr style="color:black;">
                                     </td>
-
                                 </tr>
-
                                 <?php } ?>
                             </table>
                         </div>
@@ -240,9 +216,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
             </table>
         </div>
         <?php } ?>
-
+        <?php } ?>
     </div>
     </main>
-<?php
+    <?php
 include 'layout/footer.php';
 ?>
