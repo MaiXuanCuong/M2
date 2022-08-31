@@ -44,7 +44,7 @@ include_once './../layout/sidebar.php';
             <li class="breadcrumb-item active"></li>
         </ol>
         <div class="row">
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-2 col-md-6">
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-body">Có <?php echo $rows->TL ;?> Thể Loại</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -53,7 +53,7 @@ include_once './../layout/sidebar.php';
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-2 col-md-6">
                 <div class="card bg-warning text-white mb-4">
                     <div class="card-body">Có <?php echo $rows1->SP ;?> Sản Phẩm</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -62,7 +62,7 @@ include_once './../layout/sidebar.php';
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-2 col-md-6">
                 <div class="card bg-success text-white mb-4">
                     <div class="card-body">Có <?php echo ($rows3->KH - $rows5->AD) ;?> Khách Hàng</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
@@ -71,9 +71,27 @@ include_once './../layout/sidebar.php';
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-2 col-md-6">
                 <div class="card bg-danger text-white mb-4">
                     <div class="card-body">Có <?php echo $rows2->HD ;?> Đơn Đặt</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="./../order_product/index.php">Xem Chi tiết</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg-secondary text-white mb-4">
+                    <div class="card-body">Bán <?php echo $rows2->HD ;?></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="./../order_product/index.php">Xem Chi tiết</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-6">
+                <div class="card bg-info text-white mb-4">
+                    <div class="card-body">Lời <?php echo $rows2->HD ;?></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="./../order_product/index.php">Xem Chi tiết</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -85,7 +103,7 @@ include_once './../layout/sidebar.php';
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <i class="fas fa-chart-area me-1"></i>
+                        <!-- <i class="fas fa-chart-area me-1"></i> -->
                         Area Chart Example
                     </div>
                     <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
@@ -94,7 +112,7 @@ include_once './../layout/sidebar.php';
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <i class="fas fa-chart-bar me-1"></i>
+                        <!-- <i class="fas fa-chart-bar me-1"></i> -->
                         Bar Chart Example
                     </div>
                     <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
