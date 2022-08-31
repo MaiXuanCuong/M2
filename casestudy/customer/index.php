@@ -1,24 +1,35 @@
-<?php include_once "./../layout/header.php";
+<?php 
 include_once "../database.php";
+include_once "./../layout/header.php";
+
 ?>
 <?php include_once "./../layout/sidebar.php";?>
 <?php 
 global $conn;
-$sql = "SELECT * FROM customer ";
+$sql = "SELECT * FROM customer WHERE role = 'User'";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
 // print_r ($rows);
 ?>
-<div id="layoutSidenav">
-    <div id="layoutSidenav_content">
+<!-- <div id="layoutSidenav"> -->
+    <!-- <div id="layoutSidenav_content"> -->
         <!-- <main> -->
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h2 class="mt-4">Customer</h2>
+        
+    <div class="row">
+   
+            <div class="col-xl-12">
+            <h2 class="mt-4">Customer</h2>
                 <a class="btn btn-success" href="add.php">Add Customer</a>
+                    <div class="card mb-4">
+                        <div  style="text-align: center" class="card-header">
+                <div class="container-fluid px-4">
+        
+            <div class="container-fluid px-4">
+               
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>

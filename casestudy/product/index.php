@@ -1,5 +1,8 @@
-<?php include_once "./../layout/header.php";
-include_once "../database.php";?>
+<?php 
+include_once "../database.php";
+
+include_once "./../layout/header.php";
+?>
 <?php include_once "./../layout/sidebar.php";?>
 <?php 
 global $conn;
