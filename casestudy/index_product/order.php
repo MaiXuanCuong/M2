@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $district = $_REQUEST['district'];
     $ward = $_REQUEST['ward'];
     $address = $_REQUEST['address'];
-    $address1 = "Tỉnh/Thành Phố: ".$city." Quận/Huyện: ".$district." Xã/Phường ".$ward;
+    $address1 = "Tỉnh/Thành Phố: ".$city." Quận/Huyện: ".$district." Xã/Phường: ".$ward;
     $notes = $_REQUEST['notes'];
     if($notes == ''){
         $notes = "Not Notes";

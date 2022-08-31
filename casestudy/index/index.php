@@ -35,7 +35,7 @@ $rows5 = $stmt5->fetch();
 include_once './../layout/header.php';
 include_once './../layout/sidebar.php';
 ?>
-            <!--sidebar-->
+    
 <div id="layoutSidenav_content">
 <!-- <main> -->
     <div class="container-fluid px-4">

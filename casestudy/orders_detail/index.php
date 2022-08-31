@@ -1,5 +1,5 @@
-<?php include_once "./../layout/header.php";
-include_once "./../layout/sidebar.php";
+<?php
+
 include_once "../database.php";?>
 <?php 
 if(isset($_REQUEST['id'])){
@@ -35,6 +35,8 @@ $rows = $stmt->fetchAll();
 else {
     header('location:../err.php');
 }
+include_once "./../layout/header.php";
+include_once "./../layout/sidebar.php";
 ?>
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
