@@ -51,6 +51,7 @@ include_once "./../index_product/layout/sidebar.php";
                             <th width="200px" >Tổng Tiền</th>
                             <th width="200px" >Ngày Đặt</th>
                             <th width="200px" >Sản Phẩm</th>
+                            <th width="200px" >Mua Lại</th>
                         </tr>
 
 
@@ -68,6 +69,7 @@ include_once "./../index_product/layout/sidebar.php";
                                 <td><?=number_format($row->total_price)." VNĐ"?></td>
                                 <td><?=$row->date_borrow?></td>
                                 <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
+                                <td><a class="btn btn-success" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></td>
                             </tr>
                         </tbody>
                     <?php } ?>

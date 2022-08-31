@@ -72,13 +72,13 @@ del{
     }
     ul li a:hover img {
         transform: scale(1.4);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         border-radius: 30px/30px;     
     }
     .img_product:hover img{
         border-radius: 20px/20px;
-        transform: scale(1.2);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
         
     }
 
