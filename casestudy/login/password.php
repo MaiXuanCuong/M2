@@ -4,14 +4,19 @@ global $conn;
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_REQUEST['email'];
     $password = $_REQUEST['password'];
+    $name = $_REQUEST['name'];
     $err = [];
 
 if (empty($email)) {
     $err['email'] = 'Bạn cần nhập email của mình';
 }
+if (empty($name)) {
+    $err['name'] = 'Bạn cần nhập email của mình';
+}
 if (empty($password)) {
     $err['password'] = 'Bạn cần nhập mật khẩu của mình';
 }
+
 
 if (empty($err)) {
     $sql = "SELECT * FROM customer WHERE gmail_customer = '$email'";
@@ -22,7 +27,7 @@ if (empty($err)) {
     if($row->gmail_customer != $email ){
         $err['sai_tk'] = "Tài khoản không đúng";
             } else {
-                $sql = "UPDATE customer SET pass ='$password' WHERE gmail_customer ='$email'";
+                $sql = "UPDATE customer SET pass ='$password' ,`name_customer` = '$name' WHERE gmail_customer ='$email'";
                 $conn->query($sql);
                 header('location:login.php');    
             }
@@ -68,6 +73,10 @@ if(isset($_REQUEST['id'])){
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" value="<?php if(isset($_REQUEST['id'])){echo $row1->gmail_customer;}?>"/>
                                                 <label for="inputEmail">Địa Chỉ Email</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" name="name" id="inputEmail" type="text"  value="<?php if(isset($_REQUEST['id'])){echo $row1->name_customer;}?>"/>
+                                                <label for="inputEmail">Tên</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" name="password" id="inputEmail" type="text" value="<?php  if(isset($_REQUEST['id'])){echo $row1->pass;}?>" placeholder="Nhập Lại Mật Khẩu" />
