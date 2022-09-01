@@ -73,6 +73,7 @@ include_once "layout/sidebar.php";
                             <small><p><del><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></p></del></small>
 
                             <b><i><?php echo number_format($value->price)." VNĐ"?></i></b>
+                            <i><br><b style="font-size:12px ; color:orange">Tặng: Cường lực - Ốp lưng - Tai nghe khi mua BHV (Nếu trong hộp chưa có) Giảm: 100K áp dụng HSSV mua BHV Trực Tiếp Tại Cửa Hàng</b></i>
                         </div>
                 </div>
             </div>

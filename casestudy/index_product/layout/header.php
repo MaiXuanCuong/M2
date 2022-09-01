@@ -11,7 +11,8 @@ if(isset($_SESSION['user'])==false){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <!-- <title>Admin</title> -->
+
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -125,7 +126,7 @@ border-radius: 4px;
     <body class="sb-nav-fixed">
         <nav style="background-color: #00FFFF" class="sb-topnav navbar navbar-expand navbar-light">
     
-        <a class="navbar-brand ps-3" href="../index_product/index.php"><img width="50px" height="55px" src="../product/image/zyro-image.png"><i>XC-SmartShop.vn</a>&emsp;&emsp;&emsp;<b>Liên Hệ:</i> <i class='fas fa-phone-volume'></i> 0843.442.357</b>
+        <a class="navbar-brand ps-3" href="../index_product/index.php"><img width="50px" height="55px" src="../product/image/zyro-image.png"><i>XC-SmartShop.vn</a>&emsp;&emsp;&emsp;<b>Liên Hệ:</i> <i class='fas fa-phone-volume'></i> <i>0843.442.357</i></b>
             <!-- <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> -->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -139,11 +140,11 @@ border-radius: 4px;
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../login/password.php?id=<?php echo $_SESSION['id_user'];?>">Cài Đặt Tài Khoản</a></li>
-                        <li><a class="dropdown-item" href="../orders_detail/index1.php?id_user=<?php echo $_SESSION['id_user'];?>">Lịch Sử Mua Hàng</a></li>
+                        <li><a class="dropdown-item" href="../login/password.php?id=<?php echo $_SESSION['id_user'];?>"><i>Cài Đặt Tài Khoản</i></a></li>
+                        <li><a class="dropdown-item" href="../orders_detail/index1.php?id_user=<?php echo $_SESSION['id_user'];?>"><i>Lịch Sử Mua Hàng</i></a></li>
                         <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="../login/login.php?idss=2">Đăng Xuất</a></li>
+                        <li><a class="dropdown-item" href="../login/login.php?idss=2"><i>Đăng Xuất</i></a></li>
                     </ul>
                 </li>
             </ol>
