@@ -3,29 +3,29 @@ include_once "./../database.php";
 ?>
 <?php 
 global $conn;
-$sql = "SELECT * FROM `product` JOIN categories 
-ON product.category_id = categories.id_category";
-$stmt = $conn->query($sql);
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-$rows = $stmt->fetchAll();
+// $sql = "SELECT * FROM `product` JOIN categories 
+// ON product.category_id = categories.id_category";
+// $stmt = $conn->query($sql);
+// $stmt->setFetchMode(PDO::FETCH_OBJ);
+// $rows = $stmt->fetchAll();
 include_once "layout/header.php"; 
 include_once "layout/sidebar.php";
 
-// if($_SERVER['REQUEST_METHOD'] == 'POST'){
-// $search = $_REQUEST['search'] ;
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+$search = $_REQUEST['search'] ;
 
-// $err = [];
-// if(empty($search)){
-//     $err["search"] = 'Vui Lòng Nhập Dữ Liệu TÌm Kiếm';
-// }
-// if(empty($err)){
-// $sql1 = "SELECT * FROM `product` WHERE `name_product` JOIN categories 
-// ON product.category_id = categories.id_category LIKE '%$search%'";
-// $stmt1 = $conn->query($sql1);
-// $stmt1->setFetchMode(PDO::FETCH_OBJ);
-// $rows1 = $stmt1->fetchAll();
-// }
-// }
+$err = [];
+if(empty($search)){
+    $err["search"] = 'Vui Lòng Nhập Dữ Liệu TÌm Kiếm';
+}
+if(empty($err)){
+$sql1 = "SELECT * FROM `product` JOIN categories 
+ON product.category_id = categories.id_category WHERE name_product LIKE '%$search%'";
+$stmt1 = $conn->query($sql1);
+$stmt1->setFetchMode(PDO::FETCH_OBJ);
+$rows1 = $stmt1->fetchAll();
+}
+}
  ?>
 <br><br><br><br>
 <div id="layoutSidenav_content">
@@ -33,7 +33,7 @@ include_once "layout/sidebar.php";
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex" method="post" action="search.php">
+      <form class="d-flex" method="post" action="">
         <input class="form-control me-2" name="search" type="search" placeholder="Tìm Kiếm" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Tìm&nbsp;Kiếm</button><br>
         <span><?php if(isset($err['search'])){echo $err['search'];} ?></span>
@@ -46,7 +46,7 @@ include_once "layout/sidebar.php";
     <div style="background-color: #FFFAFA" class="container-fluid px-4">
     <br>
         <div class="row">
-            <?php foreach($rows as $key => $value){ ?>
+            <?php foreach($rows1 as $key => $value){ ?>
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
