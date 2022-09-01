@@ -9,11 +9,11 @@ $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
 include_once "layout/header.php"; 
-// include_once "layout/sidebar.php";
+include_once "layout/sidebar.php";
+
  ?>
 <br><br><br><br>
 <div id="layoutSidenav_content">
-<!-- <main> -->
     <div class="container-fluid px-4">
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
