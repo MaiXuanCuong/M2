@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 include_once "layout/header.php"; 
 
-// include_once "layout/sidebar.php";
+include_once "layout/sidebar.php";
 ?>
 <br><br>
 <br>
@@ -92,7 +92,7 @@ include_once "layout/header.php";
             </div>
         </div>
         <hr> -->
-        <br>
+        <br> <br>
         <div class="row">
             <?php if(isset($rows)){ ?>
             <?php global $value; foreach($rows as $key => $value){ ?>

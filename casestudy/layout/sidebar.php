@@ -7,7 +7,7 @@
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading"></div>
                             <a class="nav-link" href="../index/index.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class='fa fa-home'></i></div>
                                 Trang Chủ
                             </a>
                             <div class="sb-sidenav-menu-heading">Danh Mục</div>
@@ -24,7 +24,7 @@
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                <div class="sb-nav-link-icon"><i class='fas fa-user-friends'></i></div>
                                 Khách Hàng
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -56,13 +56,13 @@
                             </div>
                             <div class="sb-sidenav-menu-heading">Khác</div>
                             <a class="nav-link" href="https://www.facebook.com/hihihihi.cuong">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class='fas fa-phone-alt'></i></div>
                                 Liên Hệ
                             </a>
-                            <a class="nav-link" href="#">
+                            <!-- <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

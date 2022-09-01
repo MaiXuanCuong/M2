@@ -11,6 +11,8 @@
                         <div class="sb-nav-link-icon"><i class='fa fa-home'></i></div>
                         Trang Chủ
                     </a>
+                    <br>
+
                     <a class="nav-link collapsed" href="./../categories/index.php" data-bs-toggle="collapse"
                         data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -26,7 +28,23 @@
                             <a class="nav-link" href="cate.php?id=2">Xiaomi</a>
                             <a class="nav-link" href="#">Phụ Kiện</a>
                         </nav>
+
                     </div>
+                    <br>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                        aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class='fa fa-shopping-cart'></i></i></div>
+                        Giỏ Hàng
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                        data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a class="nav-link" href="#">Xem Giỏ Hàng</a>
+                            <a class="nav-link" href="../orders_detail/index1.php?id_user=<?php echo $_SESSION['id_user'];?>">Xem Đơn Đã Đặt</a>
+                    </div>
+
+                    </a>
                 </div>
             </div>
     </div>

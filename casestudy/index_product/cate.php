@@ -74,7 +74,7 @@ include_once "layout/sidebar.php";
             </div>
         </div>
         <hr> -->
-        <br>
+        <br> <br>
         <div class="row">
             <?php foreach($rows1 as $key => $value){ ?>
             <div class="col-xl-4">

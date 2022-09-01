@@ -22,8 +22,9 @@
 <br>
 <div class="content d-flex align-items-center bg-light">
 </div>
-<footer style="background-color: #7FFFD4" class="footer-20192">
-<div class="site-section">
+<hr>
+<footer  class="footer-20192">
+<div  class="site-section">
 <div class="container">
 <div class="cta d-block d-md-flex align-items-center px-5">
 <div>

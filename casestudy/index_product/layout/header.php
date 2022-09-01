@@ -17,24 +17,24 @@ if(isset($_SESSION['user'])==false){
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <style>
 @-webkit-keyframes my {
-	 0% { color: #00FFFF; } 
-	 50% { color: #fff;  } 
-	 100% { color: #B8B8B8;  } 
+	 0% { color: green; } 
+	 50% { color: green;  } 
+	 100% { color: green;  } 
  }
  @-moz-keyframes my { 
-	 0% { color: #F8CD0A;  } 
-	 50% { color: #fff;  }
-	 100% { color: #E0FFFF;  } 
+	 0% { color: blue;  } 
+	 50% { color: blue;  }
+	 100% { color:blue;  } 
  }
  @-o-keyframes my { 
-	 0% { color: #FF00FF; } 
-	 50% { color: #0000FF; } 
-	 100% { color: #FF0000;  } 
+	 0% { color: red; } 
+	 50% { color: red; } 
+	 100% { color: red;  } 
  }
  @keyframes my { 
-	 0% { color: #00FF00;  } 
-	 50% { color: #00FFFF;  }
-	 100% { color: #FFFF00;  } 
+	 0% { color: black;  } 
+	 50% { color: black;  }
+	 100% { color: black;  } 
  } 
 .test {
         font-size:20px;
@@ -125,7 +125,7 @@ border-radius: 4px;
     <body class="sb-nav-fixed">
         <nav style="background-color: #00FFFF" class="sb-topnav navbar navbar-expand navbar-light">
     
-        <a class="navbar-brand ps-3" href="../index_product/index.php"><img width="50px" height="55px" src="../product/image/zyro-image.png">XC-SmartShop.vn</a><b>Liên Hệ: 0843.442.357</b>
+        <a class="navbar-brand ps-3" href="../index_product/index.php"><img width="50px" height="55px" src="../product/image/zyro-image.png">XC-SmartShop.vn</a>&emsp;&emsp;&emsp;<b>Liên Hệ: <i class='fas fa-phone-volume'></i> 0843.442.357</b>
             <!-- <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> -->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">

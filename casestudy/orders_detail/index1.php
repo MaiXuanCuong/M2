@@ -48,7 +48,7 @@ include_once "./../index_product/layout/sidebar.php";
                             <th width="200px" >Màu Sắc</th>
                             <th width="200px" >Hãng</th>
                             <th width="200px" >Giá</th>
-                            <th width="200px" >Số Lượng</th>
+                            <th width="50px" >SL    </th>
                             <th width="200px" >Tổng Tiền</th>
                             <th width="200px" >Ngày Đặt</th>
                             <th width="200px" >Sản Phẩm</th>
