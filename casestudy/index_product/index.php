@@ -63,16 +63,16 @@ include_once "layout/sidebar.php";
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                    <b class="test"><?php echo $value->name_product?></b>
+                    <i class="test"><?php echo $value->name_product?></i>
                     </div>
                         <div style="text-align: center">
                         <ul>
         <li class="img_product"><img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>"/></li></ul><br>
-        <button class="button"><span><a href="dm.php?id=<?php echo $value->id_product?>">Đặt Hàng Ngay</a><br> </span></button>
+        <button class="button"><span><a href="dm.php?id=<?php echo $value->id_product?>"><i>Đặt Hàng Ngay</i></a><br> </span></button>
                             
                             <small><p><del><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></p></del></small>
 
-                            <b><?php echo number_format($value->price)." VNĐ"?></b>
+                            <b><i><?php echo number_format($value->price)." VNĐ"?></i></b>
                         </div>
                 </div>
             </div>

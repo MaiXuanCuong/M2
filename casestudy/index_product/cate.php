@@ -80,7 +80,7 @@ include_once "layout/sidebar.php";
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                        <b class="test">Sản Phẩm HOT</b>
+                        <b class="test"><i><?php echo $value->name_product?></i></b>
                     </div>
                     <div style="text-align: center">
                         <ul>
@@ -89,14 +89,14 @@ include_once "layout/sidebar.php";
                             </li>
                         </ul><br>
                         <button class="button"><span> <a
-                                    href="dm.php?id=<?php echo $value->id_product?>"><?php echo $value->name_product?></a><br></span></button>
+                                    href="dm.php?id=<?php echo $value->id_product?>"><i>Đặt Hàng Ngay</i></a><br></span></button>
 
                         <small>
                             <p><del><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></p>
                             </del>
                         </small>
 
-                        <b><?php echo number_format($value->price)." VNĐ"?></b>
+                        <b><i><?php echo number_format($value->price)." VNĐ"?></i></b>
                     </div>
                 </div>
             </div>

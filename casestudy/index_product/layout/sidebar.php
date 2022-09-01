@@ -5,7 +5,7 @@
         <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">XC-SmartShop</div>
+                    <div class="sb-sidenav-menu-heading"><i>XC-SmartShop</i></div>
                     <div class="sb-sidenav-menu-heading"></div>
                     <a class="nav-link" href="index.php">
                         <div class="sb-nav-link-icon"><i class='fa fa-home'></i></div>
