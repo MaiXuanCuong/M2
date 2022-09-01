@@ -120,7 +120,6 @@ include_once "layout/sidebar.php";
                     <div style="text-align: center" class="card-header">
                         <b style="color: red">
                             <i><?php echo number_format($value->price)." VNĐ"?></i>
-                            <span id="price_product"></span>
                         </b>
                         <sub><b><del><small><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></small></del></b></sub>
                     </div>
@@ -157,7 +156,7 @@ include_once "layout/sidebar.php";
                                     <?php $explode5 = explode(';', $value->price_product );?>
                                     <?php $explode2 = explode(';', $value->configuration );?>
                                     <?php  foreach ($explode2 as $key3 => $value3) {?>
-                                    <input name="configuration" type="radio" checked="checked"
+                                    <input name="configuration"  type="radio" checked="checked"
                                         value="<?php echo $value3.";".$explode5[$key3]; ?>"><?php echo $value3.': '.number_format($explode5[$key3])." VNĐ".'<br>'; ?></input>
                                     <?php } ?>
                                 </div>
@@ -179,7 +178,7 @@ include_once "layout/sidebar.php";
                 <tr>
                     <td>
                         <br>
-                        <input type="submit" class="btn btn-danger" value="Đặt Hàng">
+                        <button type="button" class="button" ><span>Đặt Hàng</span></button>
                         <div>
                         </div>
                     </td>
@@ -203,7 +202,7 @@ include_once "layout/sidebar.php";
                             <table>
                                 <?php foreach ($explode as $key1 => $value1) {?>
                                 <tr>
-                                    <td><small><b><?php echo "➣".$value1; ?></b></small>
+                                    <td><small><b><?php echo "➣ ".$value1; ?></b></small>
                                         <!-- <hr style="color:black;"> -->
                                     </td>
                                 </tr>
@@ -211,17 +210,19 @@ include_once "layout/sidebar.php";
                             </table>
                         </div>
                         <div style="text-align: center" class="card-header">
-                            <b class="test"><i>Có Thể Bạn Quan Tâm</i></b><br>
+                            <b style="color:blue ; font-size:20px"><i>Có Thể Bạn Quan Tâm</i></b><br>
                         </div>
                         <div style="text-align: center">
-                            <b>Khuyến Mãi</b><br>
-                            <b><em>➣CHỈ BÁN HÀNG NGUYÊN SEAL 100%, nói không với hàng Fullbox</em><br>
-                                <em>➣Tặng dán cường lực Fullview khi nâng cấp sVIP</em><br>
-                                <em>➣Hỗ trợ trả góp nhanh, tra góp lãi suất 0% từ xa (*)</em><br>
-                                <em>➣Mua Online: Giao hàng tận nhà- Nhận hàng thanh toán</em><br>
-                                <em>➣Mọi Thắc Mắc Vui Lòng Liên Hệ: 0843.442.357 Để Được Tư vấn Và Hỗ
-                                    Trợ</em><br></b><br><br>
+                            <b style="color:red ; font-size:20px"><i>Khuyến Mãi</i></b>
+                        <br>
+                            <b><em>➣<i>CHỈ BÁN HÀNG NGUYÊN SEAL 100%, nói không với hàng Fullbox</i></em><br>
+                                <em>➣<i>Tặng dán cường lực Fullview khi nâng cấp sVIP</i></em><br>
+                                <em>➣<i>Hỗ trợ trả góp nhanh, tra góp lãi suất 0% từ xa (*)</i></em><br>
+                                <em>➣<i>Mua Online: Giao hàng tận nhà- Nhận hàng thanh toán</i></em><br>
+                                <em>➣<i>Mọi Thắc Mắc Vui Lòng Liên Hệ: 0843.442.357 Để Được Tư vấn Và Hỗ
+                                    Trợ</i></em><br></b><br><br>
                         </div>
+
                     </td>
                 </tr>
                 </form>
