@@ -12,17 +12,9 @@
 
         <footer class="footer-20192">
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <div class="content d-flex align-items-center bg-light">
 </div>
-<hr>
+
 <footer  class="footer-20192">
 <div  class="site-section">
 <div class="container">
