@@ -32,7 +32,7 @@ include_once "./../index_product/layout/header.php";
           
     <div id="layoutSidenav_content">
         <main><br><br><br>
-        <button class="button"><span><a href="<?php if(isset($_REQUEST['id_user'])){ echo '../index_product/index.php';} else {echo '../index_product/index.php';}?>">Trở Về</a></span></button>
+        <button class="button"><span><i><a href="<?php if(isset($_REQUEST['id_user'])){ echo '../index_product/index.php';} else {echo '../index_product/index.php';}?>">Trở Về</a></span></i></button>
 
 
 <div class="row">
@@ -42,21 +42,21 @@ include_once "./../index_product/layout/header.php";
                 <div class="card mb-4">
 
                     <div  style="text-align: center" class="card-header">
-                <h2 class="mt-4">Lịch Sử Mua Hàng</h2>
+                <h2 class="mt-4"><i>Lịch Sử Mua Hàng</i></h2>
                 <table class="table table-bordered" >
                     <thead class="thead-dark">
                         <tr>
-                            <th width="200px" >Người Mua</th>
-                            <th width="200px" >Sản Phẩm</th>
-                            <th width="200px" >Cấu hình</th>
-                            <th width="200px" >Màu Sắc</th>
-                            <th width="200px" >Hãng</th>
-                            <th width="200px" >Giá</th>
-                            <th width="50px" >SL    </th>
-                            <th width="200px" >Tổng Tiền</th>
-                            <th width="200px" >Ngày Đặt</th>
-                            <th width="200px" >Sản Phẩm</th>
-                            <th width="200px" >Mua Lại</th>
+                            <th width="200px" ><i>Người Mua</i></th>
+                            <th width="200px" ><i>Sản Phẩm</i></th>
+                            <th width="200px" ><i>Cấu hình</i></th>
+                            <th width="200px" ><i>Màu Sắc</i></th>
+                            <th width="200px" ><i>Hãng</i></th>
+                            <th width="200px" ><i>Giá</i></th>
+                            <th width="50px" ><i>SL</i></th>
+                            <th width="200px" ><i>Tổng Tiền</i></th>
+                            <th width="200px" ><i>Ngày Đặt</i></th>
+                            <th width="200px" ><i>Sản Phẩm</i></th>
+                            <th width="200px" ><i>Mua Lại</i></th>
                         </tr>
 
 
@@ -65,19 +65,19 @@ include_once "./../index_product/layout/header.php";
                     <?php foreach ($rows1 as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td><?=$row->name_order ?></td>
-                                <td><?=$row->name_product ?></td>
+                                <td><i><?=$row->name_order ?></i></td>
+                                <td><i><?=$row->name_product ?></i></td>
                                 <?php $epl1=explode(';',$row->configuration_order);?>
-                                <td><?php echo ($epl1[0]);?></td>
-                                <td><?=$row->color_order ?></td>
-                                <td><?=$row->name_category?></td>
-                                <td><?php echo number_format($epl1[1])." VNĐ"?></td>
-                                <td><?=$row->quantity_order?></td>
-                                <td><?=number_format($row->total_price)." VNĐ"?></td>
+                                <td><i><?php echo ($epl1[0]);?></i></td>
+                                <td><i><?=$row->color_order ?></i></td>
+                                <td><i><?=$row->name_category?></i></td>
+                                <td><i><?php echo number_format($epl1[1])." VNĐ"?></i></td>
+                                <td><i><?=$row->quantity_order?></i></td>
+                                <td><i><?=number_format($row->total_price)." VNĐ"?></i></td>
                                 
-                                <td><?=$row->date_borrow?></td>
+                                <td><i><?=$row->date_borrow?></i></td>
                                 <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
-                                <td><a class="button" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></td>
+                                <td><i><a class="button" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></i></td>
                             </tr>
                         </tbody>
                     <?php } ?>

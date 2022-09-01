@@ -42,8 +42,8 @@ include_once "./../layout/sidebar.php";
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-        <h2 class="mt-4">ORDER DETAIL</h2>
-                <a class="btn btn-success" href="<?php if(isset($_REQUEST['id'])){ echo '../order_product/index.php';} else {echo '../index/index.php';}?>">BACK</a> 
+        <h2 class="mt-4"><i>Chi Tiết Đặt Hàng</i></h2>
+                <a class="btn btn-success" href="<?php if(isset($_REQUEST['id'])){ echo '../order_product/index.php';} else {echo '../index/index.php';}?>"><i>Trở Về</i></a> 
 <div class="row">
         <div class="col-xl-12">
                 <div class="card mb-4">
@@ -52,37 +52,37 @@ include_once "./../layout/sidebar.php";
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th width="200px" >Khách Hàng</th>
+                            <th width="200px" ><i>Khách Hàng</i></th>
                             <!-- <th width="200px" >Giới Tính</th> -->
-                            <th width="200px" >Địa Chỉ</th>
-                            <th width="200px" >Số ĐT</th>
-                            <th width="200px" >Sản Phẩm</th>
-                            <th width="200px" >Cấu hình</th>
-                            <th width="200px" >Màu Sắc</th>
-                            <th width="200px" >Hãng</th>
-                            <th width="200px" >Giá</th>
-                            <th width="100px" >SL</th>
-                            <th width="200px" >Tổng Tiền</th>
-                            <th width="200px" >Ngày Đặt</th>
-                            <th width="200px" >Sản Phẩm</th>
+                            <th width="200px" ><i>Địa Chỉ</i></th>
+                            <th width="200px" ><i>Số ĐT</i></th>
+                            <th width="200px" ><i>Sản Phẩm</i></th>
+                            <th width="200px" ><i>Cấu hình</i></th>
+                            <th width="200px" ><i>Màu Sắc</i></th>
+                            <th width="200px" ><i>Hãng</i></th>
+                            <th width="200px" ><i>Giá</i></th>
+                            <th width="100px" ><i>SL</i></th>
+                            <th width="200px" ><i>Tổng Tiền</i></th>
+                            <th width="200px" ><i>Ngày Đặt</i></th>
+                            <th width="200px" ><i>Sản Phẩm</i></th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td><?=$row->name_order ?></td>
+                                <td><i><?=$row->name_order ?></i></td>
                                
-                                <td><?=$row->address_customer?></td>
-                                <td><?=$row->phone_customer?></td>
-                                <td><?=$row->name_product ?></td>
+                                <td><i><?=$row->address_customer?></i></td>
+                                <td><i><?=$row->phone_customer?></i></td>
+                                <td><i><?=$row->name_product ?></i></td>
                                 <?php $epl1=explode(';',$row->configuration_order);?>
-                                <td><?php echo ($epl1[0]);?></td>
-                                <td><?=$row->color_order ?></td>
-                                <td><?=$row->name_category?></td>
-                                <td><?php echo number_format($epl1[1])." VNĐ"?></td>
-                                <td><?=$row->quantity_order?></td>
-                                <td><?=number_format($row->total_price)." VNĐ"?></td>
-                                <td><?=$row->date_borrow?></td>
+                                <td><i><?php echo ($epl1[0]);?></i></td>
+                                <td><i><?=$row->color_order ?></i></td>
+                                <td><i><?=$row->name_category?></i></td>
+                                <td><i><?php echo number_format($epl1[1])." VNĐ"?></i></td>
+                                <td><i><?=$row->quantity_order?></td>
+                                <td><i><?=number_format($row->total_price)." VNĐ"?></i></td>
+                                <td><i><?=$row->date_borrow?></i></td>
                                 <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
                             </tr>
                         </tbody>

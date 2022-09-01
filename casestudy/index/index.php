@@ -39,43 +39,43 @@ include_once './../layout/sidebar.php';
 <div id="layoutSidenav_content">
 <!-- <main> -->
     <div class="container-fluid px-4">
-        <h1 class="mt-4"><img width="50px" height="55px" src="../product/image/zyro-image.png">XC-SmartShop</h1><br>Điều Hành Bởi: <?php echo $rows5->AD ?> Admin
+        <h1 class="mt-4"><img width="50px" height="55px" src="../product/image/zyro-image.png"><i>XC-SmartShop</h1><br>Điều Hành Bởi: <?php echo $rows5->AD ?> Admin</i>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
         </ol>
         <div class="row">
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">Có <?php echo $rows->TL ;?> Thể Loại</div>
+                    <div class="card-body"><i>Có <?php echo $rows->TL ;?> Thể Loại</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../categories/index.php">Xem Chi tiết</a>
+                        <a class="small text-white stretched-link" href="./../categories/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">Có <?php echo $rows1->SP ;?> Sản Phẩm</div>
+                    <div class="card-body"><i>Có <?php echo $rows1->SP ;?> Sản Phẩm</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../product/index.php">Xem Chi tiết</a>
+                        <a class="small text-white stretched-link" href="./../product/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-success text-white mb-4">
-                    <div class="card-body">Có <?php echo ($rows3->KH - $rows5->AD) ;?> Khách Hàng</div>
+                    <div class="card-body"><i>Có <?php echo ($rows3->KH - $rows5->AD) ;?> Khách Hàng</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../customer/index.php">Xem Chi tiết</a>
+                        <a class="small text-white stretched-link" href="./../customer/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">Có <?php echo $rows2->HD ;?> Đơn Đặt</div>
+                    <div class="card-body"><i>Có <?php echo $rows2->HD ;?> Đơn Đặt</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../order_product/index.php">Xem Chi tiết</a>
+                        <a class="small text-white stretched-link" href="./../order_product/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -103,16 +103,16 @@ include_once './../layout/sidebar.php';
             </div>
         </div>
       
-            <div class="card-body">
+            <div style="text-align: center" class="card-body">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Product</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Picture date</th>
-                            <th>Action</th>
+                            <th><i>ID</i></th>
+                            <th><i>Product</i></th>
+                            <th><i>Category</i></th>
+                            <th><i>Price</i></th>
+                            <th><i>Picture date</i></th>
+                            <th><i>Action</i></th>
                         </tr>
                     </thead>
                  
@@ -120,15 +120,15 @@ include_once './../layout/sidebar.php';
                                 <?php foreach ($rows4 as $key => $row) { ?>
                                                         <tbody>
                             <tr>
-                                <td width="170px"><?=$row->id_product?></td>
-                                <td><?=$row->name_product?></td>
-                                <td><?=$row->name_category?></td>
-                                <td><?= number_format($row->price)." VNĐ"?></td>
+                                <td width="170px"><i><?=$row->id_product?></i></td>
+                                <td><i><?=$row->name_product?></i></td>
+                                <td><i><?=$row->name_category?></i></td>
+                                <td><i><?= number_format($row->price)." VNĐ"?></i></td>
                                 <td><img src="./../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
-                               <td width="250px" >
+                               <td width="250px" ><i>
                                     <a class="btn btn-success" href="../product/edit.php?id=<?=$row->id_product?>">Edit</a>
                                     <a class="btn btn-danger" href="../product/delete.php?id=<?=$row->id_product?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
-                                </td>
+                                    </i></td>
                             </tr>
                         </tbody>
                     <?php } ?>

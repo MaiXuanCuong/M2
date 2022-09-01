@@ -67,37 +67,37 @@ if(empty($err))
         <main>
     <div class="container">
         <form method="post" action="">
-            <legend>Add Product</legend>
+            <legend><i>Thêm Sản Phẩm</i></legend>
             <div class="mb-3">
-                Name
+            <i>Tên Sản Phẩm</i>
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="">
                 <span><?php if(isset($err['name'])){echo $err['name'];}?></span>
-                <br>Category<br>
+                <br><i>Danh mục</i><br>
                 <select name="category" class="form-control" id="">
                 <?php foreach ($rows as $key=>$item) : ?>
                 <option value="<?=$item->id_category;?>"><?=$item->name_category;?></option>
                 <?php endforeach; ?>
                 </select><br>
-                Price
+                <i>Giá</i>
                 <input type="text" name="price" id="" class="form-control" placeholder="" value="">
                 <span><?php if(isset($err['price'])){echo $err['price'];}?></span>
-                Quantity
+                <i>Số Lượng</i>
                 <input type="text" name="quantity" id="" class="form-control" placeholder="" value="">
                 <span><?php if(isset($err['quantity'])){echo $err['quantity'];}?></span>
-                Describe
+                <i>Mô Tả</i>
                 <textarea name="describe" id="" class="form-control" placeholder="" value=""></textarea>
                 <span><?php if(isset($err['describe'])){echo $err['describe'];}?></span>
-                Specifications
+                <i>Chi Tiết Kỹ Thuật</i>
                 <textarea name="specifications" id="" class="form-control" placeholder="" value=""></textarea>
                 <span><?php if(isset($err['specifications'])){echo $err['specifications'];}?></span>
                 <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Images</label>
+                <label for="disabledTextInput" class="form-label"><i>Images</i></label>
                 <input type="file" name="image" id="" class="form-control" placeholder="" value="">
             </div>
                <span><?php if(isset($err['image'])){echo $err['image'];}?></span>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="index.php" class="btn btn-danger">cancel</a>
+            <button type="submit" class="btn btn-primary"><i>Thêm</i></button>
+            <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
         </form>
     </div>
     

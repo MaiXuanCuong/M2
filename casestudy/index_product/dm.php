@@ -109,7 +109,7 @@ include_once "layout/sidebar.php";
                                 <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>" />
                             </li>
                         </ul><br>
-                        <b style="color: blue"><?php echo $value->name_product.": "?></b>
+                        <b style="color: blue"><i><?php echo $value->name_product.": "?></i></b>
                         <small><?php echo $value->describe;?></small>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ include_once "layout/sidebar.php";
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
                         <b style="color: red">
-                            <?php echo number_format($value->price)." VNĐ"?>
+                            <i><?php echo number_format($value->price)." VNĐ"?></i>
                             <span id="price_product"></span>
                         </b>
                         <sub><b><del><small><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></small></del></b></sub>
@@ -131,7 +131,7 @@ include_once "layout/sidebar.php";
                             <form action="" method="post">
                                 <tr>
                                     <td><br>
-                                        <b>Tình Trạng: <div style="color:blue">
+                                        <b><i>Tình Trạng: <div style="color:blue"></i>
                                                 <?php if($value->quantity > 0){ echo '✅Còn Hàng' ;} else{ echo '❌Hết Hàng';};?></b>
                                     </td>
                     </div>
@@ -139,8 +139,8 @@ include_once "layout/sidebar.php";
                     <tr>
                         <td>
                             <hr style="color:black;">
-                            <b>Chọn Màu:
-                                <div style="color:blue">
+                            <b><i>Chọn Màu:
+                                <div style="color:blue"></i>
                                     <?php $explode1 = explode(';', $value->color );?>
                                     <?php foreach ($explode1 as $key2 => $value2) {?>
                                     <input name="color" type="radio" checked="checked"
@@ -152,7 +152,7 @@ include_once "layout/sidebar.php";
                 <tr>
                     <td>
                         <hr style="color:black;">
-                        <b>Chọn Cấu Hình: <div>
+                        <b><i>Chọn Cấu Hình: </i><div>
                                 <div style="color:blue">
                                     <?php $explode5 = explode(';', $value->price_product );?>
                                     <?php $explode2 = explode(';', $value->configuration );?>
@@ -166,7 +166,7 @@ include_once "layout/sidebar.php";
                 <tr>
                     <td>
                         <hr style="color:black;">
-                        <b>Số Lượng:<div>
+                        <b><i>Số Lượng:</i><div>
                                 <div class=" ">
                                     <div style="color:blue">
                                         <input name="quantity" type="number" min="1"
@@ -191,7 +191,7 @@ include_once "layout/sidebar.php";
     <div class="col-xl-4">
         <div class="card mb-4">
             <div style="text-align: center" class="card-header">
-                <b> Thông Số Kĩ Thuật</b>
+                <b><i> Thông Số Kĩ Thuật</i></b>
             </div>
 
             <table>
@@ -211,7 +211,7 @@ include_once "layout/sidebar.php";
                             </table>
                         </div>
                         <div style="text-align: center" class="card-header">
-                            <b class="test">Có Thể Bạn Quan Tâm</b><br>
+                            <b class="test"><i>Có Thể Bạn Quan Tâm</i></b><br>
                         </div>
                         <div style="text-align: center">
                             <b>Khuyến Mãi</b><br>
@@ -235,4 +235,3 @@ include_once "layout/sidebar.php";
    
 include 'layout/footer.php';
 ?>
-   

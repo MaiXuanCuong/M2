@@ -17,8 +17,8 @@ $rows = $stmt->fetchAll();
         <main >
 
             <div class="container-fluid px-4">
-                <h2 class="mt-4">Thể Loại</h2>
-                <a class="btn btn-success" href="add.php">Thêm Thể Loại</a>
+                <h2 class="mt-4"><i>Thể Loại</i></h2>
+                <a class="btn btn-success" href="add.php"><i>Thêm Thể Loại</i></a>
                 <div class="row">
         <div class="col-xl-12">
                 <div class="card mb-4">
@@ -26,9 +26,9 @@ $rows = $stmt->fetchAll();
                 <table  class="table table-bordered">
                     <thead style="text-align:center;" class="thead-dark">
                         <tr >
-                            <th width="500px" >STT</th>
-                            <th width="500px" >Tên Thể Loại</th>
-                            <th width="500px" >Thao Tác</th>
+                            <th width="500px" ><i>STT</i></th>
+                            <th width="500px" ><i>Tên Thể Loại</i></th>
+                            <th width="500px" ><i>Thao Tác</i></th>
                         </tr>
                     </thead>
                     <?php if(isset($rows)) :?>
@@ -36,12 +36,12 @@ $rows = $stmt->fetchAll();
                        
                         <tbody>
                             <tr>
-                                <td style="text-align:center;" width="170px"><?=$key + 1 ?></td>
-                                <td style="text-align:center;"><?=$row->name_category?></td>
-                               <td style="text-align:center;"  width="250px" >
-                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id_category?>">Edit</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_category?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
-                                </td>
+                                <td style="text-align:center;" width="170px"><i><?=$key + 1 ?></i></td>
+                                <td style="text-align:center;"><i><?=$row->name_category?></i></td>
+                               <td style="text-align:center;"  width="250px" ><i>
+                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id_category?>">Sửa</a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_category?>" onclick="return confirm('Bạn có chắc muốn xóa <?=$row->name_category?> không?');">Xóa</a>
+                    </i></td>
                             </tr>
                         </tbody>
                     <?php } ?>

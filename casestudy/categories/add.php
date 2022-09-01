@@ -41,18 +41,18 @@ if(empty($err))
         <!-- <main> -->
     <div class="container">
         <form method="post" action="">
-            <legend>Thêm Danh Mục</legend>
+            <legend><i>Thêm Danh Mục</i></legend>
           
             <div class="mb-3" >
-                <label for="disabledTextInput" class="form-label">Tên Danh Mục</label>
+                <label for="disabledTextInput" class="form-label"><i>Tên Danh Mục</i></label>
                 <input type="text" name="name"  id="" class="form-control" placeholder="" value="">
                 <span><?php if (isset($err['name'])) {
                             echo $err['name'];
                         }
                           ?></span>
             </div>
-            <button type="submit" class="btn btn-primary">Thêm</button>
-            <a href="index.php" class="btn btn-danger">Hủy</a>
+            <button type="submit" class="btn btn-primary"><i>Thêm</i></button>
+            <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
         </form>
     </div>
     </div>

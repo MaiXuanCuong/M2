@@ -25,9 +25,9 @@ $rows = $stmt->fetchAll();
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-            <h2 class="mt-4">Order</h2>
-                <a class="btn btn-success" href="add.php?id=<?php echo $_SESSION['id_admin']?>">Order</a>
-                <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');">Delete ALL</a>
+            <h2 class="mt-4"><i>Đơn Đặt</i></h2>
+                <!-- <a class="btn btn-success" href="add.php?id=<?php //echo $_SESSION['id_admin']?>">Thêm Đơn</a> -->
+                <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');"><i>Xóa Tất Cả</i></a>
 
 <div class="row">
         <div class="col-xl-12">
@@ -37,24 +37,24 @@ $rows = $stmt->fetchAll();
                 <table  class="table table-bordered ">
                     <thead class="thead-dark">
                         <tr>
-                            <th width="230px" >Tên Khách Hàng</th>
-                            <th width="230px" >Sản Phẩm</th>
-                            <th width="230px" >Thể Loại</th>
-                            <th width="230px" >Số Lượng</th>
-                            <th width="230px" >Ảnh</th>
-                            <th width="230px" >Thao Tác</th>
+                            <th width="230px" ><i>Tên Khách Hàng</i></th>
+                            <th width="230px" ><i>Sản Phẩm</i></th>
+                            <th width="230px" ><i>Thể Loại</i></th>
+                            <th width="230px" ><i>Số Lượng</i></th>
+                            <th width="230px" ><i>Ảnh</i></th>
+                            <th width="230px" ><i>Thao Tác</i></th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td><?=$row->name_customer?></td>
-                                <td><?=$row->name_product?></td>
-                                <td><?=$row->name_category?></td>
-                                <td><?=$row->quantity_order?></td>    
+                                <td><i><?=$row->name_customer?></i></td>
+                                <td><i><?=$row->name_product?></i></td>
+                                <td><i><?=$row->name_category?></i></td>
+                                <td><i><?=$row->quantity_order?></i></td>    
                                 <td><img src="../product/image/<?php echo $row->image ?>" width="120px" height="120px" alt=""></td>
                                <td width="250px" >
-                                    <a class="btn btn-success" href="../orders_detail/index.php?id=<?=$row->id_order_product?>">Show</a>
+                                    <a class="btn btn-success" href="../orders_detail/index.php?id=<?=$row->id_order_product?>"><i>Xem Chi Tiết</i></a>
                                     <?php $sql4 = "SELECT id_order_product FROM `order_product`";
                                         $stmt4 = $conn->query($sql4);
                                         $stmt4->setFetchMode(PDO::FETCH_OBJ);
@@ -65,7 +65,7 @@ $rows = $stmt->fetchAll();
                                                 $max =$row0->id_order_product;
                                             }
                                         } ?>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_orders_detail?>&id1=<?=$max?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_orders_detail?>&id1=<?=$max?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><i>Xóa</i></a>
                                 </td>
                             </tr>
                         </tbody>

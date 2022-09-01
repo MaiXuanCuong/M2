@@ -53,17 +53,17 @@ else {
         <main>
     <div class="container">
         <form method="post" action="">
-            <legend>Category edit</legend>
+            <legend><i>Sửa Danh Mục</i></legend>
             <div class="mb-3">
-                <label for="disabledTextInput"  class="form-label">Tên Thể Loại</label>
+                <label for="disabledTextInput"  class="form-label"><i>Tên Danh Mục</i></label>
                 <input type="text" name="name"  id="" class="form-control" placeholder="" value="<?php echo $rows->name_category; ?>">
                 <span><?php if (isset($errors['name'])) {
                             echo $errors['name'];
                         }
                           ?></span>
             </div>
-            <button type="submit" class="btn btn-primary">Lưu</button>
-            <a href="index.php" class="btn btn-danger">Hủy</a>
+            <button type="submit" class="btn btn-primary"><i>Lưu</i></button>
+            <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
         </form>
     </div>
 </body>

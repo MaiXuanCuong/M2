@@ -90,49 +90,51 @@ else {
 <body>
     <div class="container">
         <form method="post" action="">
-            <legend>Thêm Sản Phẩm</legend>
+            <legend><i>Thêm Sản Phẩm</i></legend>
             <div class="mb-3">
-                Sản Phẩm
+            <i>Sản Phẩm</i>
                 <input type="text" name="name" id="" class="form-control" placeholder=""
                     value="<?php echo $items->name_product;?>">
-                <br>Danh Mục<br>
+                <br><i>Danh Mục</i><br>
                 <select name="category" class="form-control" id="">
                     <?php foreach ($rows as $key => $row) {?>
                     <option <?=$row->id_category == $items->category_id ? "selected" : " " ?>
-                        value="<?php echo $row->id_category;?>"><?=$row->name_category;?></option>
+                        value="<?php echo $row->id_category;?>"><i><?=$row->name_category;?></option>
                     <?php } ?>
                 </select><br>
-                Cấu Hình
+                <i>Cấu Hình</i>
                 <textarea name="specifications" id="" cols="30" class="form-control"
                     rows="5"><?php echo $items->specifications;?></textarea>
-                Mô Tả
+                    <i>Mô Tả</i>
                 <textarea name="describe" id="" cols="30" class="form-control"
                     rows="5"><?php echo $items->describe;?></textarea>
-                Giá Mặc Định
+                    <i>Giá Mặc Định</i>
                 <input type="text" name="price" id="" class="form-control" placeholder=""
                     value="<?php echo $items->price;?>">
             </div>
-            Số Lượng
+            <i>Số Lượng</i>
             <input type="text" name="quantity" id="" class="form-control" placeholder=""
                 value="<?php echo $items->quantity;?>">
-            Màu Sắc
+                <i>Màu Sắc</i>
             <input type="text" name="color" id="" class="form-control" placeholder=""
                 value="<?php echo $items->color;?>">
-            Cấu Hình
+                <i>Cấu Hình</i>
             <input type="text" name="configuration" id="" class="form-control" placeholder=""
                 value="<?php echo $items->configuration;?>">
-            Giá Theo Cấu Hình
+                <i>Giá Theo Cấu Hình</i>
             <input type="text" name="price_product" id="" class="form-control" placeholder=""
                 value="<?php echo $items->price_product;?>">
-            Ảnh<br>
+                <i>Ảnh</i><br>
             <img src="../product/image/<?php echo $items->image?>" width="120px" height="120px" alt=""><br><br>
             <input type="file" name="image" id="" class="form-control" placeholder=""
                 value="<?php echo $items->image?>">
-            <button type="submit" class="btn btn-primary">Lưu</button>
-            <a href="index.php" class="btn btn-danger">Hủy</a>
-            <a href="./../index/index.php" class="btn btn-danger">Về Trang Chủ</a>
+                <br>
+            <button type="submit" class="btn btn-primary"><i>Lưu</i></button>
+            <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
+            <a href="./../index/index.php" class="btn btn-danger"><i>Về Trang Chủ</i></a>
         </form>
     </div>
+    <br>
 </body>
 
 </html>
