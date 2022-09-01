@@ -49,7 +49,7 @@ del{
 }
         ul {
 		padding: 0;
-        margin: 1px 49px;
+        margin: 1px 45px;
         list-style: none;
     }
     ul li {
@@ -65,7 +65,7 @@ del{
         text-decoration: none;
        }
     ul li a img {
-        width: 250px;
+        width: 200px;
         height: 60px;
         display: block;
 

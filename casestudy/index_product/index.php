@@ -15,7 +15,7 @@ include_once "layout/sidebar.php";
 <br><br><br><br>
 <div id="layoutSidenav_content">
     <div class="container-fluid px-4">
-        <ol class="breadcrumb mb-4">
+        <!-- <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
         </ol>
         <div class="row">
@@ -55,8 +55,8 @@ include_once "layout/sidebar.php";
             </ul>
 
             </div>
-        </div>
-        <hr>
+        </div> -->
+        <!-- <hr> -->
         <br>
         <div class="row">
         <?php foreach($rows as $key => $value){ ?>

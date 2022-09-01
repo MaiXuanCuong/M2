@@ -18,13 +18,13 @@ if (isset($_REQUEST['id'])){
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 include_once "layout/header.php"; 
-// include_once "layout/sidebar.php";
+include_once "layout/sidebar.php";
 ?>
 <br><br><br><br>
 <div id="layoutSidenav_content">
     <!-- <main> -->
     <div class="container-fluid px-4">
-        <ol class="breadcrumb mb-4">
+        <!-- <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
         </ol>
         <div class="row">
@@ -73,7 +73,7 @@ include_once "layout/header.php";
 
             </div>
         </div>
-        <hr>
+        <hr> -->
         <br>
         <div class="row">
             <?php foreach($rows1 as $key => $value){ ?>
