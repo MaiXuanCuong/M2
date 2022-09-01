@@ -25,18 +25,22 @@ else {
     header('location:../index_product/index.php');
 }
 include_once "./../index_product/layout/header.php";
-include_once "./../index_product/layout/sidebar.php";
+// include_once "./../index_product/layout/sidebar.php";
 ?>
 
 
           
     <div id="layoutSidenav_content">
-        <main>
-        <a class="btn btn-success" href="<?php if(isset($_REQUEST['id_user'])){ echo '../index_product/index.php';} else {echo '../index_product/index.php';}?>">BACK</a>
+        <main><br><br><br>
+        <button class="button"><span><a href="<?php if(isset($_REQUEST['id_user'])){ echo '../index_product/index.php';} else {echo '../index_product/index.php';}?>">Trở Về</a></span></button>
+
 
 <div class="row">
+
         <div class="col-xl-12">
+
                 <div class="card mb-4">
+
                     <div  style="text-align: center" class="card-header">
                 <h2 class="mt-4">Lịch Sử Mua Hàng</h2>
                 <table class="table table-bordered" >
@@ -73,7 +77,7 @@ include_once "./../index_product/layout/sidebar.php";
                                 
                                 <td><?=$row->date_borrow?></td>
                                 <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
-                                <td><a class="btn btn-success" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></td>
+                                <td><a class="button" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></td>
                             </tr>
                         </tbody>
                     <?php } ?>
