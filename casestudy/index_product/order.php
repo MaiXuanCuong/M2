@@ -1,5 +1,6 @@
 <?php 
 include_once "./../database.php"; 
+global $conn;
 if(isset( $_SESSION['quantity'] ) && isset( $_SESSION['id_product']) ) {
     $quantity = $_SESSION['quantity'] ; 
     $id = $_SESSION['id_user'];
@@ -47,13 +48,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     if(empty($err))
     {
-        $sql = "UPDATE customer SET `name_customer`='$name' , `address_customer` ='$address1' , `phone_customer` ='$phone' WHERE id_customer = $id ";
+        $sql = "UPDATE customer SET `address_customer` ='$address1' , `phone_customer` ='$phone' WHERE id_customer = $id ";
         $conn->query($sql);
+        
+        $sql1 = "SELECT * FROM product WHERE id_product = $id_prd ";
+        $stmt1 = $conn->query($sql1);
+        $stmt1->setFetchMode(PDO::FETCH_OBJ);
+        $rows1 = $stmt1->fetch();
+
+        $quantity_alter = ($rows1->quantity - $quantity);
+        $sql3 = "UPDATE product SET `quantity` = $quantity_alter WHERE id_product = $id_prd ";
+        $conn->query($sql3);
 
         $sql1 = "INSERT INTO `order_product` 
-        (`customer_id`,`date_borrow`,`quantity_order`,`note`,`delivery_address`,`configuration_order`,`color_order`) 
+        (`customer_id`,`date_borrow`,`quantity_order`,`note`,`delivery_address`,`configuration_order`,`color_order`,`name_order`) 
         VALUES 
-        ($id,'$borrow','$quantity','$notes','$address','$configuration','$color')"
+        ($id,'$borrow','$quantity','$notes','$address','$configuration','$color','$name')"
         ;
         $conn->exec($sql1);
         $sql2 = "SELECT id_order_product FROM `order_product`";
@@ -66,10 +76,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $max =$row0->id_order_product;
             }
         }
-        $sql1 = "SELECT * FROM product WHERE id_product = $id_prd ";
-        $stmt1 = $conn->query($sql1);
-        $stmt1->setFetchMode(PDO::FETCH_OBJ);
-        $rows1 = $stmt1->fetch();
+      
 
         $total1 = ($quantity * $rows1->price);
         $sql = "INSERT INTO `orders_detail` 
@@ -77,6 +84,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     VALUES 
                     ('$max','$id_prd','$total1')";
         $conn->exec($sql);
+
+        
+
         $idss =  $_REQUEST['idss'];
         if($idss == 2){
             unset($_SESSION['color']);

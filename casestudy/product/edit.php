@@ -67,53 +67,66 @@ else {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        span {
-            color: red;
-        }
+    span {
+        color: red;
+    }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container">
         <form method="post" action="">
             <legend>Thêm Sản Phẩm</legend>
             <div class="mb-3">
                 Sản Phẩm
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $items->name_product;?>">
+                <input type="text" name="name" id="" class="form-control" placeholder=""
+                    value="<?php echo $items->name_product;?>">
                 <br>Danh Mục<br>
                 <select name="category" class="form-control" id="">
                     <?php foreach ($rows as $key => $row) {?>
-                    <option <?=$row->id_category == $items->category_id ? "selected" : " " ?> value="<?php echo $row->id_category;?>"><?=$row->name_category;?></option>
+                    <option <?=$row->id_category == $items->category_id ? "selected" : " " ?>
+                        value="<?php echo $row->id_category;?>"><?=$row->name_category;?></option>
                     <?php } ?>
                 </select><br>
                 Cấu Hình
-                <textarea name="specifications" id="" cols="30" class="form-control" rows="5" ><?php echo $items->specifications;?></textarea>
+                <textarea name="specifications" id="" cols="30" class="form-control"
+                    rows="5"><?php echo $items->specifications;?></textarea>
                 Mô Tả
-                <textarea name="describe" id="" cols="30" class="form-control"  rows="5" ><?php echo $items->describe;?></textarea>
+                <textarea name="describe" id="" cols="30" class="form-control"
+                    rows="5"><?php echo $items->describe;?></textarea>
                 Giá
-                <input type="text" name="price" id="" class="form-control" placeholder="" value="<?php echo $items->price;?>">
+                <input type="text" name="price" id="" class="form-control" placeholder=""
+                    value="<?php echo $items->price;?>">
             </div>
-                Số Lượng
-                <input type="text" name="quantity" id="" class="form-control" placeholder="" value="<?php echo $items->quantity;?>">
-                Màu Sắc
-                <input type="text" name="color" id="" class="form-control" placeholder="" value="<?php echo $items->color;?>">
-               Cấu Hình
-                <input type="text" name="configuration" id="" class="form-control" placeholder="" value="<?php echo $items->configuration;?>">
-                Ảnh<br>
-                <img src="../product/image/<?php echo $items->image?>" width="120px" height="120px" alt=""><br><br>
-                <input type="file" name="image" id="" class="form-control" placeholder="" value="<?php echo $items->image?>">
-                <button type="submit" class="btn btn-primary">Lưu</button>
-                <a href="index.php" class="btn btn-danger">Hủy</a>
-                <a href="./../index/index.php" class="btn btn-danger">Về Trang Chủ</a>
+            Số Lượng
+            <input type="text" name="quantity" id="" class="form-control" placeholder=""
+                value="<?php echo $items->quantity;?>">
+            Màu Sắc
+            <input type="text" name="color" id="" class="form-control" placeholder=""
+                value="<?php echo $items->color;?>">
+            Cấu Hình
+            <input type="text" name="configuration" id="" class="form-control" placeholder=""
+                value="<?php echo $items->configuration;?>">
+            Ảnh<br>
+            <img src="../product/image/<?php echo $items->image?>" width="120px" height="120px" alt=""><br><br>
+            <input type="file" name="image" id="" class="form-control" placeholder=""
+                value="<?php echo $items->image?>">
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <a href="index.php" class="btn btn-danger">Hủy</a>
+            <a href="./../index/index.php" class="btn btn-danger">Về Trang Chủ</a>
         </form>
     </div>
 </body>
+
 </html>
 
 <?php include_once './../layout/footer.php';

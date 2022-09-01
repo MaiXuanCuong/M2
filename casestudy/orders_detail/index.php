@@ -52,8 +52,8 @@ include_once "./../layout/sidebar.php";
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th width="200px" >Kh Hàng</th>
-                            <th width="200px" >Giới Tính</th>
+                            <th width="200px" >Khách Hàng</th>
+                            <!-- <th width="200px" >Giới Tính</th> -->
                             <th width="200px" >Địa Chỉ</th>
                             <th width="200px" >Số ĐT</th>
                             <th width="200px" >Sản Phẩm</th>
@@ -70,7 +70,7 @@ include_once "./../layout/sidebar.php";
                     <?php foreach ($rows as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td><?=$row->name_customer ?></td>
+                                <td><?=$row->name_order ?></td>
                                 <td><?=$row->gender_customer?></td>
                                 <td><?=$row->address_customer?></td>
                                 <td><?=$row->phone_customer?></td>

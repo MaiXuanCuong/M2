@@ -42,6 +42,7 @@ include_once "./../index_product/layout/sidebar.php";
                 <table class="table table-bordered" >
                     <thead class="thead-dark">
                         <tr>
+                            <th width="200px" >Người Mua</th>
                             <th width="200px" >Sản Phẩm</th>
                             <th width="200px" >Cấu hình</th>
                             <th width="200px" >Màu Sắc</th>
@@ -60,6 +61,7 @@ include_once "./../index_product/layout/sidebar.php";
                     <?php foreach ($rows1 as $key => $row) { ?>
                         <tbody>
                             <tr>
+                                <td><?=$row->name_order ?></td>
                                 <td><?=$row->name_product ?></td>
                                 <td><?=$row->configuration_order ?></td>
                                 <td><?=$row->color_order ?></td>

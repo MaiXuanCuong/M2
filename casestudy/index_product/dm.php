@@ -99,7 +99,9 @@ include_once "layout/header.php";
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                        <p class="test">Sản Phẩm HOT</p>
+                        <!-- <p class="test"> -->
+                        <b style="color: blue"><?php echo $value->name_product?></b>
+                        <!-- </p> -->
                     </div>
                     <div style="text-align: center">
                         <ul>
@@ -107,7 +109,7 @@ include_once "layout/header.php";
                                 <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>" />
                             </li>
                         </ul><br>
-                        <b style="color: blue"><?php echo $value->name_product?></b>
+                        <b style="color: blue"><?php echo $value->name_product.": "?></b>
                         <small><?php echo $value->describe;?></small>
                     </div>
                 </div>
@@ -119,21 +121,21 @@ include_once "layout/header.php";
                         <b style="color: red"><?php echo number_format($value->price)." VNĐ"?></b>
                         <sub><b><del><small><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></small></del></b></sub>
                     </div>
-                    <div style="text-align: center ; color:red ">
+                    <div style="text-align: center; color:red ">
                         <table width="100%">
 
 
                             <form action="" method="post">
                                 <tr>
                                     <td><br>
-                                        <b>Tình Trạng: <div style="color:blue">Còn
-                                                <?php echo $value->quantity.' Sản Phẩm' ?></b>
+                                        <b>Tình Trạng: <div style="color:blue">
+                                                <?php if($value->quantity > 0){ echo '✅Còn Hàng' ;} else{ echo '❌Hết Hàng';};?></b>
                                     </td>
                     </div>
                     </tr>
                     <tr>
                         <td>
-                            <hr>
+                            <hr style="color:black;">
                             <b>Chọn Màu:
                                 <div style="color:blue">
                                     <?php $explode1 = explode(';', $value->color );?>
@@ -146,7 +148,7 @@ include_once "layout/header.php";
                 </tr>
                 <tr>
                     <td>
-                        <hr>
+                    <hr style="color:black;">
                         <b>Chọn Cấu Hình: <div>
                                 <div style="color:blue">
                                     <?php $explode2 = explode(';', $value->configuration );?>
@@ -159,7 +161,7 @@ include_once "layout/header.php";
                 </tr>
                 <tr>
                     <td>
-                        <hr>
+                    <hr style="color:black;">
                         <b>Số Lượng:<div>
                                 <div class=" ">
                                     <div style="color:blue">
@@ -171,7 +173,7 @@ include_once "layout/header.php";
                 </tr>
                 <tr>
                     <td>
-                        <hr>
+                        <br>
                         <input type="submit" class="btn btn-danger" value="Đặt Hàng">
                         <div>
                         </div>
@@ -196,8 +198,8 @@ include_once "layout/header.php";
                             <table>
                                 <?php foreach ($explode as $key1 => $value1) {?>
                                 <tr>
-                                    <td><small><b><?php echo $value1; ?></b></small>
-                                        <hr style="color:black;">
+                                    <td><small><b><?php echo "➣".$value1; ?></b></small>
+                                        <!-- <hr style="color:black;"> -->
                                     </td>
                                 </tr>
                                 <?php } ?>
