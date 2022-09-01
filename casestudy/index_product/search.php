@@ -46,7 +46,7 @@ $rows1 = $stmt1->fetchAll();
     <div style="background-color: #FFFAFA" class="container-fluid px-4">
     <br>
         <div class="row">
-            <?php foreach($rows1 as $key => $value){ ?>
+            <?php if(isset($rows1)){foreach($rows1 as $key => $value){ ?>
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
@@ -72,7 +72,7 @@ $rows1 = $stmt1->fetchAll();
                     </div>
                 </div>
             </div>
-            <?php } ?>
+            <?php } } ?>
             <?php
 
     
