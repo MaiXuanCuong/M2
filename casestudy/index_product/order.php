@@ -57,6 +57,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $rows1 = $stmt1->fetch();
 
         $quantity_alter = ($rows1->quantity - $quantity);
+        if($quantity_alter < 0){
+            $quantity_alter = 0;
+        }
         $sql3 = "UPDATE product SET `quantity` = $quantity_alter WHERE id_product = $id_prd ";
         $conn->query($sql3);
 
@@ -76,9 +79,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $max =$row0->id_order_product;
             }
         }
-      
 
-        $total1 = ($quantity * $rows1->price);
+        $sql3 = "SELECT * FROM `order_product` WHERE id_order_product = $max";
+        $stmt3 = $conn->query($sql3);
+        $stmt3->setFetchMode(PDO::FETCH_OBJ);
+        $rows3 = $stmt3->fetch();
+        
+         $epl1=explode(';',$rows3->configuration_order);
+
+        $total1 = ($quantity * $epl1[1]);
         $sql = "INSERT INTO `orders_detail` 
                     (`order_product_id`,`product_id`,`total_price`) 
                     VALUES 

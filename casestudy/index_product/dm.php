@@ -95,7 +95,7 @@ include_once "layout/header.php";
         <br>
         <div class="row">
             <?php if(isset($rows)){ ?>
-            <?php foreach($rows as $key => $value){ ?>
+            <?php global $value; foreach($rows as $key => $value){ ?>
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
@@ -118,7 +118,10 @@ include_once "layout/header.php";
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                        <b style="color: red"><?php echo number_format($value->price)." VNĐ"?></b>
+                        <b style="color: red">
+                            <?php echo number_format($value->price)." VNĐ"?>
+                            <span id="price_product"></span>
+                        </b>
                         <sub><b><del><small><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></small></del></b></sub>
                     </div>
                     <div style="text-align: center; color:red ">
@@ -148,24 +151,26 @@ include_once "layout/header.php";
                 </tr>
                 <tr>
                     <td>
-                    <hr style="color:black;">
+                        <hr style="color:black;">
                         <b>Chọn Cấu Hình: <div>
                                 <div style="color:blue">
+                                    <?php $explode5 = explode(';', $value->price_product );?>
                                     <?php $explode2 = explode(';', $value->configuration );?>
-                                    <?php foreach ($explode2 as $key3 => $value3) {?>
+                                    <?php  foreach ($explode2 as $key3 => $value3) {?>
                                     <input name="configuration" type="radio" checked="checked"
-                                        value="<?php echo $value3; ?>"><?php echo $value3; ?></input>
+                                        value="<?php echo $value3.";".$explode5[$key3]; ?>"><?php echo $value3.': '.number_format($explode5[$key3])." VNĐ".'<br>'; ?></input>
                                     <?php } ?>
                                 </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                    <hr style="color:black;">
+                        <hr style="color:black;">
                         <b>Số Lượng:<div>
                                 <div class=" ">
                                     <div style="color:blue">
-                                        <input name="quantity" type="number" value="1"></input>
+                                        <input name="quantity" type="number" min="1"
+                                            max="<?php echo $value->quantity;?>" value="1"></input>
                                     </div>
                                 </div>
                             </div>
@@ -206,7 +211,7 @@ include_once "layout/header.php";
                             </table>
                         </div>
                         <div style="text-align: center" class="card-header">
-                            <p class="test">Có Thể Bạn Quan Tâm</p><br>
+                            <b class="test">Có Thể Bạn Quan Tâm</b><br>
                         </div>
                         <div style="text-align: center">
                             <b>Khuyến Mãi</b><br>
@@ -227,5 +232,7 @@ include_once "layout/header.php";
     </div>
     </main>
     <?php
+   
 include 'layout/footer.php';
 ?>
+   

@@ -71,14 +71,15 @@ include_once "./../layout/sidebar.php";
                         <tbody>
                             <tr>
                                 <td><?=$row->name_order ?></td>
-                                <td><?=$row->gender_customer?></td>
+                               
                                 <td><?=$row->address_customer?></td>
                                 <td><?=$row->phone_customer?></td>
                                 <td><?=$row->name_product ?></td>
-                                <td><?=$row->configuration_order ?></td>
+                                <?php $epl1=explode(';',$row->configuration_order);?>
+                                <td><?php echo ($epl1[0]);?></td>
                                 <td><?=$row->color_order ?></td>
                                 <td><?=$row->name_category?></td>
-                                <td><?=number_format($row->price)." VNĐ"?></td>
+                                <td><?php echo number_format($epl1[1])." VNĐ"?></td>
                                 <td><?=$row->quantity_order?></td>
                                 <td><?=number_format($row->total_price)." VNĐ"?></td>
                                 <td><?=$row->date_borrow?></td>

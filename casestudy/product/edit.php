@@ -22,10 +22,15 @@ if(isset($_REQUEST['id']))
     $color = $_REQUEST['color'] ;
     $configuration = $_REQUEST['configuration'] ;
     $image = $_REQUEST['image'] ;
+    $price_product = $_REQUEST['price_product'] ;
     if ($image==''){
         $image = $items->image;
     }
     $err=[];
+    if($price_product=='')
+    {
+        $err['price_product']='Bạn không thể để trống mục này!';
+    }
     if($name=='')
     {
         $err['name']='Bạn không thể để trống mục này!';
@@ -55,7 +60,7 @@ if(isset($_REQUEST['id']))
     }
     if(empty($err))
     {
-        $sql = "UPDATE `product` SET `specifications`='$specifications',`describe`='$describe', `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' ,`color`= '$color', `configuration` = '$configuration' WHERE `id_product` = '$id'";
+        $sql = "UPDATE `product` SET `specifications`='$specifications',`describe`='$describe', `name_product`='$name',`category_id`='$category',`price`='$price', `quantity`= $quantity, `image`='$image' ,`color`= '$color', `configuration` = '$configuration',`price_product`='$price_product' WHERE `id_product` = '$id'";
         $conn->exec($sql);
         header('location:../index/index.php');
     }
@@ -103,7 +108,7 @@ else {
                 Mô Tả
                 <textarea name="describe" id="" cols="30" class="form-control"
                     rows="5"><?php echo $items->describe;?></textarea>
-                Giá
+                Giá Mặc Định
                 <input type="text" name="price" id="" class="form-control" placeholder=""
                     value="<?php echo $items->price;?>">
             </div>
@@ -116,6 +121,9 @@ else {
             Cấu Hình
             <input type="text" name="configuration" id="" class="form-control" placeholder=""
                 value="<?php echo $items->configuration;?>">
+            Giá Theo Cấu Hình
+            <input type="text" name="price_product" id="" class="form-control" placeholder=""
+                value="<?php echo $items->price_product;?>">
             Ảnh<br>
             <img src="../product/image/<?php echo $items->image?>" width="120px" height="120px" alt=""><br><br>
             <input type="file" name="image" id="" class="form-control" placeholder=""

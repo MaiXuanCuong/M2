@@ -63,7 +63,7 @@ include_once "layout/header.php";
             <div class="col-xl-4">
                 <div class="card mb-4">
                     <div style="text-align: center" class="card-header">
-                    <p class="test">Sản Phẩm HOT</p>
+                    <b class="test">Sản Phẩm HOT</b>
                     </div>
                         <div style="text-align: center">
                         <ul>

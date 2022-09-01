@@ -63,12 +63,14 @@ include_once "./../index_product/layout/sidebar.php";
                             <tr>
                                 <td><?=$row->name_order ?></td>
                                 <td><?=$row->name_product ?></td>
-                                <td><?=$row->configuration_order ?></td>
+                                <?php $epl1=explode(';',$row->configuration_order);?>
+                                <td><?php echo ($epl1[0]);?></td>
                                 <td><?=$row->color_order ?></td>
                                 <td><?=$row->name_category?></td>
-                                <td><?=number_format($row->price)." VNĐ"?></td>
+                                <td><?php echo number_format($epl1[1])." VNĐ"?></td>
                                 <td><?=$row->quantity_order?></td>
                                 <td><?=number_format($row->total_price)." VNĐ"?></td>
+                                
                                 <td><?=$row->date_borrow?></td>
                                 <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
                                 <td><a class="btn btn-success" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></td>

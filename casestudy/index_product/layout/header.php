@@ -37,7 +37,7 @@ if(isset($_SESSION['user'])==false){
 	 100% { color: #FFFF00;  } 
  } 
 .test {
-        font-size:24px;
+        font-size:20px;
         font-weight:bold;
   -webkit-animation: my 3000ms infinite;
   -moz-animation: my 3000ms infinite; 
