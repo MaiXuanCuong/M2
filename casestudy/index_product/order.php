@@ -120,7 +120,8 @@ include_once "layout/sidebar.php";
                 <div class="col-3">
                     <div class="mb-3">
                         <br><br><br>
-                        <input name="name" type="text" class="form-control" placeholder="Nhập Họ Và Tên(*Bắt Buộc)"></input><br>
+                        <input name="name" type="text" class="form-control"
+                            placeholder="Nhập Họ Và Tên(*Bắt Buộc)"></input><br>
                         <span><?php if (isset($err['name'])) {echo $err['name'];}?></span>
                         <div class="form-text"><b><i>Họ Và Tên</b></i></div>
                     </div>
@@ -158,7 +159,8 @@ include_once "layout/sidebar.php";
                 <div class="col-3">
                     <div class="mb-3">
                         <br><br><br>
-                        <input name="ward" type="text" class="form-control" placeholder="Nhập Xã/Phường(*Bắt Buộc)"></input><br>
+                        <input name="ward" type="text" class="form-control"
+                            placeholder="Nhập Xã/Phường(*Bắt Buộc)"></input><br>
                         <span><?php if (isset($err['ward'])) {echo $err['ward'];}?></span>
                         <div class="form-text"><b><i>Xã/Phường</b></i></div>
                     </div>
