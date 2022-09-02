@@ -14,7 +14,8 @@ ON product.id_product = orders_detail.product_id
 JOIN customer 
 ON order_product.customer_id = customer.id_customer 
 JOIN categories 
-ON product.category_id = categories.id_category";
+ON product.category_id = categories.id_category
+ORDER BY date_borrow DESC";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
@@ -37,7 +38,7 @@ $rows = $stmt->fetchAll();
                 <table  class="table table-bordered ">
                     <thead class="thead-dark">
                         <tr>
-                            <th width="230px" ><i>Tên Khách Hàng</i></th>
+                            <th width="230px" ><i>Khách Hàng</i></th>
                             <th width="230px" ><i>Sản Phẩm</i></th>
                             <th width="230px" ><i>Thể Loại</i></th>
                             <th width="230px" ><i>Số Lượng</i></th>
@@ -48,7 +49,7 @@ $rows = $stmt->fetchAll();
                     <?php foreach ($rows as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td><i><?=$row->name_customer?></i></td>
+                                <td><i><?php if($row->name_customer == $row->name_order){ echo $row->name_customer; } else { echo 'Tài Khoản: '.$row->name_customer.'<br>'.'Đặt Hộ: '.$row->name_order; } ?></i></td>
                                 <td><i><?=$row->name_product?></i></td>
                                 <td><i><?=$row->name_category?></i></td>
                                 <td><i><?=$row->quantity_order?></i></td>    

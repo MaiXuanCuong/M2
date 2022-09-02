@@ -55,13 +55,13 @@ include_once "./../layout/sidebar.php";
                             <th width="200px" ><i>Khách Hàng</i></th>
                             <!-- <th width="200px" >Giới Tính</th> -->
                             <th width="200px" ><i>Địa Chỉ</i></th>
-                            <th width="200px" ><i>Số ĐT</i></th>
+                            <th width="180px" ><i>Số ĐT</i></th>
                             <th width="200px" ><i>Sản Phẩm</i></th>
                             <th width="200px" ><i>Cấu hình</i></th>
-                            <th width="200px" ><i>Màu Sắc</i></th>
-                            <th width="200px" ><i>Hãng</i></th>
+                            <th width="150px" ><i>Màu Sắc</i></th>
+                            <th width="100px" ><i>Hãng</i></th>
                             <th width="200px" ><i>Giá</i></th>
-                            <th width="100px" ><i>SL</i></th>
+                            <th width="80px" ><i>SL</i></th>
                             <th width="200px" ><i>Tổng Tiền</i></th>
                             <th width="200px" ><i>Ngày Đặt</i></th>
                             <th width="200px" ><i>Sản Phẩm</i></th>
