@@ -195,6 +195,8 @@ include_once "layout/sidebar.php";
 <br>
 <br><br>
 <br>
+<br><br>
+<br>
 <br>
 </div>
 
