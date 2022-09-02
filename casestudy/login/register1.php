@@ -9,13 +9,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $pass = $_REQUEST['pass'];
     $matkhau = $_REQUEST['matkhau'];
     $gmail = $_REQUEST['gmail'];
-    $phone = null;
+    $phone = $_REQUEST['sodienthoai'];;
     $role = 'Admin';
     $gender = $_REQUEST['gioitinh'];
-    $address = null;
+    $address1 = $_REQUEST['diachi1'];
+    $address2 = $_REQUEST['diachi2'];
+    $address3 = $_REQUEST['diachi3'];
+    $address = 'Tỉnh/Thành Phố '.$address1.' Quận/Huyện '.$address2.' Xã/Phường '.$address3;
     $err = [];
     if(empty($ho)){
         $err['ho'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($phone)){
+        $err['sodienthoai'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($address1)){
+        $err['diachi1'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($address22)){
+        $err['diachi2'] = 'Bạn không thể để trống mục này!';
+    }
+    if(empty($address3)){
+        $err['diachi3'] = 'Bạn không thể để trống mục này!';
     }
     if(empty($ten)){
         $err['ten'] = 'Bạn không thể để trống mục này!';
@@ -104,6 +119,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row mb-3">
+                                           
+                                            <div class="col-md-4">
+                                                    <div class="form-floating">
+                                                        <input name="diachi1" class="form-control" id="inputLastName" type="text" placeholder="Nhập Tỉnh" />
+                                                        <span><?php if (isset($err['diachi1'])) {
+                                                         echo $err['diachi1'];}?></span>
+                                                        <label for="inputLastName">Tỉnh/Thành Phố</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-floating">
+                                                        <input name="diachi2" class="form-control" id="inputLastName" type="text" placeholder="Nhập Huyện" />
+                                                        <span><?php if (isset($err['diachi2'])) {
+                                                         echo $err['diachi2'];}?></span>
+                                                        <label for="inputLastName">Quận/Huyện</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-floating">
+                                                        <input name="diachi3" class="form-control" id="inputLastName" type="text" placeholder="Nhập Xã" />
+                                                        <span><?php if (isset($err['diachi3'])) {
+                                                         echo $err['diachi3'];}?></span>
+                                                        <label for="inputLastName">Xã/Phường</label>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-floating">
+                                                        <input name="sodienthoai" class="form-control" id="inputLastName" type="text" placeholder="Nhập Số Điện Thoại" />
+                                                        <span><?php if (isset($err['sodienthoai'])) {
+                                                         echo $err['sodienthoai'];}?></span>
+                                                        <label for="inputLastName">Số Điện Thoại</label>
+                                                    </div>
+                                                </div>
+                                                <br>
                                             <div class="form-floating mb-3">
                                                 <input name="gmail" class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
                                                 <span><?php if (isset($err['gmail'])) {

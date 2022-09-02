@@ -40,7 +40,7 @@ include_once './../layout/sidebar.php';
 <div id="layoutSidenav_content">
 <!-- <main> -->
     <div class="container-fluid px-4">
-        <h1 class="mt-4"><img width="50px" height="55px" src="../product/image/zyro-image.png"><i>XC-SmartShop</h1><br>Điều Hành Bởi: <?php echo $rows5->AD ?> Admin</i>
+        <h1 class="mt-4"><img width="50px" height="55px" src="../product/image/zyro-image.png"><i>XC-SmartShop</h1><br><a style="text-decoration: none; color:black" href="../customer/index1.php">Điều Hành Bởi: <?php echo $rows5->AD ?> Admin</i></a>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
         </ol>
@@ -50,7 +50,7 @@ include_once './../layout/sidebar.php';
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-body"><i>Có <?php echo $rows->TL ;?> Thể Loại</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../categories/index.php"><i>Xem Chi tiết</i></a>
+                        <a style="text-decoration: none" class="small text-white stretched-link" href="./../categories/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ include_once './../layout/sidebar.php';
                 <div class="card bg-warning text-white mb-4">
                     <div class="card-body"><i>Có <?php echo $rows1->SP ;?> Sản Phẩm</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../product/index.php"><i>Xem Chi tiết</i></a>
+                        <a style="text-decoration: none" class="small text-white stretched-link" href="./../product/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ include_once './../layout/sidebar.php';
                 <div class="card bg-success text-white mb-4">
                     <div class="card-body"><i>Có <?php echo ($rows3->KH - $rows5->AD) ;?> Khách Hàng</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../customer/index.php"><i>Xem Chi tiết</i></a>
+                        <a style="text-decoration: none" class="small text-white stretched-link" href="./../customer/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ include_once './../layout/sidebar.php';
                 <div class="card bg-danger text-white mb-4">
                     <div class="card-body"><i>Có <?php echo $rows2->HD ;?> Đơn Đặt</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="./../order_product/index.php"><i>Xem Chi tiết</i></a>
+                        <a style="text-decoration: none" class="small text-white stretched-link" href="./../order_product/index.php"><i>Xem Chi tiết</i></a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
