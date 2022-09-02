@@ -40,7 +40,7 @@ include_once './../layout/sidebar.php';
 <div id="layoutSidenav_content">
 <!-- <main> -->
     <div class="container-fluid px-4">
-        <h1 class="mt-4"><img width="50px" height="55px" src="../product/image/zyro-image.png"><i>XC-SmartShop</h1><br><a style="text-decoration: none; color:black" href="../customer/index1.php">Điều Hành Bởi: <?php echo $rows5->AD ?> Admin</i></a>
+        <h1 class="mt-4"><img width="50px" height="55px" src="../product/image/zyro-image.png"><i>XC-SmartShop</h1><br><a style="text-decoration: none; color:black" href="../admin/index.php">Điều Hành Bởi: <?php echo $rows5->AD ?> Admin</i></a>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
         </ol>

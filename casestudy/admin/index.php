@@ -37,7 +37,7 @@ $rows = $stmt->fetchAll();
                             <th width="100px" ><i>Giới Tính</i></th>
                             <th width="750px"><i>Địa Chỉ</i></th>
                             <th width="180px"><i>Số Điện Thoại</i></th>
-                            <!-- <th scope="col"><i>Thao Tác</i></th> -->
+                            <th scope="col"><i>Thao Tác</i></th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
@@ -48,10 +48,10 @@ $rows = $stmt->fetchAll();
                                 <td><i><?=$row->gender_customer?></i></td>
                                 <td><i><?=$row->address_customer?></i></td>
                                 <td><i><?=$row->phone_customer?></i><br> <br></td>
-                               <!-- <td width="250px" > -->
-                                    <!-- <a class="btn btn-success" href="edit.php?id=<?php //$row->id_customer?>"><i>Sửa</i></a> -->
-                                    <!-- <a class="btn btn-danger" href="delete.php?id=<?php //$row->id_customer?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><i>Xóa</i></a> -->
-                                <!-- </td> -->
+                               <td width="250px" >
+                                    <a class="btn btn-success" href="edit.php?id=<?php $row->id_customer?>"><i>Sửa</i></a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?php $row->id_customer?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><i>Xóa</i></a>
+                                </td>
                                 
                             </tr>
                            

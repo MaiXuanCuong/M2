@@ -57,7 +57,7 @@ else {
         <main>
     <div class="container">
         <form method="post" action="">
-            <legend>Thay Đổi Thông Tin</legend>
+            <legend>Student edit</legend>
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Họ Và Tên</label>
                 <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name_customer; ?>">
