@@ -49,11 +49,11 @@ $rows = $stmt->fetchAll();
                     <?php foreach ($rows as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td><i><?php if($row->name_customer == $row->name_order){ echo $row->name_customer; } else { echo 'Tài Khoản: '.$row->name_customer.'<br>'.'Đặt Hộ: '.$row->name_order; } ?></i><hr></td>
-                                <td><i><?=$row->name_product?></i><hr></td>
-                                <td><i><?=$row->name_category?></i><hr></td>
-                                <td><i><?=$row->quantity_order?></i><hr></td>    
-                                <td><img src="../product/image/<?php echo $row->image ?>" width="120px" height="120px" alt=""></td>
+                                <td><i><?php if($row->name_customer == $row->name_order){ echo $row->name_customer; } else { echo 'Tài Khoản: '.$row->name_customer.'<br>'.'Đặt Hộ: '.$row->name_order; } ?></i></td>
+                                <td><i><?=$row->name_product?></i></td>
+                                <td><i><?=$row->name_category?></i></td>
+                                <td><i><?=$row->quantity_order?></i></td>    
+                                <td><img src="../product/image/<?php echo $row->image ?>" width="120px" height="120px" alt=""><br><br></td>
                                <td width="250px" >
                                     <a class="btn btn-success" href="../orders_detail/index.php?id=<?=$row->id_order_product?>"><i>Xem Chi Tiết</i></a>
                                     <?php $sql4 = "SELECT id_order_product FROM `order_product`";
@@ -67,7 +67,7 @@ $rows = $stmt->fetchAll();
                                             }
                                         } ?>
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id_orders_detail?>&id1=<?=$max?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><i>Xóa</i></a>
-                                    <hr></td>
+                                    </td>
                             </tr>
                         </tbody>
                     <?php } ?>
