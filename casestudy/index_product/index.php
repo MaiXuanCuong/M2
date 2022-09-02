@@ -71,7 +71,9 @@ include_once "layout/sidebar.php";
                             </b></i>
                     </div>
                 </div>
+               
             </div>
+           
             <?php } ?>
             <?php
 

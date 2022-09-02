@@ -178,7 +178,7 @@ include_once "layout/sidebar.php";
                 <tr>
                     <td>
                         <br>
-                        <button type="button" class="button" ><span>Đặt Hàng</span></button>
+                        <input type="submit" class="button" value="Đặt Hàng"></input>
                         <div>
                         </div>
                     </td>
@@ -227,12 +227,16 @@ include_once "layout/sidebar.php";
                 </tr>
                 </form>
             </table>
+           
         </div>
+        <br><br><br>  <br><br><br> 
         <?php } ?>
         <?php } ?>
     </div>
+ 
     </main>
+      
     <?php
-   
+ 
 include 'layout/footer.php';
 ?>
