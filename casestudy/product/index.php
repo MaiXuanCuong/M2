@@ -27,33 +27,33 @@ $rows = $stmt->fetchAll();
                     <div  style="text-align: center" class="card-header">
             <div class="container-fluid px-4">
                 
-                <table class="table table-bordered">
+                <table >
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col"><i>Mã</i></th>
-                            <th scope="col"><i>Sản Phẩm</i></th>
-                            <th scope="col"><i>Danh Mục</i></th>
+                            <th scope="col"><i>Mã</i><hr></th>
+                            <th scope="col"><i>Sản Phẩm</i><hr></th>
+                            <th scope="col"><i>Danh Mục</i><hr></th>
                             <!-- <th scope="col">Cấu Hình</th> -->
                             <!-- <th scope="col">Mô Tả</th> -->
-                            <th scope="col"><i>Giá</i></th>
-                            <th scope="col"><i>Ảnh</i></th>
-                            <th scope="col"><i>Thao Tác</i></th>
+                            <th scope="col"><i>Giá</i><hr></th>
+                            <th scope="col"><i>Ảnh</i><hr></th>
+                            <th scope="col"><i>Thao Tác</i><hr></th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td width="100px"><i><?=$row->id_product?></i></td>
-                                <td width="280px"><i><?=$row->name_product?></i></td>
-                                <td width="170px"><i><?=$row->name_category?></i></td>
+                                <td width="100px" height="180px"><i><?=$row->id_product?></i><hr></td>
+                                <td width="280px"><i><?=$row->name_product?></i><hr></td>
+                                <td width="170px"><i><?=$row->name_category?></i><hr></td>
                            
-                                <td width="300px"><i><?= number_format($row->price)." VNĐ"?></i></td>
+                                <td width="300px"><i><?= number_format($row->price)." VNĐ"?></i><hr></td>
                                 <td width="200px" ><img src="./image/<?php echo $row->image?>" width="140px" height="140px" alt=""></td>
                                <td width="300px" ><i>
                                     <a class="btn btn-success" href="show.php?id=<?=$row->id_product?>">Xem Chi Tiết</a>
                                     <a class="btn btn-success" href="edit.php?id=<?=$row->id_product?>">Sửa</a>
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id_product?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Xóa</a>
-                    </i></td>
+                    </i><hr></td>
                             </tr>
                         </tbody>
                     <?php } ?>

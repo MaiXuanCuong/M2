@@ -22,39 +22,42 @@ $rows = $stmt->fetchAll();
     <div class="row">
    
             <div class="col-xl-12">
-            <h2 class="mt-4">Customer</h2>
-                <a class="btn btn-success" href="add.php">Add Customer</a>
+            <h2 class="mt-4"><i>Khách Hàng</h2>
+                <!-- <a class="btn btn-success" href="add.php"><i>Thêm Khách Hàng</a> -->
                     <div class="card mb-4">
                         <div  style="text-align: center" class="card-header">
                 <div class="container-fluid px-4">
         
             <div class="container-fluid px-4">
                
-                <table class="table table-bordered">
+                <table >
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Code</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">gender</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Action</th>
+                            <th width="100px" ><i>STT</i></th>
+                            <th width="300px" ><i>Tên</i></th>
+                            <th width="100px" ><i>Giới Tính</i></th>
+                            <th width="750px"><i>Địa Chỉ</i></th>
+                            <th width="180px"><i>Số Điện Thoại</i></th>
+                            <!-- <th scope="col"><i>Thao Tác</i></th> -->
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
                         <tbody>
                             <tr>
-                                <td width="170px"><?=$key + 1 ?></td>
-                                <td><?=$row->name_customer?></td>
-                                <td><?=$row->gender_customer?></td>
-                                <td><?=$row->address_customer?></td>
-                                <td><?=$row->phone_customer?></td>
-                               <td width="250px" >
-                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id_customer?>">Edit</a>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_customer?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
-                                </td>
+                                <td ><?=$key + 1 ?></i></td>
+                                <td><i><?=$row->name_customer?></i></td>
+                                <td><i><?=$row->gender_customer?></i></td>
+                                <td><i><?=$row->address_customer?></i></td>
+                                <td><i><?=$row->phone_customer?></i><br> <br></td>
+                               <!-- <td width="250px" > -->
+                                    <!-- <a class="btn btn-success" href="edit.php?id=<?php //$row->id_customer?>"><i>Sửa</i></a> -->
+                                    <!-- <a class="btn btn-danger" href="delete.php?id=<?php //$row->id_customer?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><i>Xóa</i></a> -->
+                                <!-- </td> -->
+                                
                             </tr>
+                           
                         </tbody>
+                        
                     <?php } ?>
                 </table>
             </div>

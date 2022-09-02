@@ -23,12 +23,12 @@ $rows = $stmt->fetchAll();
         <div class="col-xl-12">
                 <div class="card mb-4">
                     <div  style="text-align: center" class="card-header">
-                <table  class="table table-bordered">
+                <table >
                     <thead style="text-align:center;" class="thead-dark">
                         <tr >
-                            <th width="500px" ><i>STT</i></th>
-                            <th width="500px" ><i>Tên Thể Loại</i></th>
-                            <th width="500px" ><i>Thao Tác</i></th>
+                            <th width="500px" ><i>STT</i><hr></th>
+                            <th width="500px" ><i>Tên Thể Loại</i><hr></th>
+                            <th width="500px" ><i>Thao Tác</i><hr></th>
                         </tr>
                     </thead>
                     <?php if(isset($rows)) :?>
@@ -36,10 +36,10 @@ $rows = $stmt->fetchAll();
                        
                         <tbody>
                             <tr>
-                                <td style="text-align:center;" width="170px"><i><?=$key + 1 ?></i></td>
-                                <td style="text-align:center;"><i><?=$row->name_category?></i></td>
+                                <td style="text-align:center;" width="170px"><i><?=$key + 1 ?></i><hr></td>
+                                <td style="text-align:center;"><i><?=$row->name_category?></i><hr></td>
                                <td style="text-align:center;"  width="250px" ><i>
-                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id_category?>">Sửa</a>
+                                    <a class="btn btn-success" href="edit.php?id=<?=$row->id_category?>">Sửa</a> |
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id_category?>" onclick="return confirm('Bạn có chắc muốn xóa <?=$row->name_category?> không?');">Xóa</a>
                     </i></td>
                             </tr>

@@ -3,7 +3,8 @@
 include_once './../database.php';
 global $conn;
 $sql4 = "SELECT product.*, categories.name_category FROM `product` JOIN categories 
-ON product.category_id = categories.id_category";
+ON product.category_id = categories.id_category
+ORDER BY price DESC";
 $stmt4 = $conn->query($sql4);
 $stmt4->setFetchMode(PDO::FETCH_OBJ);
 $rows4 = $stmt4->fetchAll();
@@ -43,6 +44,7 @@ include_once './../layout/sidebar.php';
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active"></li>
         </ol>
+        <br>
         <div class="row">
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
@@ -82,6 +84,7 @@ include_once './../layout/sidebar.php';
             </div>
           
         </div>
+        <br>  <br>
         <div class="row">
             <div class="col-xl-6">
                 <div class="card mb-4">
@@ -102,17 +105,17 @@ include_once './../layout/sidebar.php';
                 </div>
             </div>
         </div>
-      
+      <br>  <br>  <br>
             <div style="text-align: center" class="card-body">
-                <table id="datatablesSimple">
+                <table >
                     <thead>
                         <tr>
-                            <th><i>ID</i></th>
-                            <th><i>Product</i></th>
-                            <th><i>Category</i></th>
-                            <th><i>Price</i></th>
-                            <th><i>Picture date</i></th>
-                            <th><i>Action</i></th>
+                            <th width="100px" ><i>STT</i><hr></th>
+                            <th width="300px"><i>Sản Phẩm</i><hr></th>
+                            <th width="200px"><i>Danh Mục</i><hr></th>
+                            <th width="400px"><i>Giá</i><hr></th>
+                            <th width="300px"><i>Ảnh Sản Phẩm</i><hr></th>
+                            <th><i>Thao Tác</i><hr></th>
                         </tr>
                     </thead>
                  
@@ -120,15 +123,15 @@ include_once './../layout/sidebar.php';
                                 <?php foreach ($rows4 as $key => $row) { ?>
                                                         <tbody>
                             <tr>
-                                <td width="170px"><i><?=$row->id_product?></i></td>
-                                <td><i><?=$row->name_product?></i></td>
-                                <td><i><?=$row->name_category?></i></td>
-                                <td><i><?= number_format($row->price)." VNĐ"?></i></td>
+                                <td ><i><?= $key +1?></i><hr></td>
+                                <td><i><?=$row->name_product?></i><hr></td>
+                                <td><i><?=$row->name_category?></i><hr></td>
+                                <td><i><?= number_format($row->price)." VNĐ"?></i><hr></td>
                                 <td><img src="./../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
                                <td width="250px" ><i>
                                     <a class="btn btn-success" href="../product/edit.php?id=<?=$row->id_product?>">Edit</a>
                                     <a class="btn btn-danger" href="../product/delete.php?id=<?=$row->id_product?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Delete</a>
-                                    </i></td>
+                                    </i><hr></td>
                             </tr>
                         </tbody>
                     <?php } ?>
