@@ -42,21 +42,21 @@ include_once "./../index_product/layout/header.php";
                 <div class="card mb-4">
 
                     <div  style="text-align: center" class="card-header">
-                <h2 class="mt-4"><i>Lịch Sử Mua Hàng</i></h2>
-                <table class="table table-bordered" >
+                <h2 class="mt-4"><i>Lịch Sử Mua Hàng</i><hr></h2>
+                <table >
                     <thead class="thead-dark">
                         <tr>
-                            <th width="200px" ><i>Người Mua</i></th>
-                            <th width="200px" ><i>Sản Phẩm</i></th>
-                            <th width="200px" ><i>Cấu hình</i></th>
-                            <th width="200px" ><i>Màu Sắc</i></th>
-                            <th width="200px" ><i>Hãng</i></th>
-                            <th width="200px" ><i>Giá</i></th>
-                            <th width="50px" ><i>SL</i></th>
-                            <th width="200px" ><i>Tổng Tiền</i></th>
-                            <th width="200px" ><i>Ngày Đặt</i></th>
-                            <th width="200px" ><i>Sản Phẩm</i></th>
-                            <th width="200px" ><i>Mua Lại</i></th>
+                            <th width="200px" ><i>Người Mua</i><hr></th>
+                            <th width="200px" ><i>Sản Phẩm</i><hr></th>
+                            <th width="200px" ><i>Cấu hình</i><hr></th>
+                            <th width="200px" ><i>Màu Sắc</i><hr></th>
+                            <th width="200px" ><i>Hãng</i><hr></th>
+                            <th width="200px" ><i>Giá</i><hr></th>
+                            <th width="50px" ><i>SL</i><hr></th>
+                            <th width="200px" ><i>Tổng Tiền</i><hr></th>
+                            <th width="200px" ><i>Ngày Đặt</i><hr></th>
+                            <th width="200px" ><i>Sản Phẩm</i><hr></th>
+                            <th width="200px" ><i>Mua Lại</i><hr></th>
                         </tr>
 
 

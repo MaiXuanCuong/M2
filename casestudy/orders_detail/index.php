@@ -49,22 +49,22 @@ include_once "./../layout/sidebar.php";
                 <div class="card mb-4">
                     <div  style="text-align: center" class="card-header">
               
-                <table class="table table-bordered">
+                <table >
                     <thead class="thead-dark">
                         <tr>
-                            <th width="200px" ><i>Khách Hàng</i></th>
+                            <th width="200px" ><i>Khách Hàng</i><hr></th>
                             <!-- <th width="200px" >Giới Tính</th> -->
-                            <th width="200px" ><i>Địa Chỉ</i></th>
-                            <th width="180px" ><i>Số ĐT</i></th>
-                            <th width="200px" ><i>Sản Phẩm</i></th>
-                            <th width="200px" ><i>Cấu hình</i></th>
-                            <th width="150px" ><i>Màu Sắc</i></th>
-                            <th width="100px" ><i>Hãng</i></th>
-                            <th width="200px" ><i>Giá</i></th>
-                            <th width="80px" ><i>SL</i></th>
-                            <th width="200px" ><i>Tổng Tiền</i></th>
-                            <th width="200px" ><i>Ngày Đặt</i></th>
-                            <th width="200px" ><i>Sản Phẩm</i></th>
+                            <th width="200px" ><i>Địa Chỉ</i><hr></th>
+                            <th width="180px" ><i>Số ĐT</i><hr></th>
+                            <th width="200px" ><i>Sản Phẩm</i><hr></th>
+                            <th width="200px" ><i>Cấu hình</i><hr></th>
+                            <th width="150px" ><i>Màu Sắc</i><hr></th>
+                            <th width="100px" ><i>Hãng</i><hr></th>
+                            <th width="200px" ><i>Giá</i><hr></th>
+                            <th width="80px" ><i>SL</i><hr></th>
+                            <th width="200px" ><i>Tổng Tiền</i><hr></th>
+                            <th width="200px" ><i>Ngày Đặt</i><hr></th>
+                            <th width="200px" ><i>Sản Phẩm</i><hr></th>
                         </tr>
                     </thead>
                     <?php foreach ($rows as $key => $row) { ?>
