@@ -91,7 +91,7 @@ if (empty($err)) {
                                         <form method="post">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" name="taikhoan"  id="inputEmail" type="email" placeholder="name@example.com" />
-                                                <span><?php if (isset($err['tk'])) {
+                                                <span style="color:red"><?php if (isset($err['tk'])) {
                                                          echo $err['tk'];
                                                             } else if (isset($err['sai_tk'])){echo $err['sai_tk'];}   ?></span>
                                                 <label for="inputEmail">Tài Khoản</label>
@@ -101,7 +101,7 @@ if (empty($err)) {
                                                 <input class="form-control" name="matkhau" id="inputPassword" type="password" placeholder="" /><br>
 
                                                 <label for="inputPassword">Mật Khẩu</label>
-                                                <span><?php if (isset($err['mk'])) {
+                                                <span style="color:red"><?php if (isset($err['mk'])) {
                                                          echo $err['mk'];
                                                             } else if (isset($err['sai_mk'])){echo $err['sai_mk'];}  ?></span><br>
                                                             <!-- else if(isset($err['not_admin'])){
