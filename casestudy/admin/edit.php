@@ -1,6 +1,6 @@
 <?php include_once "../database.php";
-include_once './../layout/header.php';
-include_once './../layout/sidebar.php';?>
+
+?>
 <?php
 if (isset($_REQUEST['id'])){
     $id = $_REQUEST['id'];
@@ -25,7 +25,7 @@ if (isset($_REQUEST['id'])){
         if(empty($err)){
             $sql = "UPDATE customer SET `name_customer`='$name' , `gender_customer` ='$gender' , `address_customer` ='$address' , `phone_customer` ='$phone' WHERE id_customer='$id'";
             $conn->query($sql);
-            header('location:../index/index.php');    
+            header('location:index.php');    
         }
      }
 $sql = "SELECT * FROM customer WHERE id_customer='$id'";
@@ -36,6 +36,8 @@ $rows = $stmt->fetch();
 else {
     header('location:../error/404.php');
 }
+include_once './../layout/header.php';
+include_once './../layout/sidebar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,15 +54,16 @@ else {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<div id="layoutSidenav">
+<div  id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-    <div class="container">
+    <div  class="container">
         <form method="post" action="">
-            <legend>Student edit</legend>
+            <legend>Thay Đổi Thông Tin</legend>
+            <div class="row">
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Họ Và Tên</label>
-                <input type="text" name="name" id="" class="form-control" placeholder="" value="<?php echo $rows->name_customer; ?>">
+                <input type="text" name="name" id=""  width="1000px" class="form-control" placeholder="" value="<?php echo $rows->name_customer; ?>">
                 <span><?php if (isset($err['name'])) {echo $err['name'];}?></span>
 
                
@@ -79,8 +82,10 @@ else {
                 <input type="text" name="phone" id="" class="form-control" placeholder="" value="<?php echo $rows->phone_customer; ?>">
                 <span><?php if (isset($err['phone'])) {echo $err['phone'];}?></span>
             </div>
+            </div>
             <input type="submit" value="Lưu" class="btn btn-primary"></input>
             <a href="index.php" class="btn btn-danger">Hủy</a>
+            
         </form>
     </div>
     </div>
