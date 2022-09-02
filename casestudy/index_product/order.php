@@ -191,7 +191,13 @@ include_once "layout/sidebar.php";
                 class="btn btn-primary"><b><i>Đặt Hàng</b></i></button>
         </form>
     </div>
+    <br>
+<br>
+<br><br>
+<br>
+<br>
 </div>
+
 <?php
 include 'layout/footer.php';
 ?>
