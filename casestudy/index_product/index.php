@@ -41,7 +41,6 @@ include_once "layout/sidebar.php";
     </div>
   </div>
 </nav>
-
     </div>
     <div style="background-color: #FFFAFA" class="container-fluid px-4">
     <br>

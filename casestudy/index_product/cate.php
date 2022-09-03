@@ -23,6 +23,17 @@ include_once "layout/sidebar.php";
 <br><br><br><br>
 <div id="layoutSidenav_content">
     <!-- <main> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    &nbsp;&nbsp;&nbsp;<div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex" method="post" action="search.php">
+        <input class="form-control me-2" name="search" type="search" placeholder="Tìm Kiếm" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Tìm&nbsp;Kiếm</button><br>
+        <span><?php if(isset($err['search'])){echo $err['search'];} ?></span>
+      </form>
+    </div>
+  </div>
+</nav>
     <div class="container-fluid px-4">
         
         <!-- <ol class="breadcrumb mb-4">
@@ -75,7 +86,8 @@ include_once "layout/sidebar.php";
             </div>
         </div>
         <hr> -->
-        <br> <br>
+        <br> 
+ 
         <div class="row">
             <?php foreach($rows1 as $key => $value){ ?>
             <div class="col-xl-4">
