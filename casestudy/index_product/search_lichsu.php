@@ -1,10 +1,26 @@
-<?php
+<?php 
+include_once "./../database.php"; 
+?>
+<?php 
+global $conn;
+// $sql = "SELECT * FROM `product` JOIN categories 
+// ON product.category_id = categories.id_category";
+// $stmt = $conn->query($sql);
+// $stmt->setFetchMode(PDO::FETCH_OBJ);
+// $rows = $stmt->fetchAll();
+include_once "layout/header.php"; 
+// include_once "layout/sidebar.php";
+if(isset($_SESSION['id_user'])){
+    $id = $_SESSION['id_user'];
+}
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+$search = $_REQUEST['search'] ;
 
-include_once "../database.php";?>
-<?php
-if(isset($_REQUEST['id_user'])){
-    $id1 = $_REQUEST['id_user'];
-
+$err = [];
+if(empty($search)){
+    $err["search"] = 'Vui Lòng Nhập Dữ Liệu TÌm Kiếm';
+}
+if(empty($err)){
     $sql1 = "SELECT * FROM `orders_detail` 
     JOIN product 
     ON product.id_product = orders_detail.product_id 
@@ -14,29 +30,20 @@ if(isset($_REQUEST['id_user'])){
     ON order_product.customer_id = customer.id_customer
     JOIN categories 
     ON product.category_id = categories.id_category 
-    WHERE customer.id_customer = $id1
-    ORDER BY date_borrow DESC
-   ";
-    $stmt1 = $conn->query($sql1);
-    $stmt1->setFetchMode(PDO::FETCH_OBJ);
-    $rows1 = $stmt1->fetchAll();
+    WHERE id_customer = $id AND ( name_product  LIKE '%$search%' OR name_order LIKE '%$search%' OR YEAR(date_borrow) LIKE '%$search%' OR MONTH(date_borrow) LIKE '%$search%' OR DAY(date_borrow) LIKE '%$search%' )";
+$stmt1 = $conn->query($sql1);
+$stmt1->setFetchMode(PDO::FETCH_OBJ);
+$rows1 = $stmt1->fetchAll();
 }
-else {
-    header('location:../index_product/index.php');
 }
-include_once "./../index_product/layout/header.php";
-// include_once "./../index_product/layout/sidebar.php";
-?>
-
-
-          
-    <div id="layoutSidenav_content">
- 
-        <main><br><br><br>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    &nbsp;&nbsp;&nbsp;<div class="container-fluid">
+ ?>
+<br><br><br><br>
+<div id="layoutSidenav_content">
+    <div  style="text-align: center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex" method="post" action="../index_product/search_lichsu.php">
+      <form class="d-flex" method="post" action="">
         <input class="form-control me-2" name="search" type="search" placeholder="Tìm Kiếm" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Tìm&nbsp;Kiếm</button><br>
         <span><?php if(isset($err['search'])){echo $err['search'];} ?></span>
@@ -44,7 +51,8 @@ include_once "./../index_product/layout/header.php";
     </div>
   </div>
 </nav>
-        <button class="button"><span><i><a href="<?php if(isset($_REQUEST['id_user'])){ echo '../index_product/index.php';} else {echo '../index_product/index.php';}?>">Trở Về</a></span></i></button>
+<?php if(isset($rows1)){ ?>
+<button class="button"><span><i><a href="<?php if(isset($_REQUEST['id_user'])){ echo '../index_product/index.php';} else {echo '../index_product/index.php';}?>">Trở Về</a></span></i></button>
 
 
 <div class="row">
@@ -67,8 +75,8 @@ include_once "./../index_product/layout/header.php";
                             <th width="50px" ><i>SL</i><hr></th>
                             <th width="200px" ><i>Tổng Tiền</i><hr></th>
                             <th width="200px" ><i>Ngày Đặt</i><hr></th>
-                            <th width="200px" ><i>Sản Phẩm</i><hr></th>
-                            <th width="200px" ><i>Mua Lại</i><hr></th>
+                            <th width="180px" ><i>Sản Phẩm</i><hr></th>
+                            <th width="180px" ><i>Mua Lại</i><hr></th>
                         </tr>
 
 
@@ -99,4 +107,5 @@ include_once "./../index_product/layout/header.php";
 </div>
 </div>
 </div>
+<?php }?>
 <?php include_once "./../layout/footer.php";?>

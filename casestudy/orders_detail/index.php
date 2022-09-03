@@ -40,6 +40,7 @@ include_once "./../layout/header.php";
 include_once "./../layout/sidebar.php";
 ?>
 <div id="layoutSidenav">
+
     <div id="layoutSidenav_content">
         <main>
         <h2 class="mt-4"><i>Chi Tiết Đặt Hàng</i></h2>

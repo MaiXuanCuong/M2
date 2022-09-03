@@ -1,34 +1,43 @@
-<?php
-include_once "../database.php";
-
-include_once "../layout/header.php";
-?>
-<?php include_once "../layout/sidebar.php";?>
+<?php 
+include_once "./../database.php"; ?>
 <?php 
 global $conn;
-$sql = "SELECT  * FROM `order_product` 
-JOIN orders_detail
-ON orders_detail.order_product_id = order_product.id_order_product 
-JOIN product 
-ON product.id_product = orders_detail.product_id 
-JOIN customer 
-ON order_product.customer_id = customer.id_customer 
-JOIN categories 
-ON product.category_id = categories.id_category
-ORDER BY date_borrow DESC";
-$stmt = $conn->query($sql);
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-$rows = $stmt->fetchAll();
-// echo '<pre>';
-// print_r ($rows);
-?>
-<div id="layoutSidenav">
+include_once "../layout/header.php"; 
+include_once "../layout/sidebar.php";
 
-    <div id="layoutSidenav_content">
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+$search = $_REQUEST['search'] ;
+}
+$err = [];
+if(empty($search)){
+    $err["search"] = 'Vui Lòng Nhập Dữ Liệu TÌm Kiếm';
+}
+if(empty($err)){
+    $sql1 = "SELECT * FROM `orders_detail` 
+    JOIN product 
+    ON product.id_product = orders_detail.product_id 
+    JOIN order_product 
+    ON orders_detail.order_product_id = order_product.id_order_product 
+    JOIN customer 
+    ON order_product.customer_id = customer.id_customer
+    JOIN categories 
+    ON product.category_id = categories.id_category 
+    WHERE name_product LIKE '%$search%' OR name_order LIKE '%$search%'  OR name_category LIKE '%$search%' OR YEAR(date_borrow) LIKE '%$search%' OR MONTH(date_borrow) LIKE '%$search%' OR DAY(date_borrow) LIKE '%$search%'";
+$stmt1 = $conn->query($sql1);
+$stmt1->setFetchMode(PDO::FETCH_OBJ);
+$rows1 = $stmt1->fetchAll();
+}
+
+
+
+ ?>
+<br><br><br><br>
+<div id="layoutSidenav_content">
+    <div  style="text-align: center">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    &nbsp;&nbsp;&nbsp;<div class="container-fluid">
+  <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex" method="post" action="search_qlad.php">
+      <form class="d-flex" method="post" action="">
         <input class="form-control me-2" name="search" type="search" placeholder="Tìm Kiếm" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Tìm&nbsp;Kiếm</button><br>
         <span><?php if(isset($err['search'])){echo $err['search'];} ?></span>
@@ -36,11 +45,11 @@ $rows = $stmt->fetchAll();
     </div>
   </div>
 </nav>
-        <main>
+<main>
+    <?php if($_REQUEST['search'] != null){ ?>
             <div class="container-fluid px-4">
-            <h2 class="mt-4"><i>Đơn Đặt</i></h2>
-                <!-- <a class="btn btn-success" href="add.php?id=<?php //echo $_SESSION['id_admin']?>">Thêm Đơn</a> -->
-                <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');"><i>Xóa Tất Cả</i></a>
+            <h2 style="text-align: left" class="mt-4"><i>Đơn Đặt</i><br> <a  class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');"><i>Xóa Tất Cả</i></a></h2>
+               
 
 <div class="row">
         <div class="col-xl-12">
@@ -58,7 +67,7 @@ $rows = $stmt->fetchAll();
                             <th width="230px" ><i>Thao Tác</i><hr></th>
                         </tr>
                     </thead>
-                    <?php foreach ($rows as $key => $row) { ?>
+                    <?php foreach ($rows1 as $key => $row) { ?>
                         <tbody>
                             <tr>
                                 <td><i><?php if($row->name_customer == $row->name_order){ echo $row->name_customer; } else { echo 'Tài Khoản: '.$row->name_customer.'<br>'.'Đặt Hộ: '.$row->name_order; } ?></i></td>
@@ -88,4 +97,5 @@ $rows = $stmt->fetchAll();
         </main>
     </div>
 </div>
-<?php include_once "./../layout/footer.php";?>
+<?php } ?>
+<?php include_once "../layout/footer.php";?>
