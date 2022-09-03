@@ -33,6 +33,23 @@ $sql5 = "SELECT COUNT(`role`) as AD FROM customer WHERE `role`='Admin'";
 $stmt5 = $conn->query($sql5);
 $stmt5->setFetchMode(PDO::FETCH_OBJ);
 $rows5 = $stmt5->fetch();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $search = $_REQUEST['search'] ;
+    }
+    $err = [];
+    if(empty($search)){
+        $err["search"] = 'Vui Lòng Nhập Dữ Liệu TÌm Kiếm';
+    }
+    if(empty($err)){
+        $sql6 = "SELECT * FROM product 
+        JOIN categories 
+        ON product.category_id = categories.id_category 
+        WHERE name_product LIKE '%$search%' OR price LIKE '%$search%' OR quantity LIKE '%$search%' OR name_category LIKE '%$search%'";
+    $stmt6 = $conn->query($sql6);
+    $stmt6->setFetchMode(PDO::FETCH_OBJ);
+    $rows6 = $stmt6->fetchAll();
+    }
 include_once './../layout/header.php';
 include_once './../layout/sidebar.php';
 ?>
@@ -109,7 +126,7 @@ include_once './../layout/sidebar.php';
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex" method="post" action="search_sp.php">
+      <form class="d-flex" method="post" action="">
         <input class="form-control me-2" name="search" type="search" placeholder="Tìm Kiếm" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Tìm&nbsp;Kiếm</button><br>
         <span><?php if(isset($err['search'])){echo $err['search'];} ?></span>
@@ -117,6 +134,7 @@ include_once './../layout/sidebar.php';
     </div>
   </div>
 </nav>
+<?php if($_REQUEST['search'] != null && isset($rows6)){ ?>
             <div style="text-align: center" class="card-body">
                 <table >
                     <thead>
@@ -131,7 +149,7 @@ include_once './../layout/sidebar.php';
                     </thead>
                  
                     <tbody>
-                                <?php foreach ($rows4 as $key => $row) { ?>
+                                <?php foreach ($rows6 as $key => $row) { ?>
                                                         <tbody>
                             <tr>
                                 <td ><i><?= $key +1?></i><hr></td>
@@ -152,6 +170,7 @@ include_once './../layout/sidebar.php';
         </div>
     </div>
 </main>
+<?php } ?>
 <?php
 include './../layout/footer.php';
 ?>

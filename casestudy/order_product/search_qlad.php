@@ -22,7 +22,7 @@ if(empty($err)){
     ON order_product.customer_id = customer.id_customer
     JOIN categories 
     ON product.category_id = categories.id_category 
-    WHERE name_product LIKE '%$search%' OR name_order LIKE '%$search%'  OR name_category LIKE '%$search%' OR YEAR(date_borrow) LIKE '%$search%' OR MONTH(date_borrow) LIKE '%$search%' OR DAY(date_borrow) LIKE '%$search%'";
+    WHERE name_product LIKE '%$search%' OR name_order LIKE '%$search%'  OR name_category LIKE '%$search%' OR quantity_order LIKE '%$search%' OR YEAR(date_borrow) LIKE '%$search%' OR MONTH(date_borrow) LIKE '%$search%' OR DAY(date_borrow) LIKE '%$search%'";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetchAll();
