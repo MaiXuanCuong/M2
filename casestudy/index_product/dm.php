@@ -129,17 +129,32 @@ include_once "layout/sidebar.php";
 
                             <form action="" method="post">
                                 <tr>
-                                    <td><br>
+                                    <td>
                                         <b><i>Tình Trạng: <div style="color:blue"></i>
                                                 <?php if($value->quantity > 0){ echo '✅Còn Hàng' ;} else{ echo '❌Hết Hàng';};?></b>
+
+                                                <div style="text-align: left" class="policy">
+                        <div>
+                        
+                            <p><i style="color:black ; font-size:20px" class='fas fa-box-open'></i> Trong hộp có: Sạc, Tai nghe, Sách hướng dẫn, Cây lấy sim, Ốp lưng </p>
+                        </div>
+                        <div>
+                            
+                            <p><i style="color:black ; font-size:20px" class='fas fa-award'></i> Bảo hành chính hãng 12 tháng.</p>
+                        </div>
+                        <div class="last">
+                        
+                            <p><i style="color:black ; font-size:20px" class='fa-solid fa-people-carry-box'></i> 1 đổi 1 trong 1 tháng nếu lỗi, đổi sản phẩm tại nhà trong 1 ngày.</p>
+                        </div>
+                    </div>
                                     </td>
                     </div>
                     </tr>
                     <tr>
                         <td>
-                            <hr style="color:black;">
-                            <b><i>Chọn Màu:
-                                <div style="color:blue"></i>
+                            <!-- <hr style="color:black;"> -->
+                            <b class="policy"><i>Chọn Màu:
+                                <div  style="color:blue"></i>
                                     <?php $explode1 = explode(';', $value->color );?>
                                     <?php foreach ($explode1 as $key2 => $value2) {?>
                                     <input name="color" type="radio" checked="checked"
@@ -150,8 +165,8 @@ include_once "layout/sidebar.php";
                 </tr>
                 <tr>
                     <td>
-                        <hr style="color:black;">
-                        <b><i>Chọn Cấu Hình: </i><div>
+                        <!-- <hr style="color:black;"> -->
+                        <b class="policy"><i>Chọn Cấu Hình: </i>
                                 <div style="color:blue">
                                     <?php $explode5 = explode(';', $value->price_product );?>
                                     <?php $explode2 = explode(';', $value->configuration );?>
@@ -164,21 +179,21 @@ include_once "layout/sidebar.php";
                 </tr>
                 <tr>
                     <td>
-                        <hr style="color:black;">
-                        <b><i>Số Lượng:</i><div>
-                                <div class=" ">
-                                    <div style="color:blue">
+                        <!-- <hr style="color:black;"> -->
+                        <b class="policy"><i>Số Lượng:</i>
+                             
+                                    <div  style="color:blue">
                                         <input name="quantity" type="number" min="1"
                                             max="<?php echo $value->quantity;?>" value="1"></input>
                                     </div>
-                                </div>
-                            </div>
+                              
+                           
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <br>
-                        <input type="submit" class="button" value="Đặt Hàng"></input>
+                    
+                        <input type="submit" class="button " value="Đặt Hàng"></input>
                         <div>
                         </div>
                     </td>
@@ -202,7 +217,7 @@ include_once "layout/sidebar.php";
                             <table>
                                 <?php foreach ($explode as $key1 => $value1) {?>
                                 <tr>
-                                    <td><small><b><?php echo "➣ ".$value1; ?></b></small>
+                                    <td class="policy"><small><b><?php echo "➣ ".$value1; ?></b></small>
                                         <!-- <hr style="color:black;"> -->
                                     </td>
                                 </tr>
@@ -215,12 +230,12 @@ include_once "layout/sidebar.php";
                         <div style="text-align: center">
                             <b style="color:red ; font-size:20px"><i>Khuyến Mãi</i></b>
                         <br>
-                            <b><em>➣<i>CHỈ BÁN HÀNG NGUYÊN SEAL 100%, nói không với hàng Fullbox</i></em><br>
-                                <em>➣<i>Tặng dán cường lực Fullview khi nâng cấp sVIP</i></em><br>
-                                <em>➣<i>Hỗ trợ trả góp nhanh, tra góp lãi suất 0% từ xa (*)</i></em><br>
-                                <em>➣<i>Mua Online: Giao hàng tận nhà- Nhận hàng thanh toán</i></em><br>
-                                <em>➣<i>Mọi Thắc Mắc Vui Lòng Liên Hệ: 0843.442.357 Để Được Tư vấn Và Hỗ
-                                    Trợ</i></em><br></b><br><br>
+                            <b><em class="policy">➣<i>CHỈ BÁN HÀNG NGUYÊN SEAL 100%, nói không với hàng Fullbox</i></em>
+                                <em class="policy">➣<i>Tặng dán cường lực Fullview khi nâng cấp sVIP</i></em>
+                                <em class="policy">➣<i>Hỗ trợ trả góp nhanh, tra góp lãi suất 0% từ xa (*)</i></em>
+                                <em class="policy">➣<i>Mua Online: Giao hàng tận nhà- Nhận hàng thanh toán</i></em>
+                                <em class="policy">➣<i>Mọi Thắc Mắc Vui Lòng Liên Hệ: 0843.442.357 Để Được Tư vấn Và Hỗ
+                                    Trợ</i></em>
                         </div>
 
                     </td>
@@ -233,7 +248,7 @@ include_once "layout/sidebar.php";
         <?php } ?>
         <?php } ?>
     </div>
- 
+   
     </main>
       
     <?php

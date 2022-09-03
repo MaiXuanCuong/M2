@@ -121,6 +121,47 @@ border-radius: 4px;
   opacity: 1;
   right: 0;
 }
+.policy {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding-top: 10px;
+    margin: 0 10px 10px 10px;
+    padding-bottom: 5px;
+}
+
+.policy div {
+    display: block;
+    overflow: hidden;
+    padding: 5px 0 5px 5px;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 10px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.policy div img {
+    background: #fff;
+    display: block;
+    width: 20px;
+    height: 17px;
+    float: left;
+    margin: 3px;
+}
+
+.policy div p {
+    margin: 0 0 0 28px;
+    color: #288ad6;
+}
+
+.policy div.last {
+    border-bottom: 0px;
+}
+.policy div.last {
+    border-bottom: 0px;
+}
         </style>
     </head>
     <body class="sb-nav-fixed">
