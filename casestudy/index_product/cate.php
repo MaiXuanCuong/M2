@@ -35,57 +35,6 @@ include_once "layout/sidebar.php";
   </div>
 </nav>
     <div class="container-fluid px-4">
-        
-        <!-- <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active"></li>
-        </ol>
-        <div class="row">
-            <div class="col-xl-3 col-md-6">
-
-                <div style="border-radius: 10px/10px" class="card  text-white mb-4">
-                    <div class=" d-flex align-items-center justify-content-between">
-                        <ul>
-
-                            <li> <a class="small text-white stretched-link" href="cate.php?id=3"><img width="290px"
-                                        height="50px" src="../product/image/hang1_1629782045.png"></a>
-                            </li>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-                <div style="border-radius: 10px/10px" class="card  text-white mb-4">
-                    <div class=" d-flex align-items-center justify-content-between">
-                        <ul>
-                            <li> <a class="small text-white stretched-link" href="cate.php?id=4"><img width="290px"
-                                        height="50px" src="../product/image/hang2_1629782097.png"></a>
-                            </li>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-                <div style="border-radius: 10px/10px" class="card  text-white mb-4">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <ul>
-                            <li> <a class="small text-white stretched-link" href="cate.php?id=1"><img width="290px"
-                                        height="50px" src="../product/image/hang3_1629782127.png"></a>
-                            </li>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-                <div style="border-radius: 10px/10px" class="card  text-white mb-4">
-                    <div class=" d-flex align-items-center justify-content-between">
-                        <ul>
-                            <li> <a class="small text-white stretched-link" href="cate.php?id=2"><img width="290px"
-                                        height="50px" src="../product/image/hang4_1629782113.png"></a>
-                            </li>
-                    </div>
-                </div>
-                </ul>
-
-            </div>
-        </div>
-        <hr> -->
         <br> 
  
         <div class="row">
@@ -95,12 +44,12 @@ include_once "layout/sidebar.php";
                     <div style="text-align: center" class="card-header">
                         <b class="test"><i><?php echo $value->name_product?></i></b>
                     </div>
-                    <div style="text-align: center">
-                        <ul>
-                            <li class="img_product">
+                    <div class="sanPham" style="text-align: center">
+                    
+                            <a href="dm.php?id=<?php echo $value->id_product?>">
                                 <img width="300px" height="330px" src="../product/image/<?php echo $value->image?>" />
-                            </li>
-                        </ul><br>
+                            </a>
+                        <br>
                         <button class="button"><span> <a
                                     href="dm.php?id=<?php echo $value->id_product?>"><i>Đặt Hàng Ngay</i></a><br></span></button>
 

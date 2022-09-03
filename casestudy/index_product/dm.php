@@ -54,11 +54,8 @@ include_once "layout/sidebar.php";
                         <!-- </p> -->
                     </div>
                     <div style="text-align: center">
-                        <ul>
-                            <li class="img_product">
                                 <img width="300px" height="330px" src="./../product/image/<?php echo $value->image?>" />
-                            </li>
-                        </ul><br>
+                        <br>
                         <b style="color: blue"><i><?php echo $value->name_product.": "?></i></b>
 
                         <small><?php echo $value->describe;?> <br><br><br></small>

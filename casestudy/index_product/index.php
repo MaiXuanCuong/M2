@@ -53,7 +53,7 @@ include_once "layout/sidebar.php";
                     </div>
                     <div class="sanPham" style="text-align: center">
                          
-                            <a href="dm.php?id=<?php echo $value->id_product?>"><img width="300px" height="330px"
+                            <a  href="dm.php?id=<?php echo $value->id_product?>"><img width="300px" height="330px"
                                     src="./../product/image/<?php echo $value->image?>" /></a>
                         </ ><br>
                         <button class="button"><span><a href="dm.php?id=<?php echo $value->id_product?>"><i>Đặt Hàng

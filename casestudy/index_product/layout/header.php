@@ -82,8 +82,8 @@ if(isset($_SESSION['user'])==false){
         
     } */
     /* Di chuyen anh? len tren */
-		.sanPham a:hover = img {
-			margin: 5px auto 25px;
+		.sanPham a:hover > img {
+			margin: 1px auto 7px;
 		}
 
     .button {
