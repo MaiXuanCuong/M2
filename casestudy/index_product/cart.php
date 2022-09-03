@@ -13,18 +13,20 @@ else{
     // $id = $_SESSION['id_user'];
     header ('location:index.php');   
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && count($_REQUEST) > 3){
     $color = $_REQUEST['color'];
     $configuration = $_REQUEST['configuration'];
     $quantity = $_REQUEST['quantity'];
     $err=[];
-    if ($color==''){
+    // print_r($_REQUEST);
+    // die();
+    if ($color=='' || $color== NULL){
         $err['color']='Bạn không thể để trống mục số lượng!';
     }
-    if ($configuration==''){
+    if ($configuration=='' || $configuration== NULL){
         $err['configuration']='Bạn không thể để trống mục số lượng!';
     }
-    if ($quantity==''){
+    if ($quantity=='' || $quantity== NULL){
         $err['quantity']='Bạn không thể để trống mục số lượng!';
     }
     if(empty($err)){    
