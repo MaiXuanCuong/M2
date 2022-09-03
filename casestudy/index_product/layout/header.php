@@ -83,7 +83,27 @@ if(isset($_SESSION['user'])==false){
     } */
     /* Di chuyen anh? len tren */
 		.sanPham a:hover > img {
-			margin: 1px auto 7px;
+			margin: 1px auto 2px;
+		}
+        .themvaogio {
+			z-index: 20;
+			border: 1px solid #e3e7eb;
+			border-radius: 50%;
+			width: 1.5em;
+			height: 1.5em;
+			font-size: 1.5em;
+			color: rgb(163, 161, 161);
+			background: none;
+			transition-duration: .2s;
+			cursor: pointer;
+		}
+		.themvaogio:hover {
+			color: black;
+			background-color: #e6e6e6;
+			box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+		}
+		.themvaogio:active {
+			box-shadow: none;
 		}
 
     .button {
