@@ -17,7 +17,7 @@ if(isset($_SESSION['user'])==false){
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <style>
-@-webkit-keyframes my {
+/* @-webkit-keyframes my {
 	 0% { color: blue; } 
 	 50% { color: green;  } 
 	 100% { color: green;  } 
@@ -44,8 +44,8 @@ if(isset($_SESSION['user'])==false){
   -moz-animation: my 3000ms infinite; 
   -o-animation: my 3000ms infinite; 
   animation: my 3000ms infinite;
-}
-del{
+} */
+/* del{
     text-decoration: line-through;
 }
         ul {
@@ -70,18 +70,21 @@ del{
         height: 60px;
         display: block;
 
-    }
-    ul li a:hover img {
+    } */
+    /* ul li a:hover img {
         transform: scale(1.4);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         border-radius: 30px/30px;     
-    }
-    .img_product:hover img{
+    } */
+    /* .img_product:hover img{
         border-radius: 20px/20px;
         transform: scale(1.1);
-        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
         
-    }
+    } */
+    /* Di chuyen anh? len tren */
+		.sanPham a:hover = img {
+			margin: 5px auto 25px;
+		}
 
     .button {
 border-radius: 4px;
