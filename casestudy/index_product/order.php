@@ -102,6 +102,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             unset($_SESSION['configuration']);
             unset($_SESSION['quantity']);
             unset($_SESSION['id_product']);
+            $sql4 = "UPDATE `product` SET cart = NULL WHERE `id_product` = $cart";
+            $conn->exec($sql4);
         }
         header('Location:index.php');
     }

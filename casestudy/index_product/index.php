@@ -4,7 +4,7 @@ include_once "./../database.php";
 <?php 
 global $conn;
 $sql = "SELECT * FROM `product` JOIN categories 
-ON product.category_id = categories.id_category";
+ON product.category_id = categories.id_category WHERE product.quantity > 0";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
