@@ -20,7 +20,7 @@ if(empty($search)){
 }
 if(empty($err)){
 $sql1 = "SELECT * FROM `product` JOIN categories 
-ON product.category_id = categories.id_category WHERE name_product LIKE '%$search%'";
+ON product.category_id = categories.id_category WHERE name_product LIKE '%$search%' OR name_category LIKE '%$search%' OR price LIKE '%$search%'";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetchAll();
