@@ -17,14 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && count($_REQUEST) > 3){
     $color = $_REQUEST['color'];
     $configuration = $_REQUEST['configuration'];
     $quantity = $_REQUEST['quantity'];
+    $check = $_REQUEST['check'];
     $err=[];
     // print_r($_REQUEST);
     // die();
+    if ($check=='' || $check== NULL){
+        $err['check']='Bạn không thể để trống chọn sản phẩm';
+    }
     if ($color=='' || $color== NULL){
-        $err['color']='Bạn không thể để trống mục số lượng!';
+        $err['color']='Bạn không thể để trống Chọn màu';
     }
     if ($configuration=='' || $configuration== NULL){
-        $err['configuration']='Bạn không thể để trống mục số lượng!';
+        $err['configuration']='Bạn không thể để trống Chọn cấu Hình';
     }
     if ($quantity=='' || $quantity== NULL){
         $err['quantity']='Bạn không thể để trống mục số lượng!';
@@ -33,7 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && count($_REQUEST) > 3){
         $_SESSION['color'] = $color;
         $_SESSION['configuration'] = $configuration;
         $_SESSION['quantity'] = $quantity;
-        $_SESSION['id_product'] = $id;
+        $_SESSION['id_product'] = $check;
+        
         header ('location:order.php');   
     }
 }
@@ -120,14 +125,14 @@ include_once "layout/header.php";
                         <b><i>Mua
                                 <div style="color:blue">
                             </i>
-                            <input type="checkbox" name="check"></input>
+                            <input type="checkbox" name="check" value="<?php echo $value->id_product; ?>"></input>
                            
                     <td height="100%">
 
                         <b><i>Xóa
                                 <div style="color:blue">
                             </i>
-                            <a onclick="return confirm('Bạn có chắc chắn xóa sản phẩm');" href="delete_cart.php?id=<?php echo $value->id_product?>">
+                            <a onclick="return confirm('Bạn có chắc chắn xóa sản phẩm khỏi giỏ hàng');" href="delete_cart.php?id=<?php echo $value->id_product?>">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                 <path

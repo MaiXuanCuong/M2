@@ -10,7 +10,6 @@ if(isset( $_SESSION['quantity'] ) && isset( $_SESSION['id_product']) ) {
     $id_prd =  $_SESSION['id_product'];
 }
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    // $quantity = $_REQUEST['quantity'] ;
     $name = $_REQUEST['name'] ;
     $phone = $_REQUEST['phone'];
     $city = $_REQUEST['city'];
@@ -60,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($quantity_alter < 0){
             $quantity_alter = 0;
         }
-        $sql3 = "UPDATE product SET `quantity` = $quantity_alter WHERE id_product = $id_prd ";
+        $sql3 = "UPDATE product SET `quantity` = $quantity_alter, `cart` = NULL WHERE id_product = $id_prd ";
         $conn->query($sql3);
 
         $sql1 = "INSERT INTO `order_product` 
@@ -101,9 +100,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             unset($_SESSION['color']);
             unset($_SESSION['configuration']);
             unset($_SESSION['quantity']);
+            
             unset($_SESSION['id_product']);
-            $sql4 = "UPDATE `product` SET cart = NULL WHERE `id_product` = $cart";
-            $conn->exec($sql4);
+         
         }
         header('Location:index.php');
     }
