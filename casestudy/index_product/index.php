@@ -83,9 +83,10 @@ if(empty($err)){
                                 </svg>
                             </button>
                         </form>
+                        <br>
                         <small>
-                            <p><del><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?></p>
-                            </del>
+                            <del><?php echo number_format($value->price + (($value->price*21)/100))." VNĐ"?>
+                            </del><br>
                         </small>
 
                         <b><i><?php echo number_format($value->price)." VNĐ"?></i></b>
