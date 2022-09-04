@@ -46,21 +46,24 @@ if (empty($err)) {
     // if($row->role != 'Admin' ){
     //     $err['not_admin'] = "Chỉ có Admin mới có thể Đăng Nhập";
     // }
-    if(empty($err) && $row->role == 'Admin'){
-        $_SESSION['admin'] = $row->name_customer;
-        $_SESSION['id_admin'] = $row->id_customer;
-        $_SESSION['gioitinh_ad'] = $row->gender_customer;
-        header("location:../index/index.php");}
-    } 
-    if(empty($err) && $row->role == 'User'){
-        $_SESSION['user'] = $row->name_customer;
-        $_SESSION['id_user'] = $row->id_customer;
-        $_SESSION['gioitinh'] = $row->gender_customer;
- 
+    if(isset($row)){
 
-        header("location:../index_product/index.php");
-    } else {
-        $err['err'] = "Chỉ có Admin mới có thể Đăng Nhập";
+        if(empty($err) && $row->role == 'Admin'){
+            $_SESSION['admin'] = $row->name_customer;
+            $_SESSION['id_admin'] = $row->id_customer;
+            $_SESSION['gioitinh_ad'] = $row->gender_customer;
+            header("location:../index/index.php");}
+        }
+        if(empty($err) && $row->role == 'User'){
+            $_SESSION['user'] = $row->name_customer;
+            $_SESSION['id_user'] = $row->id_customer;
+            $_SESSION['gioitinh'] = $row->gender_customer;
+     
+    
+            header("location:../index_product/index.php");
+        } else {
+            $err['err'] = "Chỉ có Admin mới có thể Đăng Nhập";
+        }
     }
 }
 }
