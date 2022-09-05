@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql6 = "SELECT * FROM product 
         JOIN categories 
         ON product.category_id = categories.id_category 
-        WHERE name_product LIKE '%$search%' OR price LIKE '%$search%' OR quantity LIKE '%$search%' OR name_category LIKE '%$search%'";
+        WHERE (name_product LIKE '%$search%' OR price LIKE '%$search%' OR quantity LIKE '%$search%' OR name_category LIKE '%$search%') && product.garbage_can is NULL";
     $stmt6 = $conn->query($sql6);
     $stmt6->setFetchMode(PDO::FETCH_OBJ);
     $rows6 = $stmt6->fetchAll();

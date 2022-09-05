@@ -4,7 +4,7 @@ global $conn;
 if(isset($_REQUEST['id']) && $_REQUEST['id'] != NULl){
     $id = $_REQUEST['id'];
     $sql = "SELECT * FROM `product` JOIN categories 
-    ON product.category_id = categories.id_category WHERE id_product = $id";
+    ON product.category_id = categories.id_category WHERE id_product = $id && product.garbage_can is NULL";
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $rows = $stmt->fetchAll();

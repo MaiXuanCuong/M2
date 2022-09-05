@@ -20,6 +20,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="../categories/index.php"><i>Loại Sản Phẩm</i></a>
                                     <a class="nav-link" href="../product/index.php"><i>Sản Phẩm</i></a>
+                                    <a class="nav-link" href="../product/Garbage_can.php"><i>Thùng Rác</i></a>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading"><i>Admin</i></div>
