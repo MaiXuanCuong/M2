@@ -29,7 +29,7 @@
 <p class="copyright">
 </p>
 </div>
-
+<hr>
 <div class="col-sm-2">
 <h3  style="color: #696969; font-size: 20px; font-weight: bold"><i>Hệ Thống Cửa Hàng</i></h3>
 <ul class="list-unstyled links">

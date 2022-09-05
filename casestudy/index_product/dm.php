@@ -76,7 +76,7 @@ include_once "layout/sidebar.php";
                                 <tr>
                                     <td>
                                         <b><i>Tình Trạng <div style="color:blue"></i>
-                                            <?php if($value->quantity > 0){ echo '✅Còn Hàng' ;} else{ echo '❌Hết Hàng';};?></b>
+                                            <i><?php if($value->quantity > 10){ echo '✅ Còn Hàng' ;} else if($value->quantity <= 10){echo '⚠ Sản Phẩm Còn Số Lượng ít';} else{ echo '❌ Tạm Hết Hàng';};?></b></i>
                                         <div style="text-align: left" class="policy">
                                             <div>
                                                 <p><i style="color:black ; font-size:20px" class='fas fa-box-open'></i>
