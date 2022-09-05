@@ -6,7 +6,7 @@ include_once "./../layout/header.php";
 <?php include_once "./../layout/sidebar.php";?>
 <?php 
 global $conn;
-if(isset($_REQUEST['id'])){
+if(isset($_REQUEST['id']) && $_REQUEST['id'] != NULL){
     $id = $_REQUEST['id'];
     $sql = "SELECT product.*, categories.name_category FROM `product` JOIN categories 
     ON product.category_id = categories.id_category WHERE id_product = $id";
@@ -24,6 +24,7 @@ if(isset($_REQUEST['id'])){
                     <div class="container-fluid px-4">
                         <a class="btn btn-success" href="index.php"><i>Trở về</i></a>
                         <div style="text-align: left" class="card-header">
+                        <?php if(isset($rows)) {?>
                             <table class="table table-bordered">
                                 <thead class="thead-dark">
                                     <tr>
@@ -61,6 +62,8 @@ if(isset($_REQUEST['id'])){
                                 </tbody>
                                 <?php } ?>
                             </table>
+                            <?php } ?>
+
                         </div>
                         </main>
                     </div>

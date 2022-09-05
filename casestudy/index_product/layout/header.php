@@ -206,7 +206,7 @@ border-radius: 4px;
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="../login/password.php?id=<?php echo $_SESSION['id_user'];?>"><i>Cài Đặt Tài Khoản</i></a></li>
-                        <li><a class="dropdown-item" href="../orders_detail/index1.php?id_user=<?php echo $_SESSION['id_user'];?>"><i>Lịch Sử Mua Hàng</i></a></li>
+                        <li><a class="dropdown-item" href="../orders_detail/index1.php"><i>Lịch Sử Mua Hàng</i></a></li>
                         <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="../login/login.php?idss=2"><i>Đăng Xuất</i></a></li>

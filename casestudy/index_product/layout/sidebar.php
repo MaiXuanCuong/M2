@@ -40,8 +40,8 @@
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
                         data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="cart.php?id_user=<?php echo $_SESSION['id_user'];?>">Xem Giỏ Hàng</a>
-                            <a class="nav-link" href="../orders_detail/index1.php?id_user=<?php echo $_SESSION['id_user'];?>">Xem Đơn Đã Đặt</a>
+                        <a class="nav-link" href="cart.php">Xem Giỏ Hàng</a>
+                            <a class="nav-link" href="../orders_detail/index1.php">Xem Đơn Đã Đặt</a>
                     </div>
 
                     </a>

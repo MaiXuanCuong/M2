@@ -2,8 +2,8 @@
 
 include_once "../database.php";?>
 <?php
-if(isset($_REQUEST['id_user'])){
-    $id1 = $_REQUEST['id_user'];
+if(isset($_SESSION['id_user'])){
+    $id1 = $_SESSION['id_user'];
 
     $sql1 = "SELECT * FROM `orders_detail` 
     JOIN product 

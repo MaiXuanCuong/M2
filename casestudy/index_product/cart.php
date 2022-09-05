@@ -1,7 +1,7 @@
 <?php 
 include_once "../database.php";
 global $conn;
-if(isset($_REQUEST['id_user']) || $_SESSION['id_user']){
+if(isset($_SESSION['id_user'])){
     $id = $_SESSION['id_user'];
     $sql = "SELECT * FROM `product` JOIN categories 
     ON product.category_id = categories.id_category WHERE product.cart is NOT NULL";

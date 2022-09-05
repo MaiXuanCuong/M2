@@ -4,7 +4,7 @@ $sql = "SELECT * FROM categories";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
-if(isset($_REQUEST['id']))
+if(isset($_REQUEST['id']) && $_REQUEST['id'] != NULL)
 {
     $id = $_REQUEST['id'];
     $sql = "SELECT * FROM product where id_product = '$id'";
@@ -90,6 +90,7 @@ else {
 <body>
     <div class="container">
         <form method="post" action="">
+            <?php if(isset($items->name_product)){ ?>
             <legend><i>Thêm Sản Phẩm</i></legend>
             <div class="mb-3">
             <i>Sản Phẩm</i>
@@ -131,6 +132,7 @@ else {
                 <br>
             <button type="submit" class="btn btn-primary"><i>Lưu</i></button>
             <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
+            <?php } ?>
             <a href="./../index/index.php" class="btn btn-danger"><i>Về Trang Chủ</i></a>
         </form>
     </div>

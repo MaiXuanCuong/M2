@@ -3,7 +3,7 @@
 include_once "../database.php";?>
 <?php
 
-if(isset($_REQUEST['id'])){
+if(isset($_REQUEST['id']) && $_REQUEST['id'] != NULL){
 $id = $_REQUEST['id'];
 global $conn;
 $sql = "SELECT * FROM `orders_detail` 
@@ -34,7 +34,7 @@ $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
 }
 else {
-    header('location:../err.php');
+    header('location:../error/404.php');
 }
 include_once "./../layout/header.php";
 include_once "./../layout/sidebar.php";
@@ -43,6 +43,7 @@ include_once "./../layout/sidebar.php";
 
     <div id="layoutSidenav_content">
         <main>
+            <?php if(isset($rows)){}; ?>
         <h2 class="mt-4"><i>Chi Tiết Đặt Hàng</i></h2>
                 <a class="btn btn-success" href="<?php if(isset($_REQUEST['id'])){ echo '../order_product/index.php';} else {echo '../index/index.php';}?>"><i>Trở Về</i></a> 
 <div class="row">

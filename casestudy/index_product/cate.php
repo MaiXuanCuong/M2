@@ -3,7 +3,7 @@ include_once "./../database.php";
 
 ?>
 <?php 
-if (isset($_REQUEST['id'])){
+if (isset($_REQUEST['id']) && $_REQUEST['id'] != NULL){
 
     $id = $_REQUEST['id'];
     global $conn;

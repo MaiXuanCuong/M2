@@ -1,7 +1,7 @@
 <?php 
 include_once "../database.php";
 global $conn;
-if(isset($_REQUEST['id'])){
+if(isset($_REQUEST['id']) && $_REQUEST['id'] != NULl){
     $id = $_REQUEST['id'];
     $sql = "SELECT * FROM `product` JOIN categories 
     ON product.category_id = categories.id_category WHERE id_product = $id";
@@ -40,6 +40,7 @@ include_once "layout/sidebar.php";
 ?>
 <br><br>
 <br>
+<?php if(isset($rows)) { ?>
 <div id="layoutSidenav_content">
     <div class="container-fluid px-4">
         <br> <br>
@@ -186,6 +187,9 @@ include_once "layout/sidebar.php";
         <br><br><br> <br><br><br>
         <?php } ?>
         <?php } ?>
+        <?php } ?>
     </div>
+    
+
     </main>
     <?php include 'layout/footer.php';?>

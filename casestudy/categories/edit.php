@@ -5,7 +5,7 @@ include_once "./../layout/header.php";
 ?>
 <?php include_once "./../layout/sidebar.php";?>
 <?php
-if (isset($_REQUEST['id'])){
+if (isset($_REQUEST['id']) && $_REQUEST['id'] != NULL ){
 
     $id = $_REQUEST['id'];
      if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -53,6 +53,7 @@ else {
         <main>
     <div class="container">
         <form method="post" action="">
+            <?php if(isset($rows)) {?>
             <legend><i>Sửa Danh Mục</i></legend>
             <div class="mb-3">
                 <label for="disabledTextInput"  class="form-label"><i>Tên Danh Mục</i></label>
@@ -64,6 +65,7 @@ else {
             </div>
             <button type="submit" class="btn btn-primary"><i>Lưu</i></button>
             <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
+            <?php } ?>
         </form>
     </div>
 </body>
