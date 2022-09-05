@@ -91,7 +91,7 @@ $rows1 = $stmt1->fetchAll();
                                 <td width="280px"><i><?=$row->name?></i></td>
                                 <td width="170px"><i><?=$row->name_class?></i></td>
                            
-                                <td width="300px"><i><?= $row->birthday?></i><hr></td>
+                                <td width="300px"><i><?= $row->birthday?></i></td>
                                 <td width="200px" ><i><?= $row->name_gender?></i></td>
                                 <td width="200px" ><i><?= $row->information?></i></td>
                                <td width="300px" ><i>
