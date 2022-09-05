@@ -1,6 +1,4 @@
-<?php 
-include_once "db.php";
-?>
+<?php include_once "db.php";?>
 <?php 
 global $conn;
 $sql = "SELECT * FROM `gender` JOIN quanlyhs 
@@ -10,7 +8,6 @@ ON quanlyhs.class_id = class.id_class";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
-// print_r ($rows);
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +21,7 @@ $rows = $stmt->fetchAll();
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <style>
             .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 10px 30px;
@@ -63,8 +60,6 @@ $rows = $stmt->fetchAll();
                             <th scope="col"><i>Mã HS</i><hr></th>
                             <th scope="col"><i>Tên Học Sinh</i><hr></th>
                             <th scope="col"><i>lớp</i><hr></th>
-                            <!-- <th scope="col">Cấu Hình</th> -->
-                            <!-- <th scope="col">Mô Tả</th> -->
                             <th scope="col"><i>Ngày Sinh</i><hr></th>
                             <th scope="col"><i>Giới Tính</i><hr></th>
                             <th scope="col"><i>Thông tin Học Sinh</i><hr></th>

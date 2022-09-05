@@ -33,7 +33,7 @@ $rows1 = $stmt1->fetchAll();
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <style>
             .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 10px 30px;
@@ -75,8 +75,6 @@ $rows1 = $stmt1->fetchAll();
                             <th scope="col"><i>Mã Học Sinh</i><hr></th>
                             <th scope="col"><i>Tên Học Sinh</i><hr></th>
                             <th scope="col"><i>lớp</i><hr></th>
-                            <!-- <th scope="col">Cấu Hình</th> -->
-                            <!-- <th scope="col">Mô Tả</th> -->
                             <th scope="col"><i>Ngày Sinh</i><hr></th>
                             <th scope="col"><i>Giới Tính</i><hr></th>
                             <th scope="col"><i>Thông tin Học Sinh</i><hr></th>

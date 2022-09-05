@@ -1,6 +1,4 @@
-<?php 
-include_once "db.php";
-?>
+<?php include_once "db.php";?>
 <?php
 global $conn;
 if(isset($_REQUEST['id'])){
@@ -20,7 +18,7 @@ $sql2 = "SELECT * FROM class";
 $stmt2 = $conn->query($sql2);
 $stmt2->setFetchMode(PDO::FETCH_OBJ);
 $rows2 = $stmt2->fetchAll();
-// print_r ($rows);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $name = $_REQUEST['name'] ;
 $class = $_REQUEST['class'] ;
@@ -107,8 +105,7 @@ if(empty($err))
                 </form>
             </div>
             <br>
-</body>
-
+        </body>
 </html>
 <?php }?>
 

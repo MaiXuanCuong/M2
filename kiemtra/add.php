@@ -1,9 +1,5 @@
 <?php 
-include_once "db.php";
-
-
-
-?>
+include_once "db.php";?>
 <?php
 global $conn;
 $sql = "SELECT * FROM quanlyhs";
@@ -20,7 +16,7 @@ $sql2 = "SELECT * FROM class";
 $stmt2 = $conn->query($sql2);
 $stmt2->setFetchMode(PDO::FETCH_OBJ);
 $rows2 = $stmt2->fetchAll();
-// print_r ($rows);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $name = $_REQUEST['name'] ;
 $class = $_REQUEST['class'] ;
@@ -103,13 +99,12 @@ if(empty($err))
                         </select><br>
                         <i>Thông tin học sinh</i>
                         <textarea name="information" id="" class="form-control" placeholder="" value=""></textarea>
-                        <span><?php if(isset($err['information'])){echo $err['information'];}?></span><br>    
-                    <button type="submit" class="btn btn-primary"><i>Thêm</i></button>
-                    <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
+                        <span><?php if(isset($err['information'])){echo $err['information'];}?></span><br>
+                        <button type="submit" class="btn btn-primary"><i>Thêm</i></button>
+                        <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
                 </form>
             </div>
             <br>
 </body>
 
 </html>
-
