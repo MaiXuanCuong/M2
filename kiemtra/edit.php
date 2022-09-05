@@ -77,6 +77,7 @@ if(empty($err))
         <main>
             <div class="container">
                 <form method="post" action="">
+                    <?php if(isset($rows->name)) : ?>
                     <legend><i>Thêm Học Sinh</i></legend>
                     <div class="mb-3">
                         <i>Tên Học Sinh</i>
@@ -102,6 +103,7 @@ if(empty($err))
                         <span><?php if(isset($err['information'])){echo $err['information'];}?></span><br>    
                     <button type="submit" class="btn btn-primary"><i>Lưu</i></button>
                     <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
+                    <?php else : "";endif; ?>
                 </form>
             </div>
             <br>
