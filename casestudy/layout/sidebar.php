@@ -41,7 +41,7 @@
                                             <a class="nav-link" href="./../login/register1.php"><i>Tạo Tài Khoản</i></a>
                                         </nav>
                                     </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError"> -->
                                 </nav>
                             </div>
                             

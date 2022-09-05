@@ -64,23 +64,27 @@ include_once './../layout/sidebar.php';
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Họ Và Tên</label>
                 <input type="text" name="name" id=""  width="1000px" class="form-control" placeholder="" value="<?php echo $rows->name_customer; ?>">
-                <span><?php if (isset($err['name'])) {echo $err['name'];}?></span>
+                <span><?php if (isset($err['name'])) {echo $err['name'];}?></span><br>
+
 
                
                 <label for="disabledTextInput" class="form-label">Giới Tính</label><br>
-                <input type="radio" name="gender" id=""  placeholder="" value="Nam">Nam<br>
-                <input type="radio" name="gender" id=""  placeholder="" value="Nữ">Nữ<br>
-                <input type="radio" name="gender" id=""  placeholder="" value="Khác">Khác<br>
+                <select name="gender" class="form-control" id="">
+                    <option <?=$rows->gender_customer == "Nam" ? "selected" : "" ;?> value="Nam">Nam<i></option>
+                    <option <?=$rows->gender_customer == "Nữ" ? "selected" : "" ;?> value="Nữ">Nữ<i></option>
+                    <option <?=$rows->gender_customer == "Khác" ? "selected" : "" ;?> value="Khác">Khác<i></option>
+                </select>
                 <span><?php if (isset($err['gender'])) {echo $err['gender'];}?></span><br>
-
 
                 <label for="disabledTextInput" class="form-label">Địa Chỉ</label>
                 <input type="text" name="address" id="" class="form-control" placeholder="" value="<?php echo $rows->address_customer; ?>">
-                <span><?php if (isset($err['address'])) {echo $err['address'];}?></span>
+                <span><?php if (isset($err['address'])) {echo $err['address'];}?></span><br>
+
 
                 <label for="disabledTextInput" class="form-label">Số Điện Thoại</label>
                 <input type="text" name="phone" id="" class="form-control" placeholder="" value="<?php echo $rows->phone_customer; ?>">
-                <span><?php if (isset($err['phone'])) {echo $err['phone'];}?></span>
+                <span><?php if (isset($err['phone'])) {echo $err['phone'];}?></span><br>
+
             </div>
             </div>
             <input type="submit" value="Lưu" class="btn btn-primary"></input>
