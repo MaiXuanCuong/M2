@@ -3,6 +3,8 @@ include_once "db.php";
 ?>
 <?php
 global $conn;
+if(isset($_REQUEST['id'])){
+
 $id1 = $_REQUEST['id'] ;
 $sql = "SELECT * FROM quanlyhs WHERE id = $id1";
 $stmt = $conn->query($sql);
@@ -52,6 +54,7 @@ if(empty($err))
     header('location:index.php');
 }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,4 +110,5 @@ if(empty($err))
 </body>
 
 </html>
+<?php }?>
 

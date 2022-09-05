@@ -87,17 +87,17 @@ $rows1 = $stmt1->fetchAll();
                     <?php foreach ($rows1 as $key => $row) { ?>
                         <tbody>
                             <tr style="text-align: center">
-                                <td width="100px" height="180px"><i><?=$row->id?></i><hr></td>
-                                <td width="280px"><i><?=$row->name?></i><hr></td>
-                                <td width="170px"><i><?=$row->name_class?></i><hr></td>
+                                <td width="100px" height="180px"><i><?=$row->id?></i></td>
+                                <td width="280px"><i><?=$row->name?></i></td>
+                                <td width="170px"><i><?=$row->name_class?></i></td>
                            
                                 <td width="300px"><i><?= $row->birthday?></i><hr></td>
-                                <td width="200px" ><i><?= $row->name_gender?></i><hr></td>
-                                <td width="200px" ><i><?= $row->information?></i><hr></td>
+                                <td width="200px" ><i><?= $row->name_gender?></i></td>
+                                <td width="200px" ><i><?= $row->information?></i></td>
                                <td width="300px" ><i>
                                     <a class="btn btn-success" href="edit.php?id=<?=$row->id?>">Sửa</a>
                                     <a class="btn btn-danger" href="delete.php?id=<?=$row->id?>" onclick="return confirm('Bạn có chắc muốn xóa không?');">Xóa</a>
-                    </i><hr></td>
+                    </i></td>
                             </tr>
                         </tbody>
                     <?php } ?>
