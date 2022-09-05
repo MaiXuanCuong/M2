@@ -1,7 +1,7 @@
 <?php include_once "db.php";?>
 <?php
 global $conn;
-if(isset($_REQUEST['id'])){
+if(isset($_REQUEST['id']) && $_REQUEST['id'] != NULL){
 
 $id1 = $_REQUEST['id'] ;
 $sql = "SELECT * FROM quanlyhs WHERE id = $id1";
