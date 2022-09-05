@@ -45,7 +45,7 @@ if ($gender==''){
 }
 
 if ($information ==''){
-    $err['infomation']='Bạn không thể để trống Thông Tin học sinh';
+    $err['information']='Bạn không thể để trống Thông Tin học sinh';
 }
 if(empty($err))
 {
@@ -103,7 +103,7 @@ if(empty($err))
                         </select><br>
                         <i>Thông tin học sinh</i>
                         <textarea name="information" id="" class="form-control" placeholder="" value=""></textarea>
-                        <span><?php if(isset($err['information'])){echo $err['infomation'];}?></span><br>    
+                        <span><?php if(isset($err['information'])){echo $err['information'];}?></span><br>    
                     <button type="submit" class="btn btn-primary"><i>Thêm</i></button>
                     <a href="index.php" class="btn btn-danger"><i>Hủy</i></a>
                 </form>
