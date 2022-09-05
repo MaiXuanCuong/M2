@@ -40,7 +40,11 @@ $rows = $stmt->fetchAll();
             <div class="container-fluid px-4">
             <h2 class="mt-4"><i>Đơn Đặt</i></h2>
                 <!-- <a class="btn btn-success" href="add.php?id=<?php //echo $_SESSION['id_admin']?>">Thêm Đơn</a> -->
-                <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');"><i>Xóa Tất Cả</i></a>
+                <a class="btn btn-success" href="../index/index.php"><i>Trở Về</i></a>
+                <!-- <div style="text-align: right">
+
+                    <a class="btn btn-danger" href="deleteall.php" onclick="return confirm('Bạn có chắc muốn xóa tất cả không?');"><i>Xóa Tất Cả</i></a>
+                </div> -->
 
 <div class="row">
         <div class="col-xl-12">

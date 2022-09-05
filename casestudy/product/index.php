@@ -18,11 +18,12 @@ $rows = $stmt->fetchAll();
     <div id="layoutSidenav_content">
         
         <!-- <main> -->
+            <br>
         <div class="row">
+            <div class="col-xl-12">
             
-        <div class="col-xl-12">
         <!-- <h2 class="mt-4">Product</h2> -->
-                <a class="btn btn-success" href="add.php"><i>Thêm Sản Phẩm</i></a>
+        <a class="btn btn-primary" href="../index/index.php"><i>Trở Về</i></a>  <a class="btn btn-success" href="add.php"><i>Thêm Sản Phẩm</i></a>
                 <div class="card mb-4">
                     <div  style="text-align: center" class="card-header">
             <div class="container-fluid px-4">

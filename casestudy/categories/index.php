@@ -17,7 +17,9 @@ $rows = $stmt->fetchAll();
         <main >
 
             <div class="container-fluid px-4">
+                
                 <h2 class="mt-4"><i>Thể Loại</i></h2>
+                <a class="btn btn-primary" href="../index/index.php"><i>Trở Về</i></a>
                 <a class="btn btn-success" href="add.php"><i>Thêm Thể Loại</i></a>
                 <div class="row">
         <div class="col-xl-12">

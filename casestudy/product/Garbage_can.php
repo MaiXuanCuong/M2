@@ -22,7 +22,7 @@ $rows = $stmt->fetchAll();
         <div class="row">
             
         <div class="col-xl-12">
-        <a class="btn btn-success" href="../index/index.php"><i>Trở Về</i></a>
+        <a class="btn btn-primary" href="../index/index.php"><i>Trở Về</i></a>
         <!-- <h2 class="mt-4">Product</h2> -->
                 <div class="card mb-4">
                     <div  style="text-align: center" class="card-header">

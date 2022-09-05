@@ -157,9 +157,9 @@ include_once "layout/header.php";
         <div style="text-align:center">
             <input type="submit" class="button" value="Xác Nhận Mua"></input>
         </div>
-        </form>
+    </form>
+    <?php } else { echo 'Giỏ Hàng Trống' ;}?><br>
+    <a class="btn btn-primary" href="index.php">Thêm Sản Phẩm Vào Giỏ</a>
     </div>
 
     </main>
-    <?php } else { echo 'Giỏ Hàng Trống' ;}?><br>
-    <a class="btn btn-primary" href="index.php">Trở Về</a>
