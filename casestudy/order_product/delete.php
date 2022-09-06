@@ -1,6 +1,6 @@
 <?php
 include_once '../database.php';
-print_r($_REQUEST);
+// print_r($_REQUEST);
 $id = $_REQUEST['id'];
 $id1 = $_REQUEST['id1'];
 if (isset($_REQUEST['id']) && isset($_REQUEST['id1'])){

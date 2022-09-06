@@ -69,6 +69,7 @@ include_once "./../index_product/layout/header.php";
                             <th width="200px" ><i>Ngày Đặt</i><hr></th>
                             <th width="200px" ><i>Sản Phẩm</i><hr></th>
                             <th width="200px" ><i>Mua Lại</i><hr></th>
+                            <th width="200px" ><i>Hủy Đơn</i><hr></th>
                         </tr>
 
 
@@ -89,7 +90,8 @@ include_once "./../index_product/layout/header.php";
                                 
                                 <td><i><?=$row->date_borrow?></i></td>
                                 <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
-                                <td><i><a class="button" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></i></td>
+                                <td width="100px"><i><a class="button" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></i></td>
+                                <td width="100px"><i><a class="button" href="huydon.php?id=<?php echo $row->id_orders_detail;?>&id1=<?php echo $row->id_customer;?>">Hủy Đơn</a></i></td>
                             </tr>
                         </tbody>
                     <?php } ?>
