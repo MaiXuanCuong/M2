@@ -25,6 +25,7 @@ if (isset($_REQUEST['id'])){
         if(empty($err)){
             $sql = "UPDATE customer SET `name_customer`='$name' , `gender_customer` ='$gender' , `address_customer` ='$address' , `phone_customer` ='$phone' WHERE id_customer='$id'";
             $conn->query($sql);
+            $_SESSION['gioitinh_ad'] = $gender;
             header('location:index.php');    
         }
      }
