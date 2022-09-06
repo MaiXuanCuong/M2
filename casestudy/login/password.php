@@ -75,7 +75,7 @@ if(isset($_REQUEST['id'])){
                                                 <label for="inputEmail">Địa Chỉ Email</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="name" id="inputEmail" type="text"  value="<?php if(isset($_REQUEST['id'])){echo $row1->name_customer;}?>"/>
+                                                <input class="form-control" name="name" id="inputEmail" type="text" placeholder="Nhập Tên value="<?php if(isset($_REQUEST['id'])){echo $row1->name_customer;}?>"/>
                                                 <label for="inputEmail">Tên</label>
                                             </div>
                                             <div class="form-floating mb-3">
