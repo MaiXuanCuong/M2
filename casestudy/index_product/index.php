@@ -3,11 +3,22 @@ include_once "./../database.php";
 ?>
 <?php 
 global $conn;
+$id = $_SESSION['id_user'];
 $sql = "SELECT * FROM `product` JOIN categories 
 ON product.category_id = categories.id_category WHERE product.quantity > 0 && product.garbage_can is NULL";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_OBJ);
 $rows = $stmt->fetchAll();
+
+$sql1 = "SELECT COUNT(orders_detail.id_orders_detail) as DH, customer.id_customer as ID FROM categories 
+INNER JOIN product ON product.category_id = categories.id_category 
+INNER JOIN orders_detail ON product.id_product = orders_detail.product_id 
+INNER JOIN order_product ON orders_detail.order_product_id = order_product.id_order_product
+INNER JOIN customer ON customer.id_customer = order_product.customer_id WHERE product.quantity > 0  && customer.id_customer = $id
+GROUP BY orders_detail.id_orders_detail";
+$stmt1 = $conn->query($sql1);
+$stmt1->setFetchMode(PDO::FETCH_OBJ);
+$rows1 = $stmt1->fetch();
 include_once "layout/header.php"; 
 include_once "layout/sidebar.php";
 
@@ -92,7 +103,12 @@ if(empty($err)){
                         <b><i><?php echo number_format($value->price)." VNĐ"?></i></b>
                         <i><br><b style="font-size:12px ; color:orange">
                                 <h5 style="color:red">Tặng</h5> Bảo Hành Vip bao gồm Nguồn-Màn Hình-Vân Tay
-                            </b></i>
+                            </b></i><br>
+                            <i class='fas fa-shipping-fast'></i>
+                            <?php  if (!isset($rows1->DH)) {?>
+                           <small> <b><i style="color:blue">Miễn Phí Vẫn Chuyển Cho Đơn hàng Đầu Tiên</i></b></small>
+                            <?php } else { ?>
+                                <small> <b> <i style="color:blue"><?php echo 'Giảm 30% Phí Vẫn Chuyển Cho Đơn Hàng Tiếp Theo'; }?></i></b></small>
                     </div>
                 </div>
 

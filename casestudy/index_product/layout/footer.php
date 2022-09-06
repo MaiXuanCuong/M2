@@ -30,7 +30,7 @@
 </p>
 </div>
 <hr>
-<div class="col-sm-2">
+<div class="col-sm-4">
 <h3  style="color: #696969; font-size: 20px; font-weight: bold"><i>Hệ Thống Cửa Hàng</i></h3>
 <ul class="list-unstyled links">
 <li><a href="#"><i>Hà Nội</i></a></li>
@@ -38,7 +38,7 @@
 <li><a href="#"><i>Đà Nẵng</i></a></li>
 <li><a href="#"><i>Thành Phố HCM</i></a></li>
 </ul>
-</div>
+</div> 
 <div class="col-sm-4">
 <h3  style="color: #696969; font-size: 20px; font-weight: bold"><i>Quy Định - Chính Sách</i></h3>
 <ul class="list-unstyled links">
@@ -52,7 +52,7 @@
 <li><a href="#"><i>Chính sách đại lý linh, phụ kiện</i></a></li>
 </ul>
 </div>
-<div class="col-sm-5">
+<div class="col-sm-4">
 <h3 style="color: #696969; font-size: 20px; font-weight: bold"><i>Liên Hệ</i></h3>
 
 <ul class="list-unstyled social">
