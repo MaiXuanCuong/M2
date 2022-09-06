@@ -3,14 +3,10 @@ include_once "./../database.php";
 ?>
 <?php 
 global $conn;
-$id = $_SESSION['id_user'];
-$sql = "SELECT * FROM `product` JOIN categories 
-ON product.category_id = categories.id_category WHERE product.quantity > 0 && product.garbage_can is NULL";
-$stmt = $conn->query($sql);
-$stmt->setFetchMode(PDO::FETCH_OBJ);
-$rows = $stmt->fetchAll();
+if(isset($_SESSION['id_user'])){
 
-$sql1 = "SELECT COUNT(orders_detail.id_orders_detail) as DH, customer.id_customer as ID FROM categories 
+    $id = $_SESSION['id_user'];
+    $sql1 = "SELECT COUNT(orders_detail.id_orders_detail) as DH, customer.id_customer as ID FROM categories 
 INNER JOIN product ON product.category_id = categories.id_category 
 INNER JOIN orders_detail ON product.id_product = orders_detail.product_id 
 INNER JOIN order_product ON orders_detail.order_product_id = order_product.id_order_product
@@ -19,6 +15,14 @@ GROUP BY orders_detail.id_orders_detail";
 $stmt1 = $conn->query($sql1);
 $stmt1->setFetchMode(PDO::FETCH_OBJ);
 $rows1 = $stmt1->fetch();
+}
+$sql = "SELECT * FROM `product` JOIN categories 
+ON product.category_id = categories.id_category WHERE product.quantity > 0 && product.garbage_can is NULL";
+$stmt = $conn->query($sql);
+$stmt->setFetchMode(PDO::FETCH_OBJ);
+$rows = $stmt->fetchAll();
+
+
 include_once "layout/header.php"; 
 include_once "layout/sidebar.php";
 
