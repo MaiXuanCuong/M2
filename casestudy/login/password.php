@@ -24,7 +24,7 @@ if (empty($err)) {
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $row = $stmt->fetch();
     if ($err != '' && $row != '') {
-    if($row->gmail_customer != $email ){
+    if($row->gmail_customer != $email && $row->name_customer != $name){
         $err['sai_tk'] = "Tài khoản không đúng";
             } else {
                 $sql = "UPDATE customer SET pass ='$password' ,`name_customer` = '$name' WHERE gmail_customer ='$email'";
