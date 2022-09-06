@@ -199,7 +199,7 @@ border-radius: 4px;
                     <!-- <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" /> -->
                     <!-- <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>-->
               
-                    <b style="color:black"><i><?php $name_user = $_SESSION['user'] ; echo $name_user; ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php if($_SESSION['gioitinh'] == 'Nam'){ echo 'anh-dai-dien-dep.jpg';} else if($_SESSION['gioitinh'] == 'Nữ'){ echo 'avatar-dep-chat-nu.jpg';}?> "></i>
+                    <b style="color:black"><i><?php $name_user = $_SESSION['user'] ; echo $name_user; ?></b><img style="border-radius:50%" width="50px" height="50px" src="../product/image/<?php if($_SESSION['gioitinh'] == 'Nam'){ echo 'anh-dai-dien-dep.jpg';} else if($_SESSION['gioitinh'] == 'Nữ'){ echo 'avatar-dep-chat-nu.jpg';} else { echo 'hinh-anh-hacker-anonymous-dep-day-bi-an.jpeg';}?> "></i>
                 </div>
                 </form>
             <ol class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">

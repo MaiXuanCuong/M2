@@ -113,6 +113,7 @@ if (empty($err)) {
                                                         <select name="gioitinh" class="form-control" id="">
                                                             <option value="Nam">Nam</option>
                                                             <option value="Nữ">Nữ</option>
+                                                            <option value="Khác">Khác</option>
                                                         </select>
                                                         <label for="inputLastName">Giới Tính</label>
                                                     </div>
