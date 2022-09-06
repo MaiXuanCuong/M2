@@ -82,7 +82,7 @@ $rows = $stmt->fetchAll();
                                                 $max =$row0->id_order_product;
                                             }
                                         } ?>
-                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_orders_detail?>&id1=<?=$max?>" onclick="return confirm('Bạn có chắc muốn xóa không?');"><i>Xóa</i></a>
+                                    <a class="btn btn-danger" href="delete.php?id=<?=$row->id_orders_detail?>&id1=<?=$max?>" onclick="return confirm('Bạn có chắc khách hàng yêu cầu hủy đơn không?');"><i>Hủy Đơn</i></a>
                                     </td>
                             </tr>
                         </tbody>
