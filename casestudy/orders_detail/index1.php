@@ -91,7 +91,7 @@ include_once "./../index_product/layout/header.php";
                                 <td><i><?=$row->date_borrow?></i></td>
                                 <td><img src="../product/image/<?php echo $row->image?>" width="120px" height="120px" alt=""></td>
                                 <td width="100px"><i><a class="button" href="../index_product/dm.php?id=<?php echo $row->id_product;?>">Mua Lại</a></i></td>
-                                <td width="100px"><i><a class="button" href="huydon.php?id=<?php echo $row->id_orders_detail;?>&id1=<?php echo $row->id_customer;?>">Hủy Đơn</a></i></td>
+                                <td width="100px"><i><a class="button" onclick="return confirm('Bạn có chắc muốn xóa <?=$row->name_product?> không?');" href="huydon.php?id=<?php echo $row->id_orders_detail;?>&id1=<?php echo $row->id_customer;?>">Hủy Đơn</a></i></td>
                             </tr>
                         </tbody>
                     <?php } ?>
