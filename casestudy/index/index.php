@@ -33,8 +33,8 @@ $sql5 = "SELECT COUNT(`role`) as AD FROM customer WHERE `role`='Admin'";
 $stmt5 = $conn->query($sql5);
 $stmt5->setFetchMode(PDO::FETCH_OBJ);
 $rows5 = $stmt5->fetch();
-include_once './../layout/header.php';
-include_once './../layout/sidebar.php';
+include_once '../layout/header.php';
+include_once '../layout/sidebar.php';
 ?>
     
 <div id="layoutSidenav_content">
@@ -74,7 +74,7 @@ include_once './../layout/sidebar.php';
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
-                <div class="card bg-danger text-white mb-4">
+                <div class="card bg-info text-white mb-4">
                     <div class="card-body"><i>Có <?php echo $rows2->HD ;?> Đơn Đặt</i></div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a style="text-decoration: none" class="small text-white stretched-link" href="./../order_product/index.php"><i>Xem Chi tiết</i></a>
