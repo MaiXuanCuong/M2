@@ -155,10 +155,10 @@ include_once "layout/sidebar.php";
                         <div style="text-align: left ; color:red ">
                             <b><?php $explode = explode(';', $value->specifications);
                                 ?></b>
-                            <table>
+                            <table  cellpadding='10px'>
                                 <?php foreach ($explode as $key1 => $value1) {?>
                                 <tr>
-                                    <td class="policy"><small><b><?php echo "➣ ".$value1; ?></b></small>
+                                    <td><small><b><?php echo "➣ ".$value1; ?></b></small>
                                         <!-- <hr style="color:black;"> -->
                                     </td>
                                 </tr>
