@@ -1,0 +1,4 @@
+1/ mở visual code
+2/ Cài extensions Live server
+3/ Chọn Open folder => chọn tới thư mục
+4/ Chuột phải file index.html, chọn open with live server

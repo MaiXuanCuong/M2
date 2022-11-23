@@ -47,7 +47,7 @@
 
 
 
-abstract
+
 abstract class HinhHoc{
 
        public $name;
