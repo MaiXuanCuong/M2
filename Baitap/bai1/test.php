@@ -61,4 +61,8 @@ echo 'Tổng Mua Hàng ' . number_format(abs($totalbuy)) . " VND<br>" .
 'Số Tiền Còn Nợ Cần Phải Trả Là ' . number_format(abs($total)) . " VND)<br>";
 echo 'Dư Nợ Tính Từ Ngày: ' . $dayfrom . ' Đến Ngày: ' . $dayto . ' Là ' . number_format(abs($total1)) . " VND<br>";
 die;
-'test cômit';
+
+$a = 5;
+$b = $a++ - --$a + $a-- + $a;
+//    5         5   5     4
+echo $b;

@@ -1,0 +1,18 @@
+<script>
+    let a = [4,6,5,3,9,2,7,1,0,8]
+            let v = 5 ;
+            for( var i= 0 ; i< a.length ; i++){
+                if( v == a[i] ){
+                    // alert('V is in the array')
+                    for(var j = i; j< a.length - i+1 ; j++){
+                        a[j] = a[j+1];
+                    }
+                    a[a.length -1] = 0;
+                    console.log(a);
+                    break;
+                    // console.log('V is in the array');
+                }else if(a[i] != v && i == a.length -1){
+                    alert('V is not in the array')
+                }
+            }
+</script>
